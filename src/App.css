@@ -313,3 +313,198 @@
     border-radius: 50%;
     margin-right: 10px;
   }
+
+
+/* Herosection */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('https://placehold.co/1920x1080') no-repeat center center/cover;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+  }
+  
+  .title {
+    color: #FAFAFA;
+    text-align: center;
+    width: 50%;
+    font-family: Inter;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 50px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .highlight {
+    color: var(--primaryColor); 
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 9999px;
+    padding: 0.5rem;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    color: rgba(0, 0, 0, 0.50);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  .search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0.5rem 1rem;
+    /* padding: 16px 10px; */
+    border-radius: 9999px;
+    margin-left: 1.4 rem;
+  }
+  
+  .search-icon{
+    position: absolute;
+    top: auto;
+    left: 1 rem;
+  }
+  .search-button {
+    background: var(--primaryColor);
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 9999px;
+    cursor: pointer;
+  }
+  
+  .search-button:hover {
+    background: #28a745; /* Darker LimeGreen */
+  }
+/* featured events */
+
+  .featured-events{
+    text-align: center;
+    margin: 5%;
+  }
+  .featured-events .featured-events-title{
+    color: var(--primaryColor);
+    text-align: center;
+    font-family: Recoleta;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .featured-events .featured-events-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 5%;
+  }
+  .event-card{
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 0px 30px 0px rgba(221, 221, 221, 0.50);
+    padding: 1.5rem;
+    text-align: left;
+  }
+  .event-card .event-title{
+    color: var(--primaryColor);
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.4px;
+  }
+.event-card img{
+  width: 100%;
+  border-radius: 5px;
+  /* height: 100%; */
+}
+.event-date{
+  color: #1A1A1A;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0.24px;
+  text-transform: capitalize;
+}
+.more-info-button{
+  text-align: center;
+  width: 100%;
+  border-radius: 6px;
+  padding: 0.5rem 0;
+  outline: none;
+  background-color: var(--primaryColor);
+  border: none;
+  box-shadow: 0px 1px 2px 0px rgba(105, 81, 255, 0.05);
+  color: #FFF;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; 
+}
+.view-more-button{
+  margin-top: 7%;
+  color: var(--primaryColor);
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 50px; 
+  letter-spacing: 1.25px;
+  padding: 10px 0px;
+  width: 20%;
+  border: 1px solid var(--primaryColor);
+  border-radius: 10px;
+}
+.view-more-button:hover{
+  color: var(--white);
+  background-color: var(--primaryColor);
+}
+.footer{
+  background-color: var(--primaryColor);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  color: white;
+}
+.footer p{
+  font-feature-settings: 'clig' off, 'liga' off;
+font-family: Inter;
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: 28px;
+}
+.footer div span{
+  border: 1px solid white;
+  padding: 10px;
+  color: #FFF;
+  margin-right: 1.5rem;
+  padding: 10px;
+  border-radius: 5px;
+}
+  

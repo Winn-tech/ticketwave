@@ -1,5 +1,6 @@
 import './App.css';
 import PasswordResetConfirmation from './Components/confirmForgetPass';
+import FeaturedEvents from './Components/featuredEvents';
 import ForgetPassOne from './Components/forgetPassOne';
 import ForgetPassThre from './Components/ForgetPassThree';
 import ForgetPassTwo from './Components/forgetPassTwo';
@@ -19,8 +20,9 @@ function App() {
        {/* <ForgetPassTwo/> */}
        {/* <ForgetPassThre/> */}
        {/* <PasswordResetConfirmation/> */}
-       {/* <HomePage/> */}
-       <HeroSection/>
+       <HomePage/>
+       {/* <HeroSection/> */}
+       {/* <FeaturedEvents/>s */}
     </div>
   );
 }
