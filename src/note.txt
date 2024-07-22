@@ -36,3 +36,10 @@ const ImageFlipper = () => {
 };
 
 export default ImageFlipper;
+
+color: #121212;
+font-family: Chivo;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;

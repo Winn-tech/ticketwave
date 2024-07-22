@@ -6,11 +6,11 @@
     --primaryColor: #66BB6A;
     --ash: #324148B2;
     --lighterAsh :#B5B4B4;
-    --white: white;
+    --white: #ffff;
 }
 .container {
     display: flex;
-    height: 110vh;
+    height: 105vh;
 }
 
 .image-section {
@@ -41,6 +41,11 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: relative;
 }
+.second-type{
+    height: 70%;
+    display: none;
+}
+
 .form-container>div{
     width: 100%;
     padding: 3rem;
@@ -67,9 +72,23 @@
     color: var(--primaryColor);
     text-decoration: none;
 }
-h2 {
-margin: 0 0 1rem;
-color: #06061D;
+.desc h2 {
+    margin: 0 0 1rem;
+    color: #06061D;
+    text-align: center;
+    font-family: Chivo;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.desc>p{
+    color: rgba(50, 65, 72, 0.70);
+    font-family: Chivo;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 133.333% */
 }
 .google-button {
     width: 100%;
@@ -82,64 +101,215 @@ color: #06061D;
     cursor: pointer;
     }
 
-    .divider {
-        text-align: center;
-        margin: 0.5rem 0;
-        color: var(--lighterAsh);
-        /* color: red; */
-    }
+.divider {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    color: #121212;
+    text-align: center;
+    font-family: Chivo;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; /* 128.571% */
+    letter-spacing: -0.5px;
+}
+.divider hr{
+    background-color: #B5B4B4;
+    color: #B5B4B4;;
+    height: 2px;
+    margin-bottom: 5px;
+    width: 47%;
+}
+  
+.input-group {
+    position: relative;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    padding: 0.65rem ;
+    border-radius: 5px;
+    border: 1px solid #CECECE;
+    background: #FAFAFA;
+}
         
-        .input-group {
-        position: relative;
-        margin-bottom: 0.5rem;
-        }
-        
-        .input-group input {
-        width: 100%;
-        padding: 0.65rem ;
-        border-radius: 5px;
-        border: 1px solid #CECECE;
-        background: #FAFAFA;
-        
-        
-        }
-        
-        .input-group .icon {
-        position: absolute;
-        top: 50%;
-        right: 0.75rem;
-        transform: translateY(-50%);
-        color: var(--muted);
-        }
-        
-        .forgot-password {
-        display: block;
-        margin-bottom: 0.5rem;
-        color: var(--primaryColor);
-        text-decoration: none;
-        text-align: left;
-        text-decoration: underline;
-        }
-        
-        .login-button {
-        width: 100%;
-        padding: 0.65rem;
-        background-color: var(--primaryColor);
-        border: none;
-        border-radius: 4px;
-        color: var(--white);
-        cursor: pointer;
-        } 
-        .terms{
-            color: #999;
-            text-align: center;
-            font-family: Chivo;
-            font-size: 10px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 18px; /* 180% */
-            letter-spacing: -0.5px;
-        }
-        .terms a{
-            color: var(--primaryColor);
-        }
+.input-group input {
+    outline: none;
+    border: none;
+    width: 100%;
+    padding-left: 30px;
+    color: #999;
+    background: #FAFAFA;
+    font-family: Chivo;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; 
+    letter-spacing: -0.5px;
+}
+.input-group .input-icon{
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+.input-group .icon {
+    position: absolute;
+    top: 50%;
+    right: 0.75rem;
+    transform: translateY(-50%);
+    color: var(--muted);
+}
+
+.forgot-password {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primaryColor);
+    text-decoration: none;
+    text-align: left;
+    text-decoration: underline;
+}
+
+.login-button {
+    width: 100%;
+    padding: 0.65rem;
+    background-color: var(--primaryColor);
+    border: none;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Chivo;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    color: var(--white);
+} 
+.forgot-password h3{
+    color: #121212;
+    font-family: Chivo;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.terms{
+    color: #999;
+    text-align: left;
+    font-family: Chivo;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; 
+    letter-spacing: -0.5px;
+}
+.terms input{
+    border-radius: 4px;
+    border: 1px solid var(--primaryColor);
+    opacity: 0.4;
+    background: var(--primaryColor);
+}
+.terms a{
+    color: var(--primaryColor);
+}
+.form-section .confirm{
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background);
+  /* color: var(--foreground); */
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 2rem auto;
+  text-align: center;
+  /* display: none; */
+}
+
+
+
+/* Navbar css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #34a853; /* Green background */
+    padding: 10px 20px;
+    color: white;
+  }
+  
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 20px;
+  }
+  
+  .greeting {
+    font-size: 1rem;
+  }
+  
+  .navbar-center ul {
+    display: flex;
+    text-decoration: none;
+  }
+
+  .navbar-center ul li{
+    margin: 0 10px;
+    list-style: none;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; 
+  }
+  .navbar-center ul li a{
+    opacity: 0.6;
+    color: #FFF;
+    text-decoration: none;
+    font-family: inter;
+  }
+  .navbar-center a:hover {
+    opacity: 1;
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon {
+    margin: 0 10px;
+    position: relative;
+  }
+  
+  .notification-dot {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    background-color: red;
+    border-radius: 50%;
+  }
+  
+  .profile {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
