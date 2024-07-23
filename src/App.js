@@ -1,5 +1,6 @@
 import './App.css';
 import PasswordResetConfirmation from './Components/confirmForgetPass';
+import CreateEventForm from './Components/createEvents';
 import FeaturedEvents from './Components/featuredEvents';
 import ForgetPassOne from './Components/forgetPassOne';
 import ForgetPassThre from './Components/ForgetPassThree';
@@ -9,6 +10,7 @@ import Navbar from './Components/Navbar';
 import SigninPage from './Components/signin';
 import SignIn from './Components/signin';
 import SignupPage from './Components/signup';
+import CreateEventPage from './Pages/createEventpage';
 import HomePage from './Pages/Home';
 
 function App() {
@@ -20,9 +22,11 @@ function App() {
        {/* <ForgetPassTwo/> */}
        {/* <ForgetPassThre/> */}
        {/* <PasswordResetConfirmation/> */}
-       <HomePage/>
+       {/* <HomePage/> */}
        {/* <HeroSection/> */}
        {/* <FeaturedEvents/>s */}
+        {/* <CreateEventForm/> */}
+        <CreateEventPage/>
     </div>
   );
 }

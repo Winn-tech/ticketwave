@@ -378,7 +378,7 @@
     padding: 0.5rem 1rem;
     /* padding: 16px 10px; */
     border-radius: 9999px;
-    margin-left: 1.4 rem;
+    margin-left: 2rem rem;
   }
   
   .search-icon{
@@ -483,6 +483,47 @@
   color: var(--white);
   background-color: var(--primaryColor);
 }
+/* eventGateway */
+.event-gateway {
+  /* background-image: url('https://placehold.co/1024x400'); */
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 100px 20px;
+  color: white;
+  background-color: #06061D;
+}
+
+.event-gateway h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.create-events-button {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  border: none;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 50px; 
+  letter-spacing: 1.25px;
+  padding: 10px 0px;
+  color: var(--white);
+  background: transparent;
+  width: 18%;
+  border: 1px solid var(--white);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.create-events-button:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+/* footer  */
 .footer{
   background-color: var(--primaryColor);
   display: flex;
