@@ -11,6 +11,8 @@ import SigninPage from './Components/signin';
 import SignIn from './Components/signin';
 import SignupPage from './Components/signup';
 import CreateEventPage from './Pages/createEventpage';
+import CreateEventAdmin from './Pages/createEventsAdmin';
+import EventInfoUser from './Pages/eventInfoUsers';
 import HomePage from './Pages/Home';
 
 function App() {
@@ -24,9 +26,11 @@ function App() {
        {/* <PasswordResetConfirmation/> */}
        {/* <HomePage/> */}
        {/* <HeroSection/> */}
-       {/* <FeaturedEvents/>s */}
+       {/* <FeaturedEvents/> */}
         {/* <CreateEventForm/> */}
-        <CreateEventPage/>
+        {/* <CreateEventPage/> */}
+        {/* <CreateEventAdmin/> */}
+        <EventInfoUser/>
     </div>
   );
 }

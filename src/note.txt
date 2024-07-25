@@ -43,3 +43,350 @@ font-size: 14px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
+
+
+
+
+
+<div class="p-8 prose dark:prose-invert"><h1 class=text-xl font-bold ">Couldn't find any HTML, LLM Response:</h1>
+
+```jsx
+import React, { useState } from 'react';
+import './EventTicketPurchase.css';
+
+const EventTicketPurchase = () => {
+  const [ticketCounts, setTicketCounts] = useState({
+    regular: 0,
+    earlyBirdK: 0,
+    earlyBirdX: 0,
+    vip: 0,
+    vvip: 0,
+  });
+
+  const handleIncrement = (type) => {
+    setTicketCounts((prev) => ({ ...prev, [type]: prev[type] + 1 }));
+  };
+
+  const handleDecrement = (type) => {
+    setTicketCounts((prev) => ({ ...prev, [type]: Math.max(prev[type] - 1, 0) }));
+  };
+
+  return (
+    <div className="event-ticket-purchase">
+      <h1>The Oxymoron of Kenny Blaq</h1>
+      <p>Event Description: Your favorite stand-up comedy show...</p>
+      <div className="ticket-list">
+        {[
+          { type: 'regular', label: 'Regular Tickets "KennyBlaq"', price: 20000 },
+          { type: 'earlyBirdK', label: 'Early Bird Regular Tickets "KB"', price: 15000 },
+          { type: 'earlyBirdX', label: 'Early Bird VIP Tickets "X"', price: 25000 },
+          { type: 'vip', label: 'VIP Tickets "KennyBlaq"', price: 50000 },
+          { type: 'vvip', label: 'VVIP Tickets "KennyBlaq"', price: 80000 },
+        ].map(({ type, label, price }) => (
+          <div className="ticket-item" key={type}>
+            <button onClick={() => handleDecrement(type)}>-</button>
+            <span>{ticketCounts[type]}</span>
+            <button onClick={() => handleIncrement(type)}>+</button>
+            <span>{label} - ₦{price}</span>
+            <span>Available: 402</span>
+          </div>
+        ))}
+      </div>
+      <button className="purchase-button">Buy Tickets</button>
+    </div>
+  );
+};
+
+export default EventTicketPurchase;
+```
+
+```css
+/* EventTicketPurchase.css */
+.event-ticket-purchase {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.event-ticket-purchase h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.event-ticket-purchase p {
+  margin-bottom: 20px;
+}
+
+.ticket-list {
+  margin-bottom: 20px;
+}
+
+.ticket-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.ticket-item button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.ticket-item button:hover {
+  background-color: #0056b3;
+}
+
+.purchase-button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.purchase-button:hover {
+  background-color: #218838;
+}
+``` 
+
+This code creates a React component for the event ticket purchase interface, complete with buttons to increment and decrement ticket quantities, and a styled layout using vanilla CSS.</div>
+
+
+
+<div class="p-8 prose dark:prose-invert"><h1 class=text-xl font-bold ">Couldn't find any HTML, LLM Response:</h1>
+
+```jsx
+import React, { useState } from 'react';
+import './EventTicketPurchase.css';
+
+const EventTicketPurchase = () => {
+  const [ticketCounts, setTicketCounts] = useState({
+    regular: 0,
+    earlyBirdK: 0,
+    earlyBirdX: 0,
+    vip: 0,
+    vvip: 0,
+  });
+
+  const handleIncrement = (type) => {
+    setTicketCounts((prev) => ({ ...prev, [type]: prev[type] + 1 }));
+  };
+
+  const handleDecrement = (type) => {
+    setTicketCounts((prev) => ({ ...prev, [type]: Math.max(prev[type] - 1, 0) }));
+  };
+
+  return (
+    <div className="event-ticket-purchase">
+      <h1>The Oxymoron of Kenny Blaq</h1>
+      <p>Event Description: Your favorite stand-up comedy show...</p>
+      <div className="ticket-list">
+        {[
+          { type: 'regular', label: 'Regular Tickets "KennyBlaq"', price: 20000 },
+          { type: 'earlyBirdK', label: 'Early Bird Regular Tickets "KB"', price: 15000 },
+          { type: 'earlyBirdX', label: 'Early Bird VIP Tickets "X"', price: 25000 },
+          { type: 'vip', label: 'VIP Tickets "KennyBlaq"', price: 50000 },
+          { type: 'vvip', label: 'VVIP Tickets "KennyBlaq"', price: 80000 },
+        ].map(({ type, label, price }) => (
+          <div className="ticket-item" key={type}>
+            <button onClick={() => handleDecrement(type)}>-</button>
+            <span>{ticketCounts[type]}</span>
+            <button onClick={() => handleIncrement(type)}>+</button>
+            <span>{label} - ₦{price}</span>
+            <span>Available: 402</span>
+          </div>
+        ))}
+      </div>
+      <button className="purchase-button">Buy Tickets</button>
+    </div>
+  );
+};
+
+export default EventTicketPurchase;
+```
+
+```css
+/* EventTicketPurchase.css */
+.event-ticket-purchase {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.event-ticket-purchase h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.event-ticket-purchase p {
+  margin-bottom: 20px;
+}
+
+.ticket-list {
+  margin-bottom: 20px;
+}
+
+.ticket-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.ticket-item button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.ticket-item button:hover {
+  background-color: #0056b3;
+}
+
+.purchase-button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.purchase-button:hover {
+  background-color: #218838;
+}
+``` 
+
+This code creates a React component for the event ticket purchase interface, complete with buttons to increment and decrement ticket quantities, and a styled layout using vanilla CSS.</div>
+
+
+
+<div class="p-8 prose dark:prose-invert"><h1 class=text-xl font-bold ">Couldn't find any HTML, LLM Response:</h1>
+
+```jsx
+import React, { useState } from 'react';
+import './EventTicketPurchase.css';
+
+const EventTicketPurchase = () => {
+  const [ticketCounts, setTicketCounts] = useState({
+    regular: 0,
+    earlyBirdK: 0,
+    earlyBirdX: 0,
+    vip: 0,
+    vvip: 0,
+  });
+
+  const handleIncrement = (type) => {
+    setTicketCounts((prev) => ({ ...prev, [type]: prev[type] + 1 }));
+  };
+
+  const handleDecrement = (type) => {
+    setTicketCounts((prev) => ({ ...prev, [type]: Math.max(prev[type] - 1, 0) }));
+  };
+
+  return (
+    <div className="event-ticket-purchase">
+      <h1>The Oxymoron of Kenny Blaq</h1>
+      <p>Event Description: Your favorite stand-up comedy show...</p>
+      <div className="ticket-list">
+        {[
+          { type: 'regular', label: 'Regular Tickets "KennyBlaq"', price: 20000 },
+          { type: 'earlyBirdK', label: 'Early Bird Regular Tickets "KB"', price: 15000 },
+          { type: 'earlyBirdX', label: 'Early Bird VIP Tickets "X"', price: 25000 },
+          { type: 'vip', label: 'VIP Tickets "KennyBlaq"', price: 50000 },
+          { type: 'vvip', label: 'VVIP Tickets "KennyBlaq"', price: 80000 },
+        ].map(({ type, label, price }) => (
+          <div className="ticket-item" key={type}>
+            <button onClick={() => handleDecrement(type)}>-</button>
+            <span>{ticketCounts[type]}</span>
+            <button onClick={() => handleIncrement(type)}>+</button>
+            <span>{label} - ₦{price}</span>
+            <span>Available: 402</span>
+          </div>
+        ))}
+      </div>
+      <button className="purchase-button">Buy Tickets</button>
+    </div>
+  );
+};
+
+export default EventTicketPurchase;
+```
+
+```css
+/* EventTicketPurchase.css */
+.event-ticket-purchase {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.event-ticket-purchase h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.event-ticket-purchase p {
+  margin-bottom: 20px;
+}
+
+.ticket-list {
+  margin-bottom: 20px;
+}
+
+.ticket-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.ticket-item button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.ticket-item button:hover {
+  background-color: #0056b3;
+}
+
+.purchase-button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.purchase-button:hover {
+  background-color: #218838;
+}
+``` 
+
+This code creates a React component for the event ticket purchase interface, complete with buttons to increment and decrement ticket quantities, and a styled layout using vanilla CSS.</div>s

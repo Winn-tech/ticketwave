@@ -1,4 +1,5 @@
 import React from 'react';
+import { LuDownload } from "react-icons/lu";
 import '../createEvents.css'
 const CreateEvents = () => {
     return ( 
@@ -16,9 +17,12 @@ const CreateEvents = () => {
                         <input type="text" id="event-title" placeholder='The Oxymoron of Kenny Blaq' required />
                     </div>
 
-                    <div className="form-group">
+                    <div className="form-group " >
                         <label htmlFor="event-img">Event Image <span>*</span></label>
+                        <div className='img-group'>
+                        <LuDownload className='img-group-icon'/>
                         <input type="file" id="event-img" placeholder=' Photo.png' required />
+                        </div>
                     </div>
 
                     <div className="form-group">

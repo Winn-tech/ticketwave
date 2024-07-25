@@ -21,11 +21,13 @@
 .create-event-container .header .first{
     color: #2D2D2D;
     font-family: Inter;
-    font-size: 30px;
+    font-size: 25px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
     letter-spacing: 0.9px;
+
+    
 }
 .create-event-container .header .second{
     background-color: var(--primaryColor);
@@ -102,6 +104,7 @@
 .create-event-container form p{
     color: #000;
     font-family: Inter;
+    margin: 1.5rem 0;
     font-size: 14px;
     font-style: normal;
     font-weight: 600;
@@ -128,4 +131,14 @@
     font-style: normal;
     font-weight: 600;
     line-height: 22px; 
+}
+.img-group{
+    position: relative;
+    height: fit-content;
+}
+.img-group .img-group-icon{
+    position: absolute;
+    right: 10px;
+    top: 55%;
+    color: #3A3A3A;
 }
