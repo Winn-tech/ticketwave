@@ -1,4 +1,5 @@
 import './App.css';
+import CartPopularEvents from './Components/cartPopularEvent';
 import PasswordResetConfirmation from './Components/confirmForgetPass';
 import CreateEventForm from './Components/createEvents';
 import FeaturedEvents from './Components/featuredEvents';
@@ -10,8 +11,11 @@ import Navbar from './Components/Navbar';
 import SigninPage from './Components/signin';
 import SignIn from './Components/signin';
 import SignupPage from './Components/signup';
+import CartPageOne from './Pages/cartPageOne';
+import CartPageTwo from './Pages/cartPageTwo';
 import CreateEventPage from './Pages/createEventpage';
 import CreateEventAdmin from './Pages/createEventsAdmin';
+import EditEventPage from './Pages/EditEventPage';
 import EventInfoUser from './Pages/eventInfoUsers';
 import HomePage from './Pages/Home';
 
@@ -30,7 +34,11 @@ function App() {
         {/* <CreateEventForm/> */}
         {/* <CreateEventPage/> */}
         {/* <CreateEventAdmin/> */}
-        <EventInfoUser/>
+        {/* <EventInfoUser/> */}
+        {/* <EditEventPage/> */}
+        {/* <CartPageOne/> */}
+        {/* <CartPopularEvents/> */}
+        <CartPageTwo/>
     </div>
   );
 }
