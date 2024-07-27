@@ -1,0 +1,108 @@
+*{
+    box-sizing: border-box;
+    font-style: chivo;
+    padding: 0;
+    margin: 0%;
+  }
+  :root{
+    --primaryColor: #66BB6A;
+    --ash: #324148B2;
+    --lighterAsh :#B5B4B4;
+    --white: #ffff;
+  }
+.help {
+    padding: 5%;
+    background-color: #f9f9f9;
+  }
+  h2{
+    color: #2D2D2D;
+    font-family: Inter;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.9px;
+  }
+  .help dt{
+    color: #000;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-top: 0.6rem;
+  }
+  
+  .help dd{
+    color: rgba(0, 0, 0, 0.80);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    text-align: left;
+    
+  }
+  
+  .help section button{
+    color: #FFF;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; 
+    border-radius: 6px;
+    background: var(--primaryColor);
+    box-shadow: 0px 1px 2px 0px rgba(105, 81, 255, 0.05);
+    outline: none;
+    border: none;
+    padding: 1rem 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .help section p{
+    color: #000;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 25px;
+    margin: 0.6rem 0; 
+  }
+.help section li{
+  color: #000;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 25px;
+  text-transform: uppercase;
+  list-style-position: inside;
+}
+  .help section li span{
+    font-weight: 400;
+    line-height: 25px;
+    text-transform: none;
+  }
+
+  /* FAQ */
+  .faq .ans{
+    color: rgba(64, 62, 62, 0.8);;
+  }
+  .faq .ans span{
+    color: var(--primaryColor);
+    margin-right: 3px;
+  }
+  .fag p{
+    margin: 0.7rem 0;
+  }
+  .faq .first{
+    color: #2D2D2D;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.6px;
+    opacity: 0.8;
+    margin: 2rem 0;
+  }

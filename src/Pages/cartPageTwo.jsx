@@ -23,7 +23,8 @@ const CartPageTwo = () => {
                 CART
                </div>
 
-               <div className="cart-item">
+              <section>
+                 <div className="cart-item">
                     <img
                     src="https://placehold.co/100x100"
                     alt="The Oxymoron of Kenny Blaq"
@@ -43,8 +44,28 @@ const CartPageTwo = () => {
                                 <button onClick={handleIncrement}>+</button>
                             </div>
                         </div>
+                    </div>
+
                 </div>
-            </div>
+
+                <div className="order-summary">
+                    <h4>order summary</h4>
+                    <p>
+                        <span>subtotal</span>
+                        <span className='price'>₦ 1000</span>
+                    </p>
+                    <p>
+                        <span>total</span>
+                        <span className='price'>₦ 1000</span>
+                    </p>
+                    <hr/>
+                    <p>
+                        <span>total</span>
+                        <span className='price'>₦ 1000</span>
+                    </p>
+                    <button className="checkout">Proceed to checkout</button>
+                </div>
+              </section>
             <CartPopularEvents/>
             </div>
             <Footer/>

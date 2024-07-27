@@ -1,0 +1,71 @@
+*{
+    box-sizing: border-box;
+    font-style: chivo;
+    padding: 0;
+    margin: 0%;
+  }
+  :root{
+    --primaryColor: #66BB6A;
+    --ash: #324148B2;
+    --lighterAsh :#B5B4B4;
+    --white: #ffff;
+  }
+  .more{
+    padding: 5%;
+  }
+  .more h2{
+    color: #2D2D2D;
+    font-family: Inter;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .more p{
+    color: #2D2D2D;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px; 
+    letter-spacing: 0.6px;
+    opacity: 0.7;
+    margin-bottom: 1.5rem;
+  }
+  .more .input--group{
+    margin-bottom: 1.5rem;
+  }
+  .more input{
+    height: 54px;
+    width: 100%;
+    flex-shrink: 0;
+    border-radius: 5px;
+    border: 1px solid #CECECE;
+    background: #FAFAFA;
+    margin-top: 0.5rem;
+  }
+  
+
+  .more .input--group label{
+    color: #2D2D2D;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  .more button{
+    background-color: var(--primaryColor);
+    color: white;
+    height: 54px;
+    width: 400px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    border-radius: 5px;
+    border: none;
+  }
