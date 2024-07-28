@@ -14,10 +14,20 @@ import CreateEventPage from './Pages/createEventpage';
 import CreateEventAdmin from './Pages/createEventsAdmin';
 import EventInfoUser from './Pages/eventInfoUsers';
 import HomePage from './Pages/Home';
+import { Routes, Route } from "react-router-dom"
 
 function App() {
   return (
     <div className="App">
+      <Routes>
+        <Route path="/login" element={ <SigninPage/> } />
+        <Route path="/register" element={ <SignupPage/> } />
+
+        
+        <Route path="/" element={ <HomePage/> } />
+      </Routes>
+
+
        {/* <SigninPage/> */}
        {/* <SignupPage/> */}
        {/* <ForgetPassOne/> */}
@@ -30,7 +40,7 @@ function App() {
         {/* <CreateEventForm/> */}
         {/* <CreateEventPage/> */}
         {/* <CreateEventAdmin/> */}
-        <EventInfoUser/>
+        {/* <EventInfoUser/> */}
     </div>
   );
 }
