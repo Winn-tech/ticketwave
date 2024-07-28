@@ -10,7 +10,7 @@ const HomePage = () => {
            <Navbar/>
            <HeroSection/>
            <FeaturedEvents/>
-           <EventGateway/>
+           <EventGateway/>¬
            <Footer/>
            
         </>
