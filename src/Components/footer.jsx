@@ -2,6 +2,7 @@ import React from 'react';
 import { RiFacebookFill } from "react-icons/ri";
 import { RiTwitterXLine } from "react-icons/ri";
 import { LuInstagram } from "react-icons/lu";
+import "../styles/footer.css"
 
 const Footer = () => {
     return ( 
