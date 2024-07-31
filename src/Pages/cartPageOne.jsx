@@ -1,5 +1,5 @@
 import {React, useState} from 'react';
-import '../stles/cart.css'
+import '../styles/cart.css'
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/footer';
 import { MdCancel } from "react-icons/md";

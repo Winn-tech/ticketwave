@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import "../stles/eventsInfo.css"
+import "../styles/eventsInfo.css"
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { IoPricetagOutline } from "react-icons/io5";
 import { IoLocationOutline } from "react-icons/io5";

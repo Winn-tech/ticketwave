@@ -1,0 +1,39 @@
+/* footer  */
+*{
+    box-sizing: border-box;
+    font-style: chivo;
+  }
+  :root{
+    --primaryColor: #66BB6A;
+    --ash: #324148B2;
+    --lighterAsh :#B5B4B4;
+    --white: #ffff;
+  }
+  
+.footer{
+    background-color: var(--primaryColor);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+    position: static;
+    bottom: 0%;
+    width: 100%;
+    }
+    .footer p{
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+    }
+    .footer div span{
+    border: 1px solid white;
+    padding: 10px;
+    color: #FFF;
+    margin-right: 1.5rem;
+    padding: 10px;
+    border-radius: 5px;
+    }

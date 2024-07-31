@@ -14,6 +14,7 @@ import SignupPage from './Components/signup';
 import Applauders from './Pages/applauders';
 import CartPageOne from './Pages/cartPageOne';
 import CartPageTwo from './Pages/cartPageTwo';
+import ContactUs from './Pages/ContactUsPage';
 import CreateEventPage from './Pages/createEventpage';
 import CreateEventAdmin from './Pages/createEventsAdmin';
 import EditEventPage from './Pages/EditEventPage';
@@ -22,6 +23,7 @@ import Extras from './Pages/extras';
 import FAQ from './Pages/FAQ';
 import HelpPage from './Pages/helpPage';
 import HomePage from './Pages/Home';
+import Orders from './Pages/orders';
 import { Routes, Route } from "react-router-dom"
 import SeatWarmers from './Pages/seatWarmers';
 import Volunteers from './Pages/volunteers';
@@ -38,7 +40,7 @@ function App() {
 
         
         {/* <Route path="/" element={ <HomePage/> } /> */}
-        <Route path="/" element={ <ForgetPassTwo/> } />
+        {/* <Route path="/" element={ <ForgetPassTwo/> } /> */}
       </Routes>
 
 
@@ -64,7 +66,9 @@ function App() {
         {/* <SeatWarmers/> */}
         {/* <Applauders/> */}
         {/* <Volunteers/> */}
-        {/* <Extras/> */}
+        {/* {/* <Extras/> */}
+        {/* <Orders/> */}
+        <ContactUs/>
     </div>
   );
 }

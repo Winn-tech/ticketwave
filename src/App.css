@@ -8,6 +8,9 @@
   --lighterAsh :#B5B4B4;
   --white: #ffff;
 }
+button{
+  cursor: pointer;
+}
 .container {
   display: flex;
   height: 105vh;
@@ -524,32 +527,5 @@ transition: background-color 0.3s;
 background-color: rgba(255, 255, 255, 1);
 }
 
-/* footer  */
-.footer{
-background-color: var(--primaryColor);
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 10px 20px;
-color: white;
-position: static;
-bottom: 0%;
-width: 100%;
-}
-.footer p{
-font-feature-settings: 'clig' off, 'liga' off;
-font-family: Inter;
-font-size: 24px;
-font-style: normal;
-font-weight: 700;
-line-height: 28px;
-}
-.footer div span{
-border: 1px solid white;
-padding: 10px;
-color: #FFF;
-margin-right: 1.5rem;
-padding: 10px;
-border-radius: 5px;
-}
+
 /* .conta */

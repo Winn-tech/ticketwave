@@ -1,5 +1,5 @@
 import React from 'react';
-import '../stles/help.css'
+import '../styles/help.css'
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/footer';
 const HelpPage = () => {

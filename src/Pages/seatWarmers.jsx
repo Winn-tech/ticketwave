@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from '../Components/Navbar';
-import '../stles/more.css'
+import '../styles/more.css'
 import Footer from '../Components/footer';
 const SeatWarmers = () => {
     return (  
