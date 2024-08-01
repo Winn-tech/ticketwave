@@ -37,3 +37,38 @@
     padding: 10px;
     border-radius: 5px;
     }
+
+    /* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    
+}
+
+/* Small devices (landscape phonespx and up) */
+
+@media (min-width: 576px) and (max-width: 767.98px){
+  .container{
+    /* display: flex;
+    flex-direction: column;
+    display: none;
+    background-color: green; */
+ }
+
+}
+    
+   /* Styles for small phones */
+  @media (max-width: 575.98px) { 
+   
+    .footer p{
+      font-feature-settings: 'clig' off, 'liga' off;
+      font-family: Inter;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 28px;
+      }
+      .footer{
+        display: flex;
+        flex-direction: column;
+        
+      }
+}

@@ -1,4 +1,5 @@
 import './App.css';
+import AuthImageSection from './Components/authImageSection';
 import CartPopularEvents from './Components/cartPopularEvent';
 import PasswordResetConfirmation from './Components/confirmForgetPass';
 import CreateEventForm from './Components/createEvents';
@@ -31,7 +32,7 @@ function App() {
   return (
     <div className="App">
        {/* <SigninPage/> */}
-       {/* <SignupPage/> */}
+       <SignupPage/>
        {/* <ForgetPassOne/> */}
        {/* <ForgetPassTwo/> */}
        {/* <ForgetPassThre/> */}
@@ -54,7 +55,8 @@ function App() {
         {/* <Volunteers/> */}
         {/* <Extras/> */}
         {/* <Orders/> */}
-        <ContactUs/>
+        {/* <ContactUs/>s */}
+        {/* <AuthImageSection/> */}
     </div>
   );
 }

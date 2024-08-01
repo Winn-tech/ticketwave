@@ -7,10 +7,10 @@ import EventGateway from '../Components/eventGateway';
 const HomePage = () => {
     return ( 
         <>
-           <Navbar/>
+           {/* <Navbar/> */}
            <HeroSection/>
            <FeaturedEvents/>
-           <EventGateway/>¬
+           <EventGateway/>
            <Footer/>
            
         </>

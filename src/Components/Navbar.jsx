@@ -1,6 +1,7 @@
 import React from 'react';
 import Notification from '../assets/notification.svg';
 import cart from '../assets/cart.svg';
+import '../styles/navbar.css'
 const Navbar = () => {
     return ( 
         <div className="navbar">
