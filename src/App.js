@@ -38,6 +38,7 @@ function App() {
       <Routes>
         <Route path="/login" element={ <SigninPage/> } />
         <Route path="/register" element={ <SignupPage/> } />
+        <Route path="/" element={ <HomePage/> } />
 
         
         {/* <Route path="/" element={ <HomePage/> } /> */}
@@ -46,7 +47,7 @@ function App() {
 
 
        {/* <SigninPage/> */}
-       <SignupPage/>
+       {/* <SignupPage/> */}
        {/* <ForgetPassOne/> */}
        {/* <ForgetPassTwo/> */}
        {/* <ForgetPassThre/> */}

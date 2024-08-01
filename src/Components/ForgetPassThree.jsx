@@ -2,6 +2,7 @@ import React from 'react';
 import LoginImages from '../images/auth/LoginImages.png'
 import { IoEyeOffOutline } from "react-icons/io5";
 import { CiLock } from "react-icons/ci";
+import '../styles/authPages.css'
 const ForgetPassThre = () => {
     return (
       <div className="container">

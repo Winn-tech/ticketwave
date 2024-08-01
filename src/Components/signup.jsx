@@ -1,5 +1,6 @@
 import React from 'react';
-import LoginImages from '../images/auth/LoginImages.png'
+import '../styles/authPages.css'
+import AuthImageSection from './authImageSection';
 import { FcGoogle } from "react-icons/fc";
 import { AiOutlineMail } from "react-icons/ai";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
@@ -8,9 +9,7 @@ import { FaRegUser } from "react-icons/fa6";
 const SignupPage = () => {
     return (
       <div className="container">
-        {/* <div className="image-section">
-          <img src={LoginImages} alt="People enjoying at a party" />
-        </div> */}
+        
         <AuthImageSection className= "image-section"/>
         <div className="form-section">
            <div>

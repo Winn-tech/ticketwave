@@ -1,6 +1,8 @@
 import React from 'react';
 import LoginImages from '../images/auth/LoginImages.png'
 import authAvatar from '../assets/authAvatar.png'
+import '../styles/authPages.css'
+
 
 import { AiOutlineMail } from "react-icons/ai";
 

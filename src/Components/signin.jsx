@@ -8,6 +8,7 @@ import axios from 'axios';
 import { environment } from '../environment';
 import {toast} from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import AuthImageSection from './authImageSection';
 
 
 const SigninPage = () => {
@@ -16,7 +17,6 @@ const SigninPage = () => {
   const [password_show, setPasswordShow] = useState(false);
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-
 
   const notifySuccess = (message) => {
     toast.success(message);
@@ -59,9 +59,7 @@ const SigninPage = () => {
 
     return (
       <div className="container">
-        <div className="image-section">
-          <img src={LoginImages} alt="People enjoying at a party" />
-        </div>
+        <AuthImageSection/>
         <div className="form-section">
             <div>
               <div className="header">

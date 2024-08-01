@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import '../styles/authPages.css'
 import loginImages from '../images/auth/LoginImages.png'
 import LoginImage2 from '../images/auth/loginImage2.jpg'
 import LoginImage3 from '../images/auth/loginImage3.jpg'
