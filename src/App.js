@@ -25,12 +25,26 @@ import FAQ from './Pages/FAQ';
 import HelpPage from './Pages/helpPage';
 import HomePage from './Pages/Home';
 import Orders from './Pages/orders';
+import { Routes, Route } from "react-router-dom"
 import SeatWarmers from './Pages/seatWarmers';
 import Volunteers from './Pages/volunteers';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
     <div className="App">
+      <ToastContainer />
+      <Routes>
+        <Route path="/login" element={ <SigninPage/> } />
+        <Route path="/register" element={ <SignupPage/> } />
+
+        
+        {/* <Route path="/" element={ <HomePage/> } /> */}
+        {/* <Route path="/" element={ <ForgetPassTwo/> } /> */}
+      </Routes>
+
+
        {/* <SigninPage/> */}
        <SignupPage/>
        {/* <ForgetPassOne/> */}
@@ -53,7 +67,7 @@ function App() {
         {/* <SeatWarmers/> */}
         {/* <Applauders/> */}
         {/* <Volunteers/> */}
-        {/* <Extras/> */}
+        {/* {/* <Extras/> */}
         {/* <Orders/> */}
         {/* <ContactUs/>s */}
         {/* <AuthImageSection/> */}

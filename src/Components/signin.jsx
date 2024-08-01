@@ -1,10 +1,62 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import LoginImages from '../images/auth/LoginImages.png'
 import line from '../assets/line.png'
 import { AiOutlineMail } from "react-icons/ai";
-import { IoEyeOffOutline } from "react-icons/io5";
+import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import { CiLock } from "react-icons/ci";
+import axios from 'axios';
+import { environment } from '../environment';
+import {toast} from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
+
+
 const SigninPage = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [password_show, setPasswordShow] = useState(false);
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+
+
+  const notifySuccess = (message) => {
+    toast.success(message);
+  };
+
+  const notifyError = (message) => {
+      toast.error(message);
+  };
+
+
+  const handleLogin = async(event)=> {
+      event.preventDefault(); 
+
+      try {
+
+        setLoading(true)
+
+        const result = await axios.post(environment.appUrl + 'login', {
+          email: email,
+          password: password,
+        });
+
+        setLoading(false)
+
+        if(result.data.success) {
+          notifySuccess(result.data.message)
+          navigate('/');
+        }else {
+          notifyError(JSON.stringify(result.data.errors));
+        }
+
+    } catch (error) {
+        setLoading(false)
+        console.error('There was an error posting the data!', error);
+    }
+
+  }
+
+
+
     return (
       <div className="container">
         <div className="image-section">
@@ -26,20 +78,20 @@ const SigninPage = () => {
                    <span>OR</span>
                    <span><img src={line} alt="" /></span>
                 </div>
-                <form>
+                <form onSubmit={handleLogin}>
                   <div className="input-group">
                     <AiOutlineMail className='input-icon'/>
-                    <input type="email" placeholder="Email" />
+                    <input type="email" value={email} onChange={(e)=> setEmail(e.target.value)} required placeholder="Email" />
                   </div>
 
                   <div className="input-group">
                     <CiLock className='input-icon'/>
-                    <input type="password" placeholder="Password" />
-                    <span className="icon"><IoEyeOffOutline/></span>
+                    <input type={password_show? "text" : "password"} value={password} onChange={(e)=> setPassword(e.target.value)} required placeholder="Password" />
+                    {password_show ? <span className="icon" onClick={()=> {setPasswordShow(!password_show)}}><IoEyeOutline/></span> :<span className="icon" onClick={()=> {setPasswordShow(!password_show)}}><IoEyeOffOutline/></span>}
                   </div>
 
                   <a href="#" className="forgot-password">Forgot password?</a>
-                  <p className='login-button'>Sign In</p>
+                  <button className='login-button' disabled={loading}>Sign In</button>
                 </form>
               </div>
           </div>
