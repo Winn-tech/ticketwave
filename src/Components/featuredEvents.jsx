@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/featuredEvents.css'
 
 const FeaturedEvents = () => {
   const events = [

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../styles/authPages.css'
+import line from '../assets/line.png'
 import AuthImageSection from './authImageSection';
 import { FcGoogle } from "react-icons/fc";
 import { AiOutlineMail } from "react-icons/ai";
@@ -7,8 +8,9 @@ import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import { CiLock } from "react-icons/ci";
 import { FaRegUser } from "react-icons/fa6";
 const SignupPage = () => {
+     const[password_show, setPasswordShow] = useState(false)
     return (
-      <div className="container">
+      <div className="auth-container">
         
         <AuthImageSection className= "image-section"/>
         <div className="form-section">
@@ -16,12 +18,19 @@ const SignupPage = () => {
             <div className="header">
                 <p>Don't have an account? <a href="#">Sign Up</a></p>
             </div>
-            <div className="form-container signup" >
+            <div className="form-container" >
                 <div className='desc'>
                     <h2>Create your account</h2>
                     <p>Discover and Book the Best Events Near You. <span role="img" aria-label="party">🎉</span></p>
-                    <button className="google-button">Continue with Google</button>
-                    <div className="divider">OR</div>
+                     <div className="google">
+                         <FcGoogle className='google-icon'/> Continue with Google
+                     </div>
+                   
+                    <div className="divider">
+                      <span><img src={line} alt="" /></span>
+                      <span>OR</span>
+                      <span><img src={line} alt="" /></span>
+                    </div>
                     <form>
                     
                     <div className="input-group">
@@ -34,14 +43,21 @@ const SignupPage = () => {
                   </div>
                   <div className="input-group">
                     <CiLock className='input-icon'/>
-                    <input type="password" placeholder="Password" />
-                    <span className="icon"><IoEyeOffOutline/></span>
+                    <input type={password_show? "text" : "password"} placeholder="Password" />
+                    <span className="icon" onClick={() => setPasswordShow(!password_show)}>
+                      {password_show ? <IoEyeOutline /> : <IoEyeOffOutline />}
+                    </span>
+
                   </div>
                 
                   <div className="input-group">
                     <CiLock className='input-icon'/>
-                    <input type="password" placeholder="Confirm Password" />
-                    <span className="icon"><IoEyeOffOutline/></span>
+                    <input type={password_show? "text" : "password"} placeholder="Confirm Password" />
+                    <span className="icon" onClick={() => setPasswordShow(!password_show)}>
+                      {password_show ? <IoEyeOutline /> : <IoEyeOffOutline />}
+                    </span>
+
+                    
                   </div>
                     <a href="#" className="forgot-password">Forgot password?</a>
                     <p className="login-button">Sign In</p>

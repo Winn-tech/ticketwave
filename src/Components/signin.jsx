@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import LoginImages from '../images/auth/LoginImages.png'
 import line from '../assets/line.png'
+import { FcGoogle } from "react-icons/fc";
 import { AiOutlineMail } from "react-icons/ai";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import { CiLock } from "react-icons/ci";
@@ -58,7 +59,7 @@ const SigninPage = () => {
 
 
     return (
-      <div className="container">
+      <div className="auth-container">
         <AuthImageSection/>
         <div className="form-section">
             <div>
@@ -69,8 +70,10 @@ const SigninPage = () => {
               
               <div className='desc' >
                 <h2>Welcome Back</h2>
-                <p>Get Tickets to the Hottest Events in Town <span role="img" aria-label="party">🎉</span></p>
-                <button className="google-button">Continue with Google</button>
+                <p>Get Tickets to the Hottest Events in Town<span role="img" aria-label="party">🎉</span></p>
+                <div className="google">
+                         <FcGoogle className='google-icon'/> Continue with Google
+                </div>
                 <div className="divider">
                    <span><img src={line} alt="" /></span>
                    <span>OR</span>
@@ -85,7 +88,10 @@ const SigninPage = () => {
                   <div className="input-group">
                     <CiLock className='input-icon'/>
                     <input type={password_show? "text" : "password"} value={password} onChange={(e)=> setPassword(e.target.value)} required placeholder="Password" />
-                    {password_show ? <span className="icon" onClick={()=> {setPasswordShow(!password_show)}}><IoEyeOutline/></span> :<span className="icon" onClick={()=> {setPasswordShow(!password_show)}}><IoEyeOffOutline/></span>}
+                    <span className="icon" onClick={() => setPasswordShow(!password_show)}>
+                      {password_show ? <IoEyeOutline /> : <IoEyeOffOutline />}
+                    </span>
+
                   </div>
 
                   <a href="#" className="forgot-password">Forgot password?</a>
