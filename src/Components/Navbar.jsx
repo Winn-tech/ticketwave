@@ -14,10 +14,10 @@ const Navbar = () => {
             <div className="navbar-center">
                 <ul>
                     <li>
-                      <a href="#home">Home</a>
+                      <a href="/">Home</a>
                     </li>
                     <li>
-                      <a href="#events">Events</a>
+                      <a href="events">Events</a>
                     </li>
                     <li>
                       <a href="#create-event">Create Event</a> 
@@ -45,7 +45,7 @@ const Navbar = () => {
                 {/* <span className="notification-dot"></span> */}
                 </a>
                 <div className="profile">
-                <img src="https://placehold.co/40x40" alt="User Profile" className="profile-pic" />
+                <img src="https://placehold.co/30x30" alt="User Profile" className="profile-pic" />
                 <span>Godwin</span>
                 </div>
             </div>

@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+    font-style: chivo;
+    padding: 0;
+    margin: 0%;
+  }
+  :root{
+    --primaryColor: #66BB6A;
+    --ash: #324148B2;
+    --lighterAsh :#B5B4B4;
+    --white: #ffff;
+  }
+.sidebar{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* position: absolute;
+    top: 0rem;
+    visibility: hidden; */
+  }
+  
+  .sidebar-center{
+    width: 80vw;
+    height: 100%;
+    padding: 5%;
+    /* transform: translateX(-100%); */
+    background: transparent;
+    background-color: whitesmoke;
+    
+  }
+  .show{
+    visibility: visible;
+  }
+  .show .sidebar-center{
+    transform: translateX(0%);
+    transition: transform 0.8s ease;
+  
+  }
+  .sidebar .head{
+    display: flex;
+    justify-content: space-between;
+  }

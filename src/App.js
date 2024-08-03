@@ -39,11 +39,10 @@ function App() {
         <Route path="/login" element={ <SigninPage/> } />
         <Route path="/register" element={ <SignupPage/> } />
         <Route path="/" element={ <HomePage/> } />
-        
-
-        
-        {/* <Route path="/" element={ <HomePage/> } /> */}
-        {/* <Route path="/" element={ <ForgetPassTwo/> } /> */}
+        <Route path='/help' element={<HelpPage/>}/>
+        <Route path='' element={<EditEventPage/>}/>
+        <Route path='' element={ <ContactUs/>}/>
+    
       </Routes>
 
 
