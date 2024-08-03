@@ -9,7 +9,7 @@ const HomePage = () => {
     return ( 
         <>
            <Navbar/>
-           <SideBar/>
+           {/* <SideBar/>g */}
            <HeroSection/>
            <FeaturedEvents/>
            <EventGateway/>

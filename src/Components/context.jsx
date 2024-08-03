@@ -4,14 +4,12 @@ import { useContext } from 'react';
 const TicketWaveContext = createContext()
 
 
-const AppProvideer = ({Children}) =>{
+const AppProvider = ({Children}) =>{
     const [isSideBarOpen, setIsSideBarOpen] = useState(false)
     
     const openSidebar =() =>{
         setIsSideBarOpen(true)
     }
-
-
 
     //  context value
     const contextValue= {
@@ -25,7 +23,6 @@ const AppProvideer = ({Children}) =>{
     )
 }
 
-export  default AppProvideer
 
 export const useGlobalContext = () =>{
     return useContext(TicketWaveContext)
@@ -33,3 +30,4 @@ export const useGlobalContext = () =>{
 }
 
 
+export { AppProvider};
