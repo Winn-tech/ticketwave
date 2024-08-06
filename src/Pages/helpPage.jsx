@@ -1,11 +1,11 @@
 import React from 'react';
 import '../styles/help.css'
-import Navbar from '../Components/Navbar';
 import Footer from '../Components/footer';
+import Navigations from '../Components/Navigations/navigations';
 const HelpPage = () => {
     return ( 
          <>
-        <Navbar/>
+        <Navigations/>
         <div className="help">
             <div className="users">
                 <h2>HOW IT WORKS FOR USERS</h2>

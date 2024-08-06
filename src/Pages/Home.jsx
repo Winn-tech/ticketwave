@@ -1,15 +1,14 @@
 import React from 'react';
-import Navbar from '../Components/Navbar';
 import HeroSection from '../Components/HeroSection';
 import FeaturedEvents from '../Components/featuredEvents';
 import Footer from '../Components/footer';
 import EventGateway from '../Components/eventGateway';
-import SideBar from '../Components/sideBar';
+import SideBar from '../Components/Navigations/sideBar';
+import Navigations from '../Components/Navigations/navigations';
 const HomePage = () => {
     return ( 
         <>
-           <Navbar/>
-           {/* <SideBar/>g */}
+           <Navigations/>
            <HeroSection/>
            <FeaturedEvents/>
            <EventGateway/>

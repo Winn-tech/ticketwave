@@ -1,10 +1,10 @@
 import React from 'react';
-import Navbar from '../Components/Navbar';
 import Footer from '../Components/footer';
+import Navigations from '../Components/Navigations/navigations';
 const FAQ = () => {
     return ( 
         <>
-           <Navbar/>
+           <Navigations/>
            <div className="help">
             <h2>FREQUENTLY ASKED QUESTION’s</h2>
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import Footer from '../Components/footer';
-import Navbar from '../Components/Navbar';
 import { BiSortAlt2 } from "react-icons/bi";
+import Navigations from '../Components/Navigations/navigations';
 const CreateEventAdmin = () => {
   const events = [
     {
@@ -43,7 +43,7 @@ const CreateEventAdmin = () => {
   ];
   return ( 
     <>
-      <Navbar/>
+          <Navigations/>
           <div className="create-event-container">
             <div className="header">
               <div className='first'>My Events</div>

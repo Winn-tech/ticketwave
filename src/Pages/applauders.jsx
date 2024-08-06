@@ -1,11 +1,11 @@
 import React from 'react';
-import Navbar from '../Components/Navbar';
 import '../styles/more.css'
 import Footer from '../Components/footer';
+import Navigations from '../Components/Navigations/navigations';
 const Applauders = () => {
     return ( 
         <>
-           <Navbar/>
+           <Navigations/>
            <div className="more">
               <h2>Applauders</h2>
               <p>

@@ -1,11 +1,11 @@
 import React from 'react';
-import Navbar from '../Components/Navbar';
 import '../styles/more.css'
 import Footer from '../Components/footer';
+import Navigations from '../Components/Navigations/navigations';
 const SeatWarmers = () => {
     return (  
        <>
-           <Navbar/>
+           <Navigations/>
            <div className="more">
               <h2>Seat Warmers</h2>
               <p>

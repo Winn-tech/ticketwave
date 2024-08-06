@@ -1,8 +1,8 @@
 import {useState, React} from 'react';
-import Navbar from '../Components/Navbar';
 import { MdOutlineDeleteOutline } from "react-icons/md";
 import CartPopularEvents from '../Components/cartPopularEvent';
 import Footer from '../Components/footer';
+import Navigations from '../Components/Navigations/navigations';
 const CartPageTwo = () => {
     const [quantity, setQuantity] = useState(1);
     const price = 10000;
@@ -16,7 +16,7 @@ const CartPageTwo = () => {
 
     return ( 
         <>
-           <Navbar/>
+           <Navigations/>
            
            <div className="cart-container">
               <div className="header">

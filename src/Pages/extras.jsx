@@ -1,11 +1,11 @@
 import React from 'react';
-import Navbar from '../Components/Navbar';
 import '../styles/more.css'
 import Footer from '../Components/footer';
+import Navigations from '../Components/Navigations/navigations';
 const Extras = () => {
     return ( 
         <>
-           <Navbar/>
+           <Navigations/>
            <div className="more">
               <h2>Extras</h2>
               <p>

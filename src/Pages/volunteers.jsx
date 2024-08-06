@@ -1,10 +1,10 @@
 import React from 'react';
-import Navbar from '../Components/Navbar';
 import '../styles/more.css'
+import Navigations from '../Components/Navigations/navigations';
 const Volunteers = () => {
     return ( 
         <>
-           <Navbar/>
+           <Navigations/>
            <div className="more">
               <h2>Volunteers</h2>
               <p>
@@ -43,7 +43,7 @@ const Volunteers = () => {
                 <button>Send</button>
               </form>
            </div>
-           <Navbar/>
+           {/* <Navbar/> */}
        </>
      );
 }

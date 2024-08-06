@@ -1,8 +1,10 @@
 import React from 'react';
 import { IoMdSearch } from "react-icons/io";
+import { useGlobalContext } from './context';
 const HeroSection = () => {
+    const {closeSubMenu} = useGlobalContext()
     return ( 
-        <div className="hero-section">
+        <div className="hero-section" onMouseOver={closeSubMenu}>
             <div className="overlay">
                 <h1 className="title">
                    Experience More with Easy Event<span className="highlight"> Ticketing</span>

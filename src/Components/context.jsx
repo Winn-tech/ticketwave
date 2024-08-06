@@ -1,33 +1,61 @@
-import React, { Children, createContext, useState } from 'react';
-import { useContext } from 'react';
+import React, { createContext, useState, useContext } from 'react';
 
-const TicketWaveContext = createContext()
+import NavLink from '../navData'
+
+const TicketWaveContext = createContext();
+
+const AppProvider = ({ children }) => {
+  const [isSideBarOpen, setIsSideBarOpen] = useState(false);
+  const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
+  const [subMenuLocation, setSubMenuLocation] = useState({})
+  const [subMenuPages, setSubMenuPage] = useState({page:{label:''}, subPages:[] })
 
 
-const AppProvider = ({Children}) =>{
-    const [isSideBarOpen, setIsSideBarOpen] = useState(false)
+  const openSidebar = () => {
+    setIsSideBarOpen(true);
+    console.log('clicked')
+  };
+
+  const closeSidebar = () => {
+    setIsSideBarOpen(false);
+  };
+
+  const openSubMenu =(page, coordinate)=>{
+    setSubMenuLocation(coordinate);
+    setIsSubMenuOpen(true)
+    const newPage = NavLink.find((targetPage)=>targetPage.page.label === page)
+    setSubMenuPage(newPage)
+    // console.log(newPage);
     
-    const openSidebar =() =>{
-        setIsSideBarOpen(true)
-    }
 
-    //  context value
-    const contextValue= {
-        isSideBarOpen, openSidebar,
-    }
+  }
 
-    return(
-        <TicketWaveContext.Provider value={contextValue}>
-           {Children}
-        </TicketWaveContext.Provider>
-    )
-}
+  const closeSubMenu =()=>{
+    setIsSubMenuOpen(false)
+  }
 
-
-export const useGlobalContext = () =>{
-    return useContext(TicketWaveContext)
+//   contextValue
+  const contextValue = {
+    isSideBarOpen,
+    openSidebar,
+    closeSidebar,
+    isSubMenuOpen,
+    openSubMenu,
+    closeSubMenu,
+    subMenuLocation,
+    subMenuPages
     
-}
+  };
 
+  return (
+    <TicketWaveContext.Provider value={contextValue}>
+      {children} 
+    </TicketWaveContext.Provider>
+  );
+};
 
-export { AppProvider};
+export const useGlobalContext = () => {
+  return useContext(TicketWaveContext);
+};
+
+export { AppProvider };

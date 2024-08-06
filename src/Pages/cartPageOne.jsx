@@ -1,9 +1,9 @@
 import {React, useState} from 'react';
 import '../styles/cart.css'
-import Navbar from '../Components/Navbar';
 import Footer from '../Components/footer';
 import { MdCancel } from "react-icons/md";
 import CartPopularEvents from '../Components/cartPopularEvent';
+import Navigations from '../Components/Navigations/navigations';
 const CartPageOne = () => {
     const [quantity, setQuantity] = useState(1);
 
@@ -13,7 +13,7 @@ const CartPageOne = () => {
 
     return (  
         <>
-           <Navbar/>
+           <Navigations/>
            <div className='cart-container'>
                <div className="header">
                 CART

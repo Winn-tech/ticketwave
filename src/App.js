@@ -8,7 +8,7 @@ import ForgetPassOne from './Components/forgetPassOne';
 import ForgetPassThre from './Components/ForgetPassThree';
 import ForgetPassTwo from './Components/forgetPassTwo';
 import HeroSection from './Components/HeroSection';
-import Navbar from './Components/Navbar';
+// import Navbar from './Components/Navbar';
 import SigninPage from './Components/signin';
 import SignIn from './Components/signin';
 import SignupPage from './Components/signup';
@@ -36,13 +36,26 @@ function App() {
     <div className="App">
       <ToastContainer />
       <Routes>
+        {/* authentication */}
         <Route path="/login" element={ <SigninPage/> } />
         <Route path="/register" element={ <SignupPage/> } />
+
+        {/* single pages */}
         <Route path="/" element={ <HomePage/> } />
-        <Route path='/help' element={<HelpPage/>}/>
-        <Route path='' element={<EditEventPage/>}/>
-        <Route path='' element={ <ContactUs/>}/>
-    
+        <Route path='/orders' element={<Orders/>}/>
+        <Route path='/create-event'  element={<CreateEventPage/>}/>
+
+        {/* help pages */}
+        <Route path='/help' element={ <HelpPage/>}/>
+        <Route path='/FAQ' element={ <FAQ/>}/>
+        <Route path='/contact-us' element={ <ContactUs/>}/>
+         
+         {/* more pages */}
+        <Route path='/applauders' element={<Applauders/>}/>
+        <Route path='/seat-warmers' element={<SeatWarmers/>}/>
+        <Route path='/volunteers' element={<Volunteers/>}/>
+        <Route path='/extras' element={<Extras/>}/>
+
       </Routes>
 
 
