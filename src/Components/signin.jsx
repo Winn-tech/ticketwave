@@ -8,8 +8,9 @@ import { CiLock } from "react-icons/ci";
 import axios from 'axios';
 import { environment } from '../environment';
 import {toast} from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import AuthImageSection from './authImageSection';
+
 
 
 const SigninPage = () => {
@@ -44,7 +45,9 @@ const SigninPage = () => {
 
         if(result.data.success) {
           notifySuccess(result.data.message)
+
           navigate('/');
+          localStorage.setItem('UserInfo', JSON.stringify(result.data))
         }else {
           notifyError(JSON.stringify(result.data.errors));
         }
@@ -64,7 +67,7 @@ const SigninPage = () => {
         <div className="form-section">
             <div>
               <div className="header">
-                <p>Don't have an account? <a href="#">Sign Up</a></p>
+                <p>Don't have an account? <Link to={'/register'}>Sign Up</Link></p>
               </div>
             <div className="form-container">
               

@@ -1,9 +1,15 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Notification from '../assets/notification.svg';
 import cart from '../assets/cart.svg';
 import '../styles/navbar.css'
+import { useNavigate, Link } from 'react-router-dom';
+
 const Navbar = () => {
-    return ( 
+  const navigate = useNavigate();
+  
+
+
+  return ( 
         <div className="navbar">
             <div className="navbar-left">
                 <div className="logo">LOGO</div>
@@ -14,7 +20,7 @@ const Navbar = () => {
             <div className="navbar-center">
                 <ul>
                     <li>
-                      <a href="#home">Home</a>
+                      <Link to="/">Home</Link>
                     </li>
                     <li>
                       <a href="#events">Events</a>
@@ -25,9 +31,9 @@ const Navbar = () => {
                     <li>
                        <a href="#orders">Orders</a>
                     </li>
-                    <li>
+                    {/* <li>
                       <a href="#orders">Orders</a>
-                    </li>
+                    </li> */}
                     <li>
                       <a href="#help">Help</a>
                     </li>
