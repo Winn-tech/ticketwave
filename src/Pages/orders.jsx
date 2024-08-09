@@ -11,12 +11,12 @@ const Orders = () => {
         <>
            <Navigations/>
            <section >
-               <h2>ORDERS( <span>{orders}</span>)</h2>
+               <h2>ORDERS(<span>{orders}</span>)</h2>
                <div className="orders">
                    <div className="single-order">
                      
                         <div>
-                            <img src={eventimage} alt="" />
+                            <img src={eventimage} alt="ticket image" />
                         </div>
 
                         <div className='desc'>

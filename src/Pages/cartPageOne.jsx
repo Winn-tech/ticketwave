@@ -4,6 +4,7 @@ import Footer from '../Components/footer';
 import { MdCancel } from "react-icons/md";
 import CartPopularEvents from '../Components/cartPopularEvent';
 import Navigations from '../Components/Navigations/navigations';
+import { Link } from 'react-router-dom';
 const CartPageOne = () => {
     const [quantity, setQuantity] = useState(1);
 
@@ -35,9 +36,13 @@ const CartPageOne = () => {
                             <td>No 26 Kanaga Street Lagos road</td>
                             <td>
                                 <div className="button-group">
-                                    <span onClick={() => handleQuantityChange(-1)}>-</span>
+                                    <span onClick={() => handleQuantityChange(-1)}>
+                                      -
+                                    </span>
                                     {quantity}  
-                                <span onClick={() => handleQuantityChange(1)}>+</span>
+                                <span onClick={() => handleQuantityChange(1)}>
+                                   +
+                                </span>
                                 </div>  
                             </td>
                             <td>N10000</td>
@@ -46,7 +51,10 @@ const CartPageOne = () => {
                         </tr>
                     </tbody>
                 </table>
-                <button className="proceed-button">Proceed</button>
+                <Link to={'/carttwo'}>
+                     <button className="proceed-button">Proceed</button>
+                </Link>
+               
                 <CartPopularEvents/>
           </div>
            <Footer/>

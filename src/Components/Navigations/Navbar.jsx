@@ -59,17 +59,19 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-right">
-                <a href="#cart" className="icon">
+                <Link to="/cart" className="icon">
                 <img src={cart} alt="cart" />
-                </a>
-                <a href="#notifications" className="icon">
+                </Link>
+                <Link to={"/notifications"} className="icon">
                 <img src={Notification} />
                 {/* <span className="notification-dot"></span> */}
-                </a>
-                <div className="profile">
-                <img src="https://placehold.co/30x30" alt="User Profile" className="profile-pic" />
-                <span>Godwin</span>
-                </div>
+                </Link>
+                <Link to={"/user-profile"}> 
+                  <div className="profile">
+                  <img src="https://placehold.co/30x30" alt="User Profile" className="profile-pic" />
+                  <span>Godwin</span>
+                  </div>
+                </Link>
                 <div  onClick={openSidebar} className='menubar-container'> 
                 <GiHamburgerMenu className='menubar'/>
              </div>

@@ -28,8 +28,10 @@ import Orders from './Pages/orders';
 import { Routes, Route } from "react-router-dom"
 import SeatWarmers from './Pages/seatWarmers';
 import Volunteers from './Pages/volunteers';
+import NotificationPage from './Pages/NotificationPage';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import UserProfilePage from './Pages/userProfilePage';
 
 function App() {
   return (
@@ -43,7 +45,14 @@ function App() {
         {/* single pages */}
         <Route path="/" element={ <HomePage/> } />
         <Route path='/orders' element={<Orders/>}/>
-        <Route path='/create-event'  element={<CreateEventPage/>}/>
+        <Route path='/create-event' element={<CreateEventPage/>}/>
+        <Route path='/events'  element={<FeaturedEvents/>}/>
+        <Route path='/notifications'  element={<NotificationPage/>}/>
+        <Route path='/user-profile'  element={<UserProfilePage/>}/>
+
+        {/* cart pages */}
+        <Route path='/Cart'  element={<CartPageOne/>}/>
+        <Route path='/Carttwo'  element={<CartPageTwo/>}/>
 
         {/* help pages */}
         <Route path='/help' element={ <HelpPage/>}/>
