@@ -1,0 +1,56 @@
+*{
+    box-sizing: border-box;
+    font-style: chivo;
+    overflow-x: hidden;
+    
+  }
+  body{
+    width: 100%;
+  }
+  
+  :root{
+    --primaryColor: #66BB6A;
+    --ash: #324148B2;
+    --lighterAsh :#B5B4B4;
+    --white: #ffff;
+  }
+  button{
+    cursor: pointer;
+  }
+  .profilePage{
+    min-width: 90vh;
+  }
+  .profilePage>div{
+    margin-bottom: 1rem;
+  }
+ .profile-image{
+    display: flex;
+    gap: 4%;
+    align-items: center;
+    color: var(--primaryColor);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.25px;
+ } 
+.profile-image img{
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    flex-shrink: 0;  
+}
+
+.user-details .group .label{
+    color: var(--primaryColor);
+    font-family: Fellix;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.user-details .group .detail{
+
+}

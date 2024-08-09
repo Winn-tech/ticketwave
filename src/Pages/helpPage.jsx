@@ -1,13 +1,13 @@
 import React from 'react';
 import '../styles/help.css'
-import Navbar from '../Components/Navbar';
 import Footer from '../Components/footer';
+import Navigations from '../Components/Navigations/navigations';
 const HelpPage = () => {
     return ( 
          <>
-        <Navbar/>
+        <Navigations/>
         <div className="help">
-            <section className="users">
+            <div className="users">
                 <h2>HOW IT WORKS FOR USERS</h2>
                 <dl>
                     <dt>1.find tickets </dt>
@@ -33,10 +33,10 @@ const HelpPage = () => {
                     For payment made  – once the payment process is completed, your barcode ticket(s) will be sent immediately to the email address you provided while registering
                     </dd>
                 </dl>
-                <button>FREQUENTLY ASKED QUESTIONS FOR USERS</button>
-            </section>
+                <button>FREQUENTLY ASKED QUESTIONS</button>
+            </div>
 
-            <section className="organizers">
+            <div className="organizers">
                 <h2>HOW IT WORKS FOR ORGANIZERS</h2>
                 <p>To create and sell event tickets on ticketwave, you need to have an account on our website.</p>
                 <ol>
@@ -60,7 +60,7 @@ const HelpPage = () => {
                 <p>We will review and approve the submitted event within 48 hours.</p>
              
                 <button className="learn-more">FIND OUT MORE ABOUT ORGANIZING</button>
-          </section>
+          </div>
      </div>
      <Footer/>
          </>

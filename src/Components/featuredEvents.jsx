@@ -64,7 +64,7 @@ const FeaturedEvents = () => {
         
       } catch (error) {
         console.log(error);
-        
+        setEvent([]);
       }
 
 

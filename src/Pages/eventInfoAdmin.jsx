@@ -6,8 +6,8 @@ import { IoLocationOutline } from "react-icons/io5";
 import { TbCategory } from "react-icons/tb";
 import { BiCalendar } from "react-icons/bi";
 import eventimage from "../images/eventimage.png"
-import Navbar from "../Components/Navbar";
 import Footer from "../Components/footer";
+import Navigations from "../Components/Navigations/navigations";
 const EventInfoAdmin = () => {
     const [ticketCounts, setTicketCounts] = useState({
         regular: 0,
@@ -26,7 +26,7 @@ const EventInfoAdmin = () => {
       };
     return ( 
     <>
-        <Navbar/>
+        <Navigations/>
         <div className="events-info-container">
           <div className="event-info-img">
             <img src={eventimage} alt="" />

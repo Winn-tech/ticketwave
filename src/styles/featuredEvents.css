@@ -33,6 +33,7 @@
     font-weight: 600;
     line-height: normal;
     letter-spacing: -0.4px;
+    margin: 0.5rem 0;
   }
   .featured-events .event-card img{
   width: 100%;
@@ -41,13 +42,13 @@
   }
   .featured-events .event-date{
   color: #1A1A1A;
-  
   font-family: Inter;
   font-size: 12px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 14px;
   letter-spacing: 0.24px;
+  margin: 0.5rem 0;
   text-transform: capitalize;
   }
   .featured-events .more-info-button{
@@ -87,9 +88,25 @@
     color: var(--white);
     background-color: var(--primaryColor);
     }
-
+   
+    
 
     @media (min-width: 768px) and (max-width: 991.98px) { 
+      .view-more-button{
+        margin-top: 7%;
+        color: var(--primaryColor);
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 20px;
+        letter-spacing: 1.25px;
+        padding: 0px 0px;
+        min-width: 50%;
+        border: 1px solid var(--primaryColor);
+        border-radius: 10px;
+        flex-shrink: 0;
+    }
       
       .featured-events-grid{
         grid-template-columns: repeat(2, 1fr);

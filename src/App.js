@@ -8,7 +8,7 @@ import ForgetPassOne from './Components/forgetPassOne';
 import ForgetPassThre from './Components/ForgetPassThree';
 import ForgetPassTwo from './Components/forgetPassTwo';
 import HeroSection from './Components/HeroSection';
-import Navbar from './Components/Navbar';
+// import Navbar from './Components/Navbar';
 import SigninPage from './Components/signin';
 import SignIn from './Components/signin';
 import SignupPage from './Components/signup';
@@ -28,22 +28,49 @@ import Orders from './Pages/orders';
 import { Routes, Route } from "react-router-dom"
 import SeatWarmers from './Pages/seatWarmers';
 import Volunteers from './Pages/volunteers';
+import NotificationPage from './Pages/NotificationPage';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import UserProfilePage from './Pages/userProfilePage';
+import Navigations from './Components/Navigations/navigations';
 
 function App() {
   return (
     <div className="App">
       <ToastContainer />
       <Routes>
+        {/* authentication */}
         <Route path="/login" element={ <SigninPage/> } />
         <Route path="/register" element={ <SignupPage/> } />
-        <Route path="/" element={ <HomePage/> } />
-        
 
-        
-        {/* <Route path="/" element={ <HomePage/> } /> */}
-        {/* <Route path="/" element={ <ForgetPassTwo/> } /> */}
+        {/* single pages */}
+        <Route path="/" element={ <HomePage/> } />
+        <Route path='/orders' element={<Orders/>}/>
+        <Route path='/create-event' element={<CreateEventPage/>}/>
+        <Route path='/events'  element={
+          <>
+            <Navigations />
+            <FeaturedEvents/>
+          </>
+        }/>
+        <Route path='/notifications'  element={<NotificationPage/>}/>
+        <Route path='/user-profile'  element={<UserProfilePage/>}/>
+
+        {/* cart pages */}
+        <Route path='/Cart'  element={<CartPageOne/>}/>
+        <Route path='/Carttwo'  element={<CartPageTwo/>}/>
+
+        {/* help pages */}
+        <Route path='/help' element={ <HelpPage/>}/>
+        <Route path='/FAQ' element={ <FAQ/>}/>
+        <Route path='/contact-us' element={ <ContactUs/>}/>
+         
+         {/* more pages */}
+        <Route path='/applauders' element={<Applauders/>}/>
+        <Route path='/seat-warmers' element={<SeatWarmers/>}/>
+        <Route path='/volunteers' element={<Volunteers/>}/>
+        <Route path='/extras' element={<Extras/>}/>
+
       </Routes>
 
 

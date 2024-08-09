@@ -10,33 +10,43 @@
     --white: #ffff;
   }
   
-.footer{
+footer{
     background-color: var(--primaryColor);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    height: 100px;
+    padding: 0 5%;
     color: white;
     position: static;
     bottom: 0%;
     width: 100%;
+    min-height: fit-content;
     }
-    .footer p{
-    font-feature-settings: 'clig' off, 'liga' off;
-    font-family: Inter;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 28px;
+
+footer p{
+      /* font-feature-settings: 'clig' off, 'liga' off; */
+      font-family: Inter;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 28px;
     }
-    .footer div span{
+ footer> div{
+  display: flex;
+  gap: 0 5%;
+ }   
+  
+  footer>div .icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
     border: 1px solid white;
-    padding: 10px;
-    color: #FFF;
-    margin-right: 1.5rem;
-    padding: 10px;
     border-radius: 5px;
-    }
+  }  
+
 
     /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) { 
@@ -46,29 +56,24 @@
 /* Small devices (landscape phonespx and up) */
 
 @media (min-width: 576px) and (max-width: 767.98px){
-  .container{
-    /* display: flex;
-    flex-direction: column;
-    display: none;
-    background-color: green; */
- }
-
+  footer{
+    display: block;
+  }
 }
     
    /* Styles for small phones */
   @media (max-width: 575.98px) { 
    
-    .footer p{
-      font-feature-settings: 'clig' off, 'liga' off;
+    footer p{
       font-family: Inter;
       font-size: 16px;
       font-style: normal;
       font-weight: 700;
       line-height: 28px;
       }
-      .footer{
+      footer{
         display: flex;
         flex-direction: column;
-        
+        padding: 5% 0;
       }
 }

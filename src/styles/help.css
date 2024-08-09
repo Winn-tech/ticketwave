@@ -11,9 +11,10 @@
     --white: #ffff;
   }
 .help {
-    padding: 5%;
     background-color: #f9f9f9;
+    padding: 5%;
   }
+
   h2{
     color: #2D2D2D;
     font-family: Inter;
@@ -23,6 +24,7 @@
     line-height: normal;
     letter-spacing: 0.9px;
   }
+
   .help dt{
     color: #000;
     font-family: Inter;
@@ -33,7 +35,7 @@
     margin-top: 0.6rem;
   }
   
-  .help dd{
+  .users .help dd{
     color: rgba(0, 0, 0, 0.80);
     font-family: Inter;
     font-size: 16px;
@@ -43,7 +45,7 @@
     
   }
   
-  .help section button{
+  .help>div button{
     color: #FFF;
     font-family: Inter;
     font-size: 14px;
@@ -57,9 +59,10 @@
     border: none;
     padding: 1rem 1rem;
     margin: 1.5rem 0;
+    
   }
 
-  .help section p{
+  .help> p{
     color: #000;
     font-family: Inter;
     font-size: 16px;
@@ -68,7 +71,7 @@
     line-height: 25px;
     margin: 0.6rem 0; 
   }
-.help section li{
+.help>div li{
   color: #000;
   font-family: Inter;
   font-size: 16px;
@@ -78,7 +81,7 @@
   text-transform: uppercase;
   list-style-position: inside;
 }
-  .help section li span{
+  .help>div li span{
     font-weight: 400;
     line-height: 25px;
     text-transform: none;

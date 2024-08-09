@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 import '../styles/orders.css'
 import eventimage from'../images/eventimage.png'
-import Navbar from '../Components/Navbar';
 import Footer from '../Components/footer';
+import Navigations from '../Components/Navigations/navigations';
 
 const Orders = () => {
 
     const [orders, setOrders] = useState(1)
     return ( 
         <>
-           <Navbar/>
+           <Navigations/>
            <section >
-               <h2>ORDERS( <span>{orders}</span>)</h2>
+               <h2>ORDERS(<span>{orders}</span>)</h2>
                <div className="orders">
                    <div className="single-order">
                      
                         <div>
-                            <img src={eventimage} alt="" />
+                            <img src={eventimage} alt="ticket image" />
                         </div>
 
                         <div className='desc'>

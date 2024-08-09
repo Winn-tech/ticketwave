@@ -31,6 +31,7 @@
     height: 100%;
     object-fit: cover;
     min-height: inherit;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
   }
 
   .auth-container .form-section {

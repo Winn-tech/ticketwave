@@ -6,16 +6,17 @@ import "../styles/footer.css"
 
 const Footer = () => {
     return ( 
-        <div className="footer">
+        
+        <footer>
             <div>
                 <p>© 2023  TICKETSWAVE ALL RIGHTS RESERVED.</p>
             </div>
-            <div>
-                <span><RiFacebookFill/></span>
-                <span><RiTwitterXLine/></span>
-                <span><LuInstagram/></span>
-            </div>
-        </div>
+             <div>
+                 <div className='icon'><RiFacebookFill/></div>
+                 <div className='icon'><RiTwitterXLine/></div>
+                 <div className='icon'><LuInstagram/></div>
+             </div>
+        </footer>
      );
 }
  

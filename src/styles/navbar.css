@@ -93,4 +93,25 @@
     border-radius: 50%;
     margin-right: 10px;
   }
+  .menubar-container{
+    display: none;
+  }
+
+
+
+  @media (max-width: 900px){
+    .menubar-container{
+      display: block;
+    }
+    .navbar-center{
+      display: none;
+    }
+    .greeting{
+      display: none;
+    }
+    .profile{
+      display: none;
+    }
+  
+  }
   
