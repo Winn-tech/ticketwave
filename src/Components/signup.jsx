@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import '../styles/authPages.css'
 import line from '../assets/line.png'
 import AuthImageSection from './authImageSection';
@@ -34,7 +34,7 @@ const SignupPage = () => {
     };
   
   
-    const handleLogin = async(event)=> {
+    const handleRegister = async(event)=> {
         event.preventDefault(); 
   
         try {
@@ -62,10 +62,20 @@ const SignupPage = () => {
   
       } catch (error) {
           setLoading(false)
+          
+        notifyError(JSON.stringify(error));
           console.error('There was an error posting the data!', error);
       }
   
     }
+
+
+    
+    useEffect(()=> {
+      if(localStorage.UserInfo !== null || localStorage.UserInfo !== undefined) {
+        localStorage.removeItem('UserInfo');
+      }
+    }, [])
 
     return (
       <div className="auth-container">
@@ -89,7 +99,7 @@ const SignupPage = () => {
                       <span>OR</span>
                       <span><img src={line} alt="" /></span>
                     </div>
-                    <form onSubmit={handleLogin}>
+                    <form onSubmit={handleRegister}>
                     
                     <div className="input-group">
                     <FaRegUser className='input-icon'/>

@@ -48,17 +48,25 @@ const SigninPage = () => {
 
           navigate('/');
           localStorage.setItem('UserInfo', JSON.stringify(result.data))
-        }else {
+        }
+        else {
           notifyError(JSON.stringify(result.data.errors));
         }
 
     } catch (error) {
         setLoading(false)
+        notifyError(JSON.stringify(error));
         console.error('There was an error posting the data!', error);
     }
 
   }
 
+
+  useEffect(()=> {
+    if(localStorage.UserInfo !== null || localStorage.UserInfo !== undefined) {
+      localStorage.removeItem('UserInfo');
+    }
+  }, [])
 
 
     return (

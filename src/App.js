@@ -33,6 +33,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import UserProfilePage from './Pages/userProfilePage';
 import Navigations from './Components/Navigations/navigations';
+import ProtectedRoute from './Components/Protected';
 
 function App() {
   return (
@@ -44,32 +45,32 @@ function App() {
         <Route path="/register" element={ <SignupPage/> } />
 
         {/* single pages */}
-        <Route path="/" element={ <HomePage/> } />
-        <Route path='/orders' element={<Orders/>}/>
-        <Route path='/create-event' element={<CreateEventPage/>}/>
-        <Route path='/events'  element={
+        <Route path="/" element={<ProtectedRoute element={<HomePage/>} />} />
+        <Route path='/orders' element={<ProtectedRoute element={<Orders />} />} />
+        <Route path='/create-event' element={<ProtectedRoute element={<CreateEventPage />} />} />
+        <Route path='/events' element={<ProtectedRoute element={
           <>
             <Navigations />
-            <FeaturedEvents/>
+            <FeaturedEvents />
           </>
-        }/>
-        <Route path='/notifications'  element={<NotificationPage/>}/>
-        <Route path='/user-profile'  element={<UserProfilePage/>}/>
-
+        } />} />
+        <Route path='/notifications' element={<ProtectedRoute element={<NotificationPage />} />} />
+        <Route path='/user-profile' element={<ProtectedRoute element={<UserProfilePage />} />} />
+        
         {/* cart pages */}
-        <Route path='/Cart'  element={<CartPageOne/>}/>
-        <Route path='/Carttwo'  element={<CartPageTwo/>}/>
+        <Route path='/Cart' element={<ProtectedRoute element={<CartPageOne />} />} />
+        <Route path='/Carttwo' element={<ProtectedRoute element={<CartPageTwo />} />} />
 
         {/* help pages */}
-        <Route path='/help' element={ <HelpPage/>}/>
-        <Route path='/FAQ' element={ <FAQ/>}/>
-        <Route path='/contact-us' element={ <ContactUs/>}/>
-         
-         {/* more pages */}
-        <Route path='/applauders' element={<Applauders/>}/>
-        <Route path='/seat-warmers' element={<SeatWarmers/>}/>
-        <Route path='/volunteers' element={<Volunteers/>}/>
-        <Route path='/extras' element={<Extras/>}/>
+        <Route path='/help' element={<ProtectedRoute element={<HelpPage />} />} />
+        <Route path='/FAQ' element={<ProtectedRoute element={<FAQ />} />} />
+        <Route path='/contact-us' element={<ProtectedRoute element={<ContactUs />} />} />
+
+        {/* more pages */}
+        <Route path='/applauders' element={<ProtectedRoute element={<Applauders />} />} />
+        <Route path='/seat-warmers' element={<ProtectedRoute element={<SeatWarmers />} />} />
+        <Route path='/volunteers' element={<ProtectedRoute element={<Volunteers />} />} />
+        <Route path='/extras' element={<ProtectedRoute element={<Extras />} />} />
 
       </Routes>
 
