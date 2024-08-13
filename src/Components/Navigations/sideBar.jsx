@@ -22,11 +22,20 @@ const SideBar = () => {
                </div>
             </div>
             <article className='nav'>
+              
+            <Link to={"/user-profile"} className='user-profile' onClick={closeSidebar}>  
+                  <div className='user-profile' >
+                  <img src="https://placehold.co/30x30" alt="User Profile" className="profile-pic" />
+                  <span>Godwin</span>
+                  </div>
+            </Link>
+
+            <hr/>
               {NavLink.map((links, index)=>{
                 const {page, subPages} = links
                 return <div key={index} onClick={closeSidebar}>
                   <Link className='nav-link' to={page.url}>{page.label} </Link>
-
+                 
                  <ul>
                      {subPages.map((subPage, index)=>{
                       const {label, url} = subPage

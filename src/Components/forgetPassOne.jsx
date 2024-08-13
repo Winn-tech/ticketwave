@@ -1,15 +1,14 @@
-import React from 'react';
-import LoginImages from '../images/auth/LoginImages.png'
+import React, { useState } from 'react';
 import '../styles/authPages.css'
 import { AiOutlineMail } from "react-icons/ai";
-
+import AuthImageSection from './authImageSection';
+import { Link } from 'react-router-dom';
 
 const ForgetPassOne = () => {
+  const [email, setEmail] = useState("")
     return ( 
-        <div className="container ">
-        <div className="image-section">
-          <img src={LoginImages} alt="People enjoying at a party" />
-        </div>
+        <div className="auth-container ">
+        <AuthImageSection/>
         <div className="form-section">
             <div>
               <div className="header">
@@ -24,11 +23,13 @@ const ForgetPassOne = () => {
                 <form>
                 <div className="input-group">
                     <AiOutlineMail className='input-icon'/>
-                    <input type="email" placeholder="Email" />
+                    <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
                   </div>
                   
                   <a href="#" className="forgot-password">Return to Login</a>
-                  <p className="login-button">Submit</p>
+                 <Link to={'/forget-password/reset'}>
+                 <button className="login-button" disabled={!email}>Submit</button>
+                 </Link>
                 </form>
               </div>
           </div>

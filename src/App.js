@@ -32,6 +32,9 @@ import NotificationPage from './Pages/NotificationPage';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import UserProfilePage from './Pages/userProfilePage';
+import AdminDashBoard from './Pages/adminDashboardPage';
+import Table from './Components/admin-componenets/table';
+
 
 function App() {
   return (
@@ -49,6 +52,14 @@ function App() {
         <Route path='/events'  element={<FeaturedEvents/>}/>
         <Route path='/notifications'  element={<NotificationPage/>}/>
         <Route path='/user-profile'  element={<UserProfilePage/>}/>
+        <Route path='/eventInfoUsers' element={<EventInfoUser/>}/>
+        <Route path='/forget-password' element={<ForgetPassOne/>}/>
+        <Route path='/forget-password/reset' element={<ForgetPassTwo/>}/>
+        
+        {/* admin pages */}
+        <Route path='/admin/admin-dashboard' element={<AdminDashBoard/>}/>
+        <Route path='/admin/orders-table' element={<Table/>}/>
+      
 
         {/* cart pages */}
         <Route path='/Cart'  element={<CartPageOne/>}/>

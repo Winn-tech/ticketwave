@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/more.css'
 import Navigations from '../Components/Navigations/navigations';
+import Footer from '../Components/footer';
 const Volunteers = () => {
     return ( 
         <>
@@ -43,7 +44,7 @@ const Volunteers = () => {
                 <button>Send</button>
               </form>
            </div>
-           {/* <Navbar/> */}
+           <Footer/>
        </>
      );
 }

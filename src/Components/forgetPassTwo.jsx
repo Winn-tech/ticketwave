@@ -1,5 +1,5 @@
 import React from 'react';
-import LoginImages from '../images/auth/LoginImages.png'
+import AuthImageSection from './authImageSection';
 import authAvatar from '../assets/authAvatar.png'
 import '../styles/authPages.css'
 
@@ -9,10 +9,8 @@ import { AiOutlineMail } from "react-icons/ai";
 
 const ForgetPassTwo = () => {
     return ( 
-        <div className="container ">
-        <div className="image-section">
-          <img src={LoginImages} alt="People enjoying at a party" />
-        </div>
+        <div className="auth-container ">
+         <AuthImageSection/>
         <div className="form-section">
             <div>
               <div className="header">

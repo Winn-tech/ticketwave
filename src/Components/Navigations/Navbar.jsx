@@ -4,7 +4,7 @@ import cart from '../../assets/cart.svg';
 import { GiHamburgerMenu } from "react-icons/gi";
 import '../../styles/navbar.css'
 import { useGlobalContext } from '.././context';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 const Navbar = () => {
   const {openSidebar, isSubMenuOpen, openSubMenu, closeSubMenu} = useGlobalContext()
    const handleAction =(e)=>{
@@ -37,24 +37,24 @@ const Navbar = () => {
             </div>
             <div className="navbar-center">
                 <ul>
-                    <li >
-                      <Link to={"/"}>Home</Link>
+                    <li>
+                      <NavLink to={"/"}>Home</NavLink>
                     </li>
                     <li>
-                      <Link to={"/events"}>Events</Link>
+                      <NavLink to={"/events"}>Events</NavLink>
                     </li>
                     <li >
-                      <Link to={"/create-event"}>Create Event</Link> 
+                      <NavLink to={"/create-event"}>Create Event</NavLink> 
                     </li>
                    
                     <li >
-                      <Link to={"/orders"}>Orders</Link>
+                      <NavLink to={"/orders"}>Orders</NavLink>
                     </li>
                     <li onMouseOver={handleAction}>
-                      <Link to={"/help"} className='hov-btn' onClick={preventClick}>Help</Link>
+                      <NavLink to={"/help"} className='hov-btn' onClick={preventClick}>Help</NavLink>
                     </li>
                     <li onMouseOver={handleAction}>
-                      <Link to={"/#more"} className='hov-btn' onClick={preventClick}>More</Link>
+                      <NavLink to={"/more"} className='hov-btn' onClick={preventClick}>More</NavLink>
                     </li>
                 </ul>
             </div>

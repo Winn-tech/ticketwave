@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/featuredEvents.css'
+import { Link } from 'react-router-dom';
 
 const FeaturedEvents = () => {
   const events = [
@@ -51,7 +52,9 @@ const FeaturedEvents = () => {
               <h3 className="event-title">{event.title}</h3>
               <p className="event-date">{event.date}</p>
               <p className="event-label">{event.label}</p>
-              <button className="more-info-button">More Info</button>
+              <Link to={'/eventInfoUsers'}>
+                  <button className="more-info-button" > More Info </button>
+              </Link>
             </div>
           </div>
         ))}
