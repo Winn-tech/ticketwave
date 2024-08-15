@@ -15,6 +15,8 @@ const Navbar = () => {
     const bottom = position.bottom - 3
     openSubMenu(page, {center, bottom} )
    }
+   const userInfo = JSON.parse(localStorage.UserInfo);
+
    
 
    const preventClick = (event) => {
@@ -32,7 +34,7 @@ const Navbar = () => {
             <div className="navbar-left">
                 <div className="logo">LOGO</div>
                 <div className="greeting">
-                <span role="img" aria-label="wave">👋</span> Hi Godwin
+                <span role="img" aria-label="wave">👋</span> Hi {userInfo.user.fullname}
                 </div>
             </div>
             <div className="navbar-center">
@@ -69,7 +71,7 @@ const Navbar = () => {
                 <Link to={"/user-profile"}> 
                   <div className="profile">
                   <img src="https://placehold.co/30x30" alt="User Profile" className="profile-pic" />
-                  <span>Godwin</span>
+                  <span>{userInfo.user.fullname}</span>
                   </div>
                 </Link>
                 <div  onClick={openSidebar} className='menubar-container'> 

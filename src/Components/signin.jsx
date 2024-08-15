@@ -8,8 +8,9 @@ import { CiLock } from "react-icons/ci";
 import axios from 'axios';
 import { environment } from '../environment';
 import {toast} from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import AuthImageSection from './authImageSection';
+
 
 
 const SigninPage = () => {
@@ -44,18 +45,28 @@ const SigninPage = () => {
 
         if(result.data.success) {
           notifySuccess(result.data.message)
+
           navigate('/');
-        }else {
-          notifyError(JSON.stringify(result.data.errors));
+          localStorage.setItem('UserInfo', JSON.stringify(result.data))
+        }
+        else {
+          notifyError(result.data.errors ? JSON.stringify(result.data.errors) : result.data.message);
         }
 
     } catch (error) {
         setLoading(false)
+        notifyError(JSON.stringify(error));
         console.error('There was an error posting the data!', error);
     }
 
   }
 
+
+  useEffect(()=> {
+    if(localStorage.UserInfo !== null || localStorage.UserInfo !== undefined) {
+      localStorage.removeItem('UserInfo');
+    }
+  }, [])
 
 
     return (
@@ -64,7 +75,7 @@ const SigninPage = () => {
         <div className="form-section">
             <div>
               <div className="header">
-                <p>Don't have an account? <a href="#">Sign Up</a></p>
+                <p>Don't have an account? <Link to={'/register'}>Sign Up</Link></p>
               </div>
             <div className="form-container">
               
@@ -94,7 +105,7 @@ const SigninPage = () => {
 
                   </div>
 
-                  <a href="#" className="forgot-password">Forgot password?</a>
+                  <Link to='/forget-password/email' className="forgot-password">Forgot password?</Link>
                   <button className='login-button' disabled={loading}>Sign In</button>
                 </form>
               </div>

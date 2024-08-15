@@ -32,6 +32,8 @@ import NotificationPage from './Pages/NotificationPage';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import UserProfilePage from './Pages/userProfilePage';
+import Navigations from './Components/Navigations/navigations';
+import ProtectedRoute from './Components/Protected';
 import AdminDashBoard from './Pages/adminDashboardPage';
 import Table from './Components/admin-componenets/table';
 import AdminOrders from './Pages/adminOrdersPage';
@@ -47,17 +49,23 @@ function App() {
         {/* authentication */}
         <Route path="/login" element={ <SigninPage/> } />
         <Route path="/register" element={ <SignupPage/> } />
+        <Route path='/forget-password/email' element={<ForgetPassOne/>}/>
+        <Route path='/forget-password/sent' element={<ForgetPassTwo/>}/>
+        <Route path='/forget-password' element={<ForgetPassThre/>}/>
 
         {/* single pages */}
-        <Route path="/" element={ <HomePage/> } />
-        <Route path='/orders' element={<Orders/>}/>
-        <Route path='/create-event' element={<CreateEventPage/>}/>
-        <Route path='/events'  element={<FeaturedEvents/>}/>
-        <Route path='/notifications'  element={<NotificationPage/>}/>
-        <Route path='/user-profile'  element={<UserProfilePage/>}/>
-        <Route path='/eventInfoUsers' element={<EventInfoUser/>}/>
-        <Route path='/forget-password' element={<ForgetPassOne/>}/>
-        <Route path='/forget-password/reset' element={<ForgetPassTwo/>}/>
+        <Route path="/" element={<ProtectedRoute element={<HomePage/>} />} />
+        <Route path='/orders' element={<ProtectedRoute element={<Orders />} />} />
+        <Route path='/create-event' element={<ProtectedRoute element={<CreateEventPage />} />} />
+        <Route path='/events' element={<ProtectedRoute element={
+          <>
+            <Navigations />
+            <FeaturedEvents />
+          </>
+        } />} />
+        <Route path='/notifications' element={<ProtectedRoute element={<NotificationPage />} />} />
+        <Route path='/user-profile' element={<ProtectedRoute element={<UserProfilePage />} />} />
+        <Route path='/eventInfoUsers/:id' element={<ProtectedRoute element={<EventInfoUser/>}/>}/>
         
         {/* admin pages */}
         <Route path='/admin/admin-dashboard' element={<AdminDashBoard/>}/>
@@ -66,10 +74,10 @@ function App() {
         {/* <Route path='/admin/users/user' element={<NewTable/>}/> */}
         {/* <Route path='/admin/orders' element={<AdminOrders/>}/> */}
       
-
+        
         {/* cart pages */}
-        <Route path='/Cart'  element={<CartPageOne/>}/>
-        <Route path='/Carttwo'  element={<CartPageTwo/>}/>
+        <Route path='/Cart' element={<ProtectedRoute element={<CartPageOne />} />} />
+        <Route path='/Cart/checkout' element={<ProtectedRoute element={<CartPageTwo />} />} />
 
         {/* help pages */}
         <Route path='/help' element={ <HelpPage/>}/>
@@ -77,10 +85,10 @@ function App() {
         <Route path='/contact-us' element={ <ContactUs/>}/>
          
          {/* more pages */}
-        <Route path='/more/applauders' element={<Applauders/>}/>
-        <Route path='/more/seat-warmers' element={<SeatWarmers/>}/>
-        <Route path='/more/volunteers' element={<Volunteers/>}/>
-        <Route path='/more/extras' element={<Extras/>}/>
+        <Route path='/applauders' element={<Applauders/>}/>
+        <Route path='/seat-warmers' element={<SeatWarmers/>}/>
+        <Route path='/volunteers' element={<Volunteers/>}/>
+        <Route path='/extras' element={<Extras/>}/>
 
       </Routes>
 
