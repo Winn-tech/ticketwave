@@ -56,7 +56,7 @@ const AdminDashBoard = () => {
                     </div>
 
                     <div className='grid-item'>
-                         <div className='icon-container'><FaRegCalendarAlt/></div>
+                         <div className='icon-container'><GrTicket/></div>
                          <div>
                             <p>total events accepted</p>
                             <h2>25</h2>
@@ -64,7 +64,7 @@ const AdminDashBoard = () => {
                     </div>
                      
                     <div className='grid-item'>
-                         <div className='icon-container'><FaRegCalendarAlt/></div>
+                         <div className='icon-container'><FaMoneyBills/></div>
                          <div>
                             <p>total revenue</p>
                             <h2>₦10,000,000</h2>

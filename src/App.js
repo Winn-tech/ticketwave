@@ -34,6 +34,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import UserProfilePage from './Pages/userProfilePage';
 import AdminDashBoard from './Pages/adminDashboardPage';
 import Table from './Components/admin-componenets/table';
+import AdminOrders from './Pages/adminOrdersPage';
+import NewTable from './Components/admin-componenets/newTable';
+import Users from './Pages/adminUsersPage';
 
 
 function App() {
@@ -58,7 +61,10 @@ function App() {
         
         {/* admin pages */}
         <Route path='/admin/admin-dashboard' element={<AdminDashBoard/>}/>
-        <Route path='/admin/orders-table' element={<Table/>}/>
+        <Route path='/admin/orders-table' element={<NewTable/>}/>
+        <Route path='/admin/users' element={<Users/>}/>
+        {/* <Route path='/admin/users/user' element={<NewTable/>}/> */}
+        {/* <Route path='/admin/orders' element={<AdminOrders/>}/> */}
       
 
         {/* cart pages */}
@@ -71,10 +77,10 @@ function App() {
         <Route path='/contact-us' element={ <ContactUs/>}/>
          
          {/* more pages */}
-        <Route path='/applauders' element={<Applauders/>}/>
-        <Route path='/seat-warmers' element={<SeatWarmers/>}/>
-        <Route path='/volunteers' element={<Volunteers/>}/>
-        <Route path='/extras' element={<Extras/>}/>
+        <Route path='/more/applauders' element={<Applauders/>}/>
+        <Route path='/more/seat-warmers' element={<SeatWarmers/>}/>
+        <Route path='/more/volunteers' element={<Volunteers/>}/>
+        <Route path='/more/extras' element={<Extras/>}/>
 
       </Routes>
 

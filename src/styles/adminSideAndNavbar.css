@@ -23,7 +23,7 @@
 }
 
 .admin-navbar .logo{
-  color: #66BB6A;
+  color: var(--primaryColor);
   font-family: "Frank Ruhl Libre";
   font-size: 40px;
   font-style: normal;
@@ -67,24 +67,26 @@
   transition: color 0.3s;
   padding: 10px 15px;
 }
-.nav-item:hover{
-  color: var(--primaryColor);
+.nav-item:hover, .active{
+  color: var(--primaryColor) ;
   border-left: 10px solid var(--primaryColor);
   background: #a7c8a9;
 }
-  
-  
-  
-  .logout-button {
-    background-color: transparent;
-    border: none;
-    color: #EB5757;
-    font-family: Inter;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 24px; 
-    text-align: left;
-    padding-left: 15px;
-    margin-bottom: 100px;
-  }
+.active span{
+  color: var(--primaryColor);
+}
+ 
+.logout-button {
+  background-color: transparent;
+  border: none;
+  color: #EB5757;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; 
+  text-align: left;
+  padding-left: 15px;
+  margin-bottom: 100px;
+}
+

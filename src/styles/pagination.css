@@ -1,0 +1,21 @@
+
+
+:root{
+    --primaryColor: #66BB6A;
+}
+.pagination ul {
+    display: flex;
+  }
+  .pagination  li{
+    padding: 5px;
+    border: 1px solid blue;
+    cursor: pointer;
+  }
+  .pagination  .current{
+    background-color: var(--primaryColor);
+    color: white;
+  }
+  .pagination .disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
