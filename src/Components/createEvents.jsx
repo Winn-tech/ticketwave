@@ -74,23 +74,6 @@ const CreateEvents = () => {
     const createEvent = async(e)=> {
         e.preventDefault();
 
-        // {
-        //     : "gabriel's birthday",
-        //     "venue_details": "lagos",
-        //     "event_description": "fun",
-        //     "organizer_details": "gabriel",
-        //     "event_start":"2021-03-04",
-        //     "event_end":"2021-03-04",
-        //     "event_category": "party",
-        //     "event_tag": [
-        //         {"name": "parrrii"}
-        //     ],
-        //     "event_cost": [
-        //         {"level": "basic", "cost": 10,},
-        //         {"level": "premium", "cost": 20}
-        //     ]
-        // }
-
         let tags = [
             {
                 "name": e.target[3].value

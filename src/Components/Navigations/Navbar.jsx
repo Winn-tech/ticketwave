@@ -4,7 +4,7 @@ import cart from '../../assets/cart.svg';
 import { GiHamburgerMenu } from "react-icons/gi";
 import '../../styles/navbar.css'
 import { useGlobalContext } from '.././context';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 const Navbar = () => {
   const {openSidebar, isSubMenuOpen, openSubMenu, closeSubMenu} = useGlobalContext()
    const handleAction =(e)=>{
@@ -15,6 +15,8 @@ const Navbar = () => {
     const bottom = position.bottom - 3
     openSubMenu(page, {center, bottom} )
    }
+   const userInfo = JSON.parse(localStorage.UserInfo);
+
    
 
    const preventClick = (event) => {
@@ -32,29 +34,29 @@ const Navbar = () => {
             <div className="navbar-left">
                 <div className="logo">LOGO</div>
                 <div className="greeting">
-                <span role="img" aria-label="wave">👋</span> Hi Godwin
+                <span role="img" aria-label="wave">👋</span> Hi {userInfo.user.fullname}
                 </div>
             </div>
             <div className="navbar-center">
                 <ul>
-                    <li >
-                      <Link to={"/"}>Home</Link>
+                    <li>
+                      <NavLink to={"/"}>Home</NavLink>
                     </li>
                     <li>
-                      <Link to={"/events"}>Events</Link>
+                      <NavLink to={"/events"}>Events</NavLink>
                     </li>
                     <li >
-                      <Link to={"/create-event"}>Create Event</Link> 
+                      <NavLink to={"/create-event"}>Create Event</NavLink> 
                     </li>
                    
                     <li >
-                      <Link to={"/orders"}>Orders</Link>
+                      <NavLink to={"/orders"}>Orders</NavLink>
                     </li>
                     <li onMouseOver={handleAction}>
-                      <Link to={"/help"} className='hov-btn' onClick={preventClick}>Help</Link>
+                      <NavLink to={"/help"} className='hov-btn' onClick={preventClick}>Help</NavLink>
                     </li>
                     <li onMouseOver={handleAction}>
-                      <Link to={"/#more"} className='hov-btn' onClick={preventClick}>More</Link>
+                      <NavLink to={"/more"} className='hov-btn' onClick={preventClick}>More</NavLink>
                     </li>
                 </ul>
             </div>
@@ -69,7 +71,7 @@ const Navbar = () => {
                 <Link to={"/user-profile"}> 
                   <div className="profile">
                   <img src="https://placehold.co/30x30" alt="User Profile" className="profile-pic" />
-                  <span>Godwin</span>
+                  <span>{userInfo.user.fullname}</span>
                   </div>
                 </Link>
                 <div  onClick={openSidebar} className='menubar-container'> 

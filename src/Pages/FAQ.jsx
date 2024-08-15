@@ -1,6 +1,7 @@
 import React from 'react';
 import Footer from '../Components/footer';
 import Navigations from '../Components/Navigations/navigations';
+import '../styles/help.css'
 const FAQ = () => {
     return ( 
         <>

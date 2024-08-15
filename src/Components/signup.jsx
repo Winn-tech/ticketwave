@@ -57,7 +57,7 @@ const SignupPage = () => {
             notifySuccess(result.data.message)
             navigate('/login');
           }else {
-            notifyError(JSON.stringify(result.data.errors));
+            notifyError(result.data.errors ? JSON.stringify(result.data.errors) : result.data.message);
           }
   
       } catch (error) {
@@ -123,10 +123,9 @@ const SignupPage = () => {
                     <input required value={confirm} onChange={(e)=> setconfirm(e.target.value)} type={confirm_show? "text" : "password"} placeholder="Confirm Password" />
                     <span className="icon" onClick={() => setConfirmShow(!confirm_show)}>
                       {confirm_show ? <IoEyeOutline /> : <IoEyeOffOutline />}
-                    </span>
-
-                    
+                    </span>    
                   </div>
+
                     <a href="#" className="forgot-password">Forgot password?</a>
                     <button className="login-button" disabled={loading}>Sign Up</button>
                     <div className='terms'>

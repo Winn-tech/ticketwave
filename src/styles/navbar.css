@@ -61,6 +61,9 @@
   .navbar-center a:hover {
     opacity: 1;
   }
+  .navbar-center .active {
+    opacity: 1;
+  }
   
   .navbar-right {
     display: flex;
@@ -85,6 +88,7 @@
   .profile {
     display: flex;
     align-items: center;
+    flex-direction: column;
   }
   
   .profile-pic {

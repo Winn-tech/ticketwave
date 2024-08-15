@@ -9,9 +9,8 @@ const Modal = ({ isOpen, onClose, setCosts, costs }) => {
 
     // Add the new cost to the existing list of costs
     setCosts([...costs, newCost]);
-
-
-    console.log(costs);
+    
+    setNewCost({ level: '', cost: '', available: '' })
 
     // Close the modal after saving
     onClose();

@@ -50,7 +50,7 @@ const SigninPage = () => {
           localStorage.setItem('UserInfo', JSON.stringify(result.data))
         }
         else {
-          notifyError(JSON.stringify(result.data.errors));
+          notifyError(result.data.errors ? JSON.stringify(result.data.errors) : result.data.message);
         }
 
     } catch (error) {
@@ -105,7 +105,7 @@ const SigninPage = () => {
 
                   </div>
 
-                  <a href="#" className="forgot-password">Forgot password?</a>
+                  <Link to='/forget-password/email' className="forgot-password">Forgot password?</Link>
                   <button className='login-button' disabled={loading}>Sign In</button>
                 </form>
               </div>

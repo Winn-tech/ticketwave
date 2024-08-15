@@ -12,6 +12,7 @@
   }
   .more{
     padding: 5%;
+    min-height: 90vh;
   }
   .more h2{
     color: #2D2D2D;

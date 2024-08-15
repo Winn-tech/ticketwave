@@ -5,6 +5,7 @@ import {toast} from 'react-toastify';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 
+// import { Link } from 'react-router-dom';
 
 const FeaturedEvents = () => {
   const events = [
@@ -87,7 +88,9 @@ const FeaturedEvents = () => {
               <h3 className="event-title">{event.title}</h3>
               <p className="event-date">{event.date}</p>
               <p className="event-label">{event.label}</p>
-              <button className="more-info-button">More Info</button>
+              <Link to={'/eventInfoUsers'}>
+                  <button className="more-info-button" > More Info </button>
+              </Link>
             </div>
           </div>
         ))} */}
@@ -99,7 +102,10 @@ const FeaturedEvents = () => {
               <h3 className="event-title"style={{margin: '20px 0px'}}>{event.event_title}</h3>
               <p className="event-date" style={{marginBottom: '20px'}}>{event.event_start}</p>
               <p className="event-label" style={{marginBottom: '20px'}}>{event.venue_details}</p>
-              <button className="more-info-button">More Info</button>
+              <Link to={'/eventInfoUsers/'+ event.id}>
+                  <button className="more-info-button" > More Info </button>
+              </Link>
+              {/* <button className="more-info-button">More Info</button> */}
             </div>
           </div>
         ))}

@@ -1,10 +1,71 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Navigations from '../Components/Navigations/navigations';
 import { LuUploadCloud } from "react-icons/lu";
+import { CiEdit } from "react-icons/ci";
 import Footer from '../Components/footer';
 import '../styles/userProfilePage.css'
 import ProfilePic from '../images/profile-pic.jpg'
+import { Link, useNavigate } from 'react-router-dom';
+import { environment } from '../environment';
+import axios from 'axios';
+import {toast} from 'react-toastify';
+
+
+
 const UserProfilePage = () => {
+   const userInfo = JSON.parse(localStorage.UserInfo);
+   const [loading, setLoading] = useState(false);
+   const [info, setInfo] = useState([]);
+   const navigate = useNavigate();
+
+   
+   const notifySuccess = (message) => {
+      toast.success(message);
+   };
+
+   const notifyError = (message) => {
+         toast.error(message);
+   };
+   
+   useEffect(() => {
+      const getUserInfo = async () => {
+        try {
+          setLoading(true);
+          const result = await axios.get(environment.appUrl + 'user-details', {
+            headers: {
+              Authorization: `Bearer ${userInfo.token}`
+            }
+          });
+          setLoading(false);
+          console.log(result.data.user);
+      
+          setInfo(result.data.user)
+        } catch (error) {
+          setLoading(false);
+          notifyError(JSON.stringify(error));
+          setInfo([]);
+        }
+      };
+  
+      getUserInfo();
+    }, [userInfo.token]);
+
+    function formatMoney(amount, currencySymbol = '') {
+      if (amount === undefined || amount === null || isNaN(amount)) {
+         console.error('Invalid amount:', amount);
+         return '';
+     }
+ 
+     const amountStr = typeof amount !== 'string' ? amount.toString() : amount;
+      
+      const [integerPart, decimalPart] = amountStr.split('.');
+      const formattedIntegerPart = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      return decimalPart !== undefined
+          ? `${currencySymbol}${formattedIntegerPart}.${decimalPart}`
+          : `${currencySymbol}${formattedIntegerPart}`;
+   }
+
+
     return ( 
         <>
           <Navigations/>
@@ -26,16 +87,23 @@ const UserProfilePage = () => {
 
                      <div className="group">
                         <p className='label'>Email</p>
-                        <p className='detail'>abdurrazzaqabdulmuhsin7@gmail.com</p>
+                        <p className='detail'>{info.email}</p>
                      </div>
 
                      <div className="group">
-                        <p className='label'>passwor</p>
-                        <p className='detail'>**********</p>
+                        <p className='label'>password</p>
+                        <p className='detail'>
+                           <span>**********</span>
+                           <span><CiEdit className='icon'/></span>
+                        </p>
                      </div>
                </div>
                <div className="withdraw">
-                   <p>₦500,000</p>
+                <div className="svg">
+                  
+            
+                </div>
+                   <p className='price'>{formatMoney(info.account_balance, '₦')}</p>
                    <p>Available balance</p>
                    <button>Withdraw</button>
                </div>

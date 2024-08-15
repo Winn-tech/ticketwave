@@ -1,4 +1,4 @@
-*{
+/* *{
     box-sizing: border-box;
     font-style: chivo;
     padding: 0;
@@ -11,12 +11,12 @@
     --white: #ffff;
   }
 
-  section{
+  .orders{
     padding: 5%;
     min-height: 90vh;
   }
 
-  section h2{
+   .orders h2{
     color: #2D2D2D;
     font-family: Inter;
     font-size: 30px;
@@ -26,20 +26,25 @@
     letter-spacing: 0.9px;
     margin-bottom: 1rem;
   }
-  .orders .single-order{
+
+  .orders-section{
+    display: flex;
+    flex-direction: column;
+    gap: 20px 0;
+  }
+  .orders .orders-section .single-order{
     width: 100%;
-    /* height: 140px; */
-    overflow: hidden;
-    flex-shrink: 0;
     border-radius: 50px;
     border: 1.5px solid var(--primaryColor);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem  1.5rem;
+    height: 170px;
+    
   }
   
-  .orders img{
+  .orders .single-order img{
     width: 190px;
     height: 110px;
     flex-shrink: 0;
@@ -62,16 +67,14 @@
     line-height: 18px;
     border: none;
   }
-  .orders .single-order .desc p{
-    margin-top: 0.5rem;
-  }
+  
   .orders .single-order .event-name{
     color: #000;
     font-family: Inter;
     font-size: 24px;
     font-style: normal;
     font-weight: 600;
-    line-height: 26px; 
+    overflow-y: hidden;
   }
 .orders .single-order .price{
     color: #66BB6A;
@@ -79,7 +82,6 @@
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
-    line-height: 22px; 
     margin-right: 2rem;
 }
 .orders .single-order .location{
@@ -88,15 +90,15 @@
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
-    line-height: 22px; /* 110% */
+    
 }
-.orders .date{
+.orders .order-date{
     color: #000;
     font-family: Inter;
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
-    line-height: 22px; 
+    
 }
 .orders .ticket{
     color: #000;
@@ -104,16 +106,187 @@
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
-    line-height: 22px; 
+} */
+* {
+  box-sizing: border-box;
+  font-style: chivo;
+  padding: 0;
+  margin: 0;
 }
 
-@media (max-width:1000px){
-  .orders .single-order{
-    display: flex;
+:root {
+  --primaryColor: #66BB6A;
+  --ash: #324148B2;
+  --lighterAsh: #B5B4B4;
+  --white: #ffff;
+}
+
+.orders {
+  padding: 5%;
+  min-height: 90vh;
+}
+
+.orders h2 {
+  color: #2D2D2D;
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.9px;
+  margin-bottom: 1rem;
+}
+
+.orders-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0;
+}
+
+.orders .orders-section .single-order {
+  width: 100%;
+  border-radius: 50px;
+  border: 1.5px solid var(--primaryColor);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1.5rem;
+  /* height: 170px; */
+}
+
+.orders .single-order img {
+  width: 190px;
+  height: 110px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  background: lightgray 50% / cover no-repeat;
+}
+
+.orders .single-order button {
+  background-color: var(--primaryColor);
+  color: white;
+  width: 300px;
+  height: 52px;
+  padding: 17px 0px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 5px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  border: none;
+}
+
+.orders .single-order .event-name {
+  color: #000;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  overflow-y: hidden;
+}
+
+.orders .single-order .price {
+  color: #66BB6A;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  margin-right: 2rem;
+}
+
+.orders .single-order .location {
+  color: #000;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.orders .order-date {
+  color: #000;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.orders .ticket {
+  color: #000;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Tablets and smaller desktops */
+@media (max-width: 992px) {
+  .orders .single-order {
     flex-direction: column;
-    justify-content: center;
+    height: auto;
     text-align: center;
-    gap: 20px 0;
-    padding: 0.5rem 0;
+    padding: 1rem;
+  }
+
+  .orders .single-order img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  .orders .single-order button {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  .orders h2 {
+    font-size: 24px;
+  }
+
+  .orders .single-order {
+    padding: 1rem;
+  }
+
+  .orders .single-order .event-name,
+  .orders .single-order .price,
+  .orders .single-order .location,
+  .orders .order-date,
+  .orders .ticket {
+    font-size: 18px;
+  }
+
+  .orders .single-order button {
+    width: 100%;
+    font-size: 14px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .orders h2 {
+    font-size: 20px;
+  }
+
+  .orders .single-order {
+    padding: 0.5rem;
+  }
+
+  .orders .single-order .event-name,
+  .orders .single-order .price,
+  .orders .single-order .location,
+  .orders .order-date,
+  .orders .ticket {
+    font-size: 16px;
+  }
+
+  .orders .single-order button {
+    font-size: 12px;
   }
 }

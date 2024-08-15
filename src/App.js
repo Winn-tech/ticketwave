@@ -34,6 +34,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import UserProfilePage from './Pages/userProfilePage';
 import Navigations from './Components/Navigations/navigations';
 import ProtectedRoute from './Components/Protected';
+import AdminDashBoard from './Pages/adminDashboardPage';
+import Table from './Components/admin-componenets/table';
+
 
 function App() {
   return (
@@ -43,6 +46,9 @@ function App() {
         {/* authentication */}
         <Route path="/login" element={ <SigninPage/> } />
         <Route path="/register" element={ <SignupPage/> } />
+        <Route path='/forget-password/email' element={<ForgetPassOne/>}/>
+        <Route path='/forget-password/sent' element={<ForgetPassTwo/>}/>
+        <Route path='/forget-password' element={<ForgetPassThre/>}/>
 
         {/* single pages */}
         <Route path="/" element={<ProtectedRoute element={<HomePage/>} />} />
@@ -56,10 +62,16 @@ function App() {
         } />} />
         <Route path='/notifications' element={<ProtectedRoute element={<NotificationPage />} />} />
         <Route path='/user-profile' element={<ProtectedRoute element={<UserProfilePage />} />} />
+        <Route path='/eventInfoUsers/:id' element={<ProtectedRoute element={<EventInfoUser/>}/>}/>
+        
+        {/* admin pages */}
+        <Route path='/admin/admin-dashboard' element={<AdminDashBoard/>}/>
+        <Route path='/admin/orders-table' element={<Table/>}/>
+      
         
         {/* cart pages */}
         <Route path='/Cart' element={<ProtectedRoute element={<CartPageOne />} />} />
-        <Route path='/Carttwo' element={<ProtectedRoute element={<CartPageTwo />} />} />
+        <Route path='/Cart/checkout' element={<ProtectedRoute element={<CartPageTwo />} />} />
 
         {/* help pages */}
         <Route path='/help' element={<ProtectedRoute element={<HelpPage />} />} />
