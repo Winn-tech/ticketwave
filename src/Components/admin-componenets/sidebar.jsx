@@ -10,6 +10,10 @@ import { NavLink } from 'react-router-dom';
 const AdminSidebar = () => {
     return ( 
     <div className="admin-sidebar">
+      <div className="logo">
+        Ticketwave
+      </div>
+
       <nav className="sidebar-nav">
         <ul>
           <li>

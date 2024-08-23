@@ -26,18 +26,23 @@ export default NotificationPage;
 const SingleNotification = ()=>{
     return(
         <div className="single-notification">
-                    <div className='desc'>
-                        <h3>
-                            Ticket Purchased
-                        </h3>
-                        <p>Abdurrazzaq Abdulmuhsin has successfully purchase “Kenny Blaq Oxymoron Regular Ticket <span>1</span> for a sum of #10,000</p>
-                    </div>
-                    <div>
-                        <MdCancel className='icon'/>
-                    </div>
-                    <div className="date">
+                    <div className="notification-date">
                           <FaClockRotateLeft/> <span>1:00 PM at August 7, 2024</span>
                     </div>
-                </div>
+                    <div className='desc'>
+                        <div>
+                            <h3>
+                                Ticket Purchased
+                            </h3>
+                            <p>Abdurrazzaq Abdulmuhsin has successfully purchase “Kenny Blaq Oxymoron Regular Ticket <span>1</span> for a sum of #10,000</p>
+                        </div>
+                        
+                        <div>
+                            <MdCancel className='icon'/>
+                        </div>
+                    </div>
+                   
+                    
+     </div>
     )
 }

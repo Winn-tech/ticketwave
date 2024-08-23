@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import '../../styles/pagination.css'
+import '../../styles/tables.css'
 import MOCK_DATA from './MOCK_DATA.json';
 import _ from 'lodash';
+import { GrLinkPrevious } from "react-icons/gr";
+import { GrLinkNext } from "react-icons/gr";
 
 const NewTable = () => {
     
@@ -51,40 +54,8 @@ const NewTable = () => {
 
     return ( 
         <>
-            <h3>There are <span>{count}</span> orders</h3>
-            <div className='pagination'>
-                <ul>
-                    <li 
-                        className={currentPage === 1 ? 'page disabled' : 'page'}
-                        onClick={() => currentPage > 1 && onPageChange(currentPage - 1)}
-                    >
-                        Previous
-                    </li>
-
-                    {pageNumbers.map((page, index) => {
-                        return (
-                            <React.Fragment key={page}>
-                                <li 
-                                    className={page === currentPage ? 'page current' : 'page'}
-                                    onClick={() => onPageChange(page)} 
-                                >
-                                    {page}
-                                </li>
-                                {index < pageNumbers.length - 1 && pageNumbers[index + 1] !== page + 1 && (
-                                    <li className='page' key={`ellipsis-${index}`}>...</li>
-                                )}
-                            </React.Fragment>
-                        );
-                    })}
-
-                    <li 
-                        className={currentPage === pagesCount ? 'page disabled' : 'page'}
-                        onClick={() => currentPage < pagesCount && onPageChange(currentPage + 1)}
-                    >
-                        Next
-                    </li>
-                </ul>
-            </div>
+            {/* <h3>There are <span>{count}</span> orders</h3> */}
+            
             <table>
                 <thead>
                     <tr>
@@ -112,6 +83,42 @@ const NewTable = () => {
                     })}
                 </tbody>
             </table>
+
+            <div className='pagination'>
+                <ul>
+                    <li 
+                        className={currentPage === 1 ? 'page disabled' : 'page'}
+                        onClick={() => currentPage > 1 && onPageChange(currentPage - 1)}
+                    >  
+                        <GrLinkPrevious/>
+                        Previous
+                    </li>
+
+                    {pageNumbers.map((page, index) => {
+                        return (
+                            <React.Fragment key={page}>
+                                <li 
+                                    className={page === currentPage ? 'page current' : 'page'}
+                                    onClick={() => onPageChange(page)} 
+                                >
+                                    {page}
+                                </li>
+                                {index < pageNumbers.length - 1 && pageNumbers[index + 1] !== page + 1 && (
+                                    <li className='page' key={`ellipsis-${index}`}>...</li>
+                                )}
+                            </React.Fragment>
+                        );
+                    })}
+
+                    <li 
+                        className={currentPage === pagesCount ? 'page disabled' : 'page'}
+                        onClick={() => currentPage < pagesCount && onPageChange(currentPage + 1)}
+                    >
+                        Next
+                        <GrLinkNext/>
+                    </li>
+                </ul>
+            </div>
         </>
     );
 };

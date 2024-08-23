@@ -39,6 +39,9 @@ import Table from './Components/admin-componenets/table';
 import AdminOrders from './Pages/adminOrdersPage';
 import NewTable from './Components/admin-componenets/newTable';
 import Users from './Pages/adminUsersPage';
+import AdminSingleUser from './Pages/adminSingleUser';
+import AdminNotifications from './Pages/adminNotifications';
+import AdminRevenue from './Pages/adminRevenue';
 
 
 function App() {
@@ -63,7 +66,8 @@ function App() {
             <FeaturedEvents />
           </>
         } />} />
-        <Route path='/notifications' element={<ProtectedRoute element={<NotificationPage />} />} />
+        {/* <Route path='/notifications' element={<ProtectedRoute element={<NotificationPage />} />} /> */}
+        <Route path='/notifications' element={<NotificationPage />} />
         <Route path='/user-profile' element={<ProtectedRoute element={<UserProfilePage />} />} />
         <Route path='/eventInfoUsers/:id' element={<ProtectedRoute element={<EventInfoUser/>}/>}/>
         
@@ -71,8 +75,12 @@ function App() {
         <Route path='/admin/admin-dashboard' element={<AdminDashBoard/>}/>
         <Route path='/admin/orders-table' element={<NewTable/>}/>
         <Route path='/admin/users' element={<Users/>}/>
-        {/* <Route path='/admin/users/user' element={<NewTable/>}/> */}
-        {/* <Route path='/admin/orders' element={<AdminOrders/>}/> */}
+        <Route path='/admin/orders' element={<AdminOrders/>}/>
+        <Route path='/admin/Revenue' element={<AdminRevenue/>}/>
+        <Route path='/admin/notifications' element={<AdminNotifications/>}/>
+        <Route path='/admin/users/user' element={<AdminSingleUser/>}/>
+        <Route path='/admin/notification' element={<Users/>}/>
+        
       
         
         {/* cart pages */}

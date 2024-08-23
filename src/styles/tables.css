@@ -1,0 +1,27 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primaryColor: #66BB6A;
+}
+table{
+    background-color: white;
+    text-align: center;
+}
+thead{
+    border-radius: 8px 8px 0px 0px;
+    /* opacity: 0.2; */
+    background-color: rgba(26, 225, 152, 0.20);
+    height: 40px;
+}
+th{
+    color: #66BB6A;
+    font-family: inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    text-align: center;
+}

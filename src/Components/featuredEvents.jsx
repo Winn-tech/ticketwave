@@ -8,45 +8,7 @@ import axios from 'axios';
 // import { Link } from 'react-router-dom';
 
 const FeaturedEvents = () => {
-  const events = [
-    {
-      title: "The Oxymoron of Kenyaflag",
-      date: "Date: 12/01/2023",
-      location: "Location: Nairobi",
-      imageUrl: "https://placehold.co/300x200.png?text=Event+Image",
-    },
-    {
-      title: "The Oxymoron of Kenyaflag",
-      date: "Date: 12/01/2023",
-      location: "Location: Nairobi",
-      imageUrl: "https://placehold.co/300x200.png?text=Event+Image",
-    },
-    {
-      title: "The Oxymoron of Kenyaflag",
-      date: "Date: 12/01/2023",
-      location: "Location: Nairobi",
-      imageUrl: "https://placehold.co/300x200.png?text=Event+Image",
-    },
-    {
-      title: "The Oxymoron of Kenyaflag",
-      date: "Date: 12/01/2023",
-      location: "Location: Nairobi",
-      imageUrl: "https://placehold.co/300x200.png?text=Event+Image",
-    },
-    {
-      title: "The Oxymoron of Kenyaflag",
-      date: "Date: 12/01/2023",
-      location: "Location: Nairobi",
-      imageUrl: "https://placehold.co/300x200.png?text=Event+Image",
-    },
-    {
-      title: "The Oxymoron of Kenyaflag",
-      date: "Date: 12/01/2023",
-      location: "Location: Nairobi",
-      imageUrl: "https://placehold.co/300x200.png?text=Event+Image",
-    },
-  ];
-
+ 
   const userInfo = JSON.parse(localStorage.UserInfo);
   const [event, setEvent] = useState([]);
 
@@ -79,7 +41,7 @@ const FeaturedEvents = () => {
     return ( 
     <div className="featured-events">
       <h2 className="featured-events-title">Featured Events</h2>
-      {event.length > 0 && <div className="featured-events-grid">
+      { event && event.length > 0 && <div className="featured-events-grid">
   
         {/* {events.map((event, index) => (
           <div className="event-card" key={index}>
@@ -111,8 +73,8 @@ const FeaturedEvents = () => {
         ))}
 
       </div>}
-      {event.length == 0 && <h1 style={{textAlign: 'center', width: '100%', marginTop: '30px'}}>NO EVENT</h1>}
-      {event.length > 6 && <button className="view-more-button">VIEW MORE</button>}
+      { event && event.length == 0 && <h1 style={{textAlign: 'center', width: '100%', marginTop: '30px'}}>NO EVENT</h1>}
+      {event && event.length > 6 && <button className="view-more-button">VIEW MORE</button>}
     </div>
      );
 }
