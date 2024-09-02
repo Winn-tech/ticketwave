@@ -29,7 +29,7 @@ const NewTable = () => {
     const getPageNumbers = () => {
         let startPage = 1;
         let endPage = pagesCount;
-        const maxPagesToShow = 4;
+        const maxPagesToShow = 6;
 
         if (pagesCount > maxPagesToShow) {
             if (currentPage <= 2) {
@@ -56,7 +56,7 @@ const NewTable = () => {
         <>
             {/* <h3>There are <span>{count}</span> orders</h3> */}
             
-            <table>
+            <table>()
                 <thead>
                     <tr>
                         <th>Order Id</th>
@@ -87,7 +87,7 @@ const NewTable = () => {
             <div className='pagination'>
                 <ul>
                     <li 
-                        className={currentPage === 1 ? 'page disabled' : 'page'}
+                        className={currentPage === 1 ? 'page disabled left' : 'page left'}
                         onClick={() => currentPage > 1 && onPageChange(currentPage - 1)}
                     >  
                         <GrLinkPrevious/>
@@ -111,7 +111,7 @@ const NewTable = () => {
                     })}
 
                     <li 
-                        className={currentPage === pagesCount ? 'page disabled' : 'page'}
+                        className={currentPage === pagesCount ? 'page disabled right' : 'page right'}
                         onClick={() => currentPage < pagesCount && onPageChange(currentPage + 1)}
                     >
                         Next

@@ -26,9 +26,23 @@
 .main-container .sub-container .heading{
     display: flex;
     justify-content: space-between;
-    margin-bottom: 2rem ;
+    margin-bottom: 2.5rem ;
 }
-
+.main-container .sub-container .heading div:first-of-type{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.main-container .sub-container .heading div:first-of-type p{
+    color: #66BB6A;
+    padding: 4px 11px;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    border-radius: 28px;
+    background-color: rgba(208, 223, 253, 0.30);
+}
 .main-container .sub-container .heading h3{
     color: #344054;
     font-family: inter;
@@ -39,7 +53,7 @@
 .main-container .sub-container .second-heading{
     display: flex;
     justify-content: space-between;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
 }
 .sub-container .second-heading aside{
     display: flex;
