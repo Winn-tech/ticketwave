@@ -10,6 +10,8 @@ import { environment } from '../environment';
 import {toast} from 'react-toastify';
 import { useNavigate, Link } from 'react-router-dom';
 import AuthImageSection from './authImageSection';
+import { auth, googleProvider } from "../firebaseConfig";
+import { signInWithPopup } from "firebase/auth";
 
 
 
@@ -46,7 +48,8 @@ const SigninPage = () => {
         if(result.data.success) {
           notifySuccess(result.data.message)
 
-          navigate('/');
+          navigate('/', { replace: true });
+
           localStorage.setItem('UserInfo', JSON.stringify(result.data))
         }
         else {
@@ -61,12 +64,92 @@ const SigninPage = () => {
 
   }
 
+  async function verifyEmail(email, token) {
+    try {
+
+        setLoading(true)
+
+        const result = await axios.post(environment.appUrl + 'verify-email', {
+          email: email,
+          token: token,
+        });
+
+        setLoading(false)
+
+        if(result.data.success) {
+          notifySuccess(result.data.message)
+          console.log(result.data);
+        }
+        else {
+          notifyError(result.data.errors ? JSON.stringify(result.data.errors) : result.data.message);
+        }
+
+    } catch (error) {
+        setLoading(false)
+        notifyError(JSON.stringify(error));
+    } 
+  }
 
   useEffect(()=> {
     if(localStorage.UserInfo !== null || localStorage.UserInfo !== undefined) {
       localStorage.removeItem('UserInfo');
     }
+
+    const url = window.location.href;
+
+    const parsedUrl = new URL(url);
+
+    const params = new URLSearchParams(parsedUrl.search);
+
+    const email = params.get('email');
+    const token = params.get('token');
+
+
+
+    if(email !== null) {
+      verifyEmail(email, token)
+    }
+
   }, [])
+
+  
+  const googleSignIn = async()=> {
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      const user = result.user;
+
+        try {
+
+          setLoading(true)
+  
+          const result = await axios.post(environment.appUrl + 'login', {
+            email: user?.email,
+            password: user?.uid,
+          });
+  
+          setLoading(false)
+  
+          if(result.data.success) {
+            notifySuccess(result.data.message)
+  
+            navigate('/', { replace: true });
+            localStorage.setItem('UserInfo', JSON.stringify(result.data))
+          }
+          else {
+            notifyError(result.data.errors ? JSON.stringify(result.data.errors) : result.data.message);
+          }
+  
+      } catch (error) {
+          setLoading(false)
+          notifyError(JSON.stringify(error));
+          console.error('There was an error posting the data!', error);
+      }
+    } catch (error) {
+      console.error("Error signing in with Google: ", error);
+      notifyError(JSON.stringify(error));
+    }
+
+  }
 
 
     return (
@@ -82,7 +165,7 @@ const SigninPage = () => {
               <div className='desc' >
                 <h2>Welcome Back</h2>
                 <p>Get Tickets to the Hottest Events in Town<span role="img" aria-label="party">🎉</span></p>
-                <div className="google">
+                <div className="google" onClick={googleSignIn}>
                          <FcGoogle className='google-icon'/> Continue with Google
                 </div>
                 <div className="divider">

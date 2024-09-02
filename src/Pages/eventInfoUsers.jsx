@@ -16,7 +16,7 @@ import { Link, useNavigate } from "react-router-dom";
 const EventInfoUser = () => {
   const [ticketCounts, setTicketCounts] = useState({});
   const [eventInfo, setEventInfo] = useState({});
-  const userInfo = JSON.parse(localStorage.UserInfo);
+  const userInfo = localStorage.UserInfo !== undefined && JSON.parse(localStorage.UserInfo);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const [addCart, setAddCart] = useState(false);
@@ -44,7 +44,7 @@ const EventInfoUser = () => {
       try {
         const result = await axios.get(environment.appUrl + 'events/' + Eventid, {
           headers: {
-            Authorization: `Bearer ${userInfo.token}`
+            // Authorization: `Bearer ${userInfo.token}`
           }
         });
         setEventInfo(result.data.event);
@@ -113,8 +113,10 @@ const EventInfoUser = () => {
         event_id: eventId,
         quantity: ticketCounts[ticket.level],
         ticket_cost: ticket.cost,
-        ticket_type: ticket.level
+        ticket_type: ticket.level,
+        available: ticket.available
     }));
+
 
     try {
         setLoading(true);
@@ -205,7 +207,7 @@ const EventInfoUser = () => {
               </div>
             ))}
           </div>
-          <button onClick={()=> {addCart && AddtoCart()}} disabled={loading} >Buy Tickets</button>
+          <button onClick={()=> {addCart && localStorage.UserInfo !== undefined && AddtoCart(); localStorage.UserInfo == undefined && addCart && navigate('/login')}} disabled={loading} >Buy Tickets</button>
         </div>
       </div>
       <Footer />

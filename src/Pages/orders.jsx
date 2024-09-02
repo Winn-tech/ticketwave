@@ -30,11 +30,24 @@ const Orders = () => {
         const getRegistrations = async () => {
           try {
             setLoading(true);
+            // const result = await axios.get(environment.appUrl + 'my-registrations', {
+            //   headers: {
+            //     Authorization: `Bearer ${userInfo.token}`,
+            //     "Content-Type": 'application/json',
+            //     "accept": 'application/json',
+            //     access-control-origin: *
+            //   }
+            // });
             const result = await axios.get(environment.appUrl + 'my-registrations', {
-              headers: {
-                Authorization: `Bearer ${userInfo.token}`
-              }
-            });
+                headers: {
+                  Authorization: `Bearer ${userInfo.token}`,
+                  ContentType: 'application/json',
+                  Accept: 'application/json',
+                }
+              });
+              
+
+            
             setLoading(false);
 
             console.log(result.data.registration);

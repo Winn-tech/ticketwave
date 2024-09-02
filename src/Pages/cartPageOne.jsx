@@ -24,15 +24,17 @@ const CartPageOne = () => {
     //     setQuantity(prev => Math.max(1, prev + change));
     // };
 
-    const handleQuantityChange = (index, change) => {
+    const handleQuantityChange = (index, change, max) => {
         setCart(prevCarts => {
             const updatedCarts = [...prevCarts];
             const newQuantity = updatedCarts[index].quantity + change;
+
     
             // Ensure the quantity does not go below 1
             if (newQuantity > 0) {
-                updatedCarts[index].quantity = newQuantity;
+                updatedCarts[index].quantity = (max > updatedCarts[index].quantity && change == 1) ? newQuantity : (change == -1)?newQuantity :updatedCarts[index].quantity;
             }
+
     
             return updatedCarts;
         });
@@ -192,11 +194,11 @@ const CartPageOne = () => {
                                 <td>{cart.event.venue_details}</td>
                                 <td>
                                     <div className="button-group">
-                                        <span onClick={() => handleQuantityChange(index, -1)}>
+                                        <span onClick={() => handleQuantityChange(index, -1, cart.available)}>
                                         -
                                         </span>
                                         {cart.quantity}  
-                                    <span onClick={() => handleQuantityChange(index, 1)}>
+                                    <span onClick={() => handleQuantityChange(index, 1, cart.available)}>
                                     +
                                     </span>
                                     </div>  

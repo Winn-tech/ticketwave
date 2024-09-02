@@ -11,6 +11,8 @@ import { useNavigate, Link } from 'react-router-dom';
 import {toast} from 'react-toastify';
 import axios from 'axios';
 import { environment } from '../environment';
+import { auth, googleProvider } from "../firebaseConfig";
+import { signInWithPopup } from "firebase/auth";
 
 
 
@@ -20,6 +22,7 @@ const SignupPage = () => {
      const [email, setEmail] = useState('');
      const [password, setPassword] = useState('');
      const [name, setname] = useState('');
+     const [lastN, setLastN] = useState('');
      const [confirm, setconfirm] = useState('');
      const navigate = useNavigate();
      const [loading, setLoading] = useState(false);
@@ -47,7 +50,8 @@ const SignupPage = () => {
           const result = await axios.post(environment.appUrl + 'register', {
             email: email,
             password: password,
-            fullname: name,
+            first_name: name,
+            last_name: lastN,
             password_confirmation: confirm
           });
   
@@ -67,6 +71,48 @@ const SignupPage = () => {
           console.error('There was an error posting the data!', error);
       }
   
+    }
+
+
+    const googleSignUp = async()=> {
+      try {
+        const result = await signInWithPopup(auth, googleProvider);
+        const user = result.user;
+        const firstName = user?.displayName.slice(0, user?.displayName.indexOf(' '));
+        const lastName = user?.displayName.slice(user?.displayName.indexOf(' ')+1, user?.displayName.length)
+
+        
+          try {
+              setLoading(true)
+
+              const result = await axios.post(environment.appUrl + 'register', {
+                email: user?.email,
+                password: user?.uid,
+                first_name: firstName,
+                last_name: lastName,
+                password_confirmation: user?.uid
+              });
+      
+              setLoading(false)
+      
+              if(result.data.success) {
+                notifySuccess(result.data.message)
+                navigate('/login');
+              }else {
+                notifyError(result.data.errors ? JSON.stringify(result.data.errors) : result.data.message);
+              }
+      
+          } catch (error) {
+              setLoading(false)
+              
+            notifyError(JSON.stringify(error));
+              console.error('There was an error posting the data!', error);
+          }
+      } catch (error) {
+        console.error("Error signing in with Google: ", error);
+        notifyError(JSON.stringify(error));
+      }
+
     }
 
 
@@ -90,7 +136,7 @@ const SignupPage = () => {
                 <div className='desc'>
                     <h2>Create your account</h2>
                     <p>Discover and Book the Best Events Near You. <span role="img" aria-label="party">🎉</span></p>
-                     <div className="google">
+                     <div className="google" onClick={googleSignUp}>
                          <FcGoogle className='google-icon'/> Continue with Google
                      </div>
                    
@@ -102,9 +148,13 @@ const SignupPage = () => {
                     <form onSubmit={handleRegister}>
                     
                     <div className="input-group">
-                    <FaRegUser className='input-icon'/>
-                    <input type="text" value={name} onChange={(e)=> setname(e.target.value)} required placeholder="Full name" />
-                  </div>
+                      <FaRegUser className='input-icon'/>
+                      <input type="text" value={name} onChange={(e)=> setname(e.target.value)} required placeholder="First name" />
+                    </div>
+                    <div className="input-group">
+                      <FaRegUser className='input-icon'/>
+                      <input type="text" value={lastN} onChange={(e)=> setLastN(e.target.value)} required placeholder="last name" />
+                    </div>
                     <div className="input-group">
                     <AiOutlineMail className='input-icon'/>
                     <input type="email" value={email} onChange={(e)=> setEmail(e.target.value)} required placeholder="Email" />

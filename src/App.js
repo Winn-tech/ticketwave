@@ -51,18 +51,19 @@ function App() {
         <Route path='/forget-password' element={<ForgetPassThre/>}/>
 
         {/* single pages */}
-        <Route path="/" element={<ProtectedRoute element={<HomePage/>} />} />
+        {/* <Route path="/" element={<ProtectedRoute element={<HomePage/>} />} /> */}
+        <Route path="/" element={<HomePage/>} />
         <Route path='/orders' element={<ProtectedRoute element={<Orders />} />} />
         <Route path='/create-event' element={<ProtectedRoute element={<CreateEventPage />} />} />
-        <Route path='/events' element={<ProtectedRoute element={
-          <>
-            <Navigations />
-            <FeaturedEvents />
-          </>
-        } />} />
+        <Route path='/events' element={
+            <>
+              <Navigations />
+              <FeaturedEvents />
+            </>
+          } />
         <Route path='/notifications' element={<ProtectedRoute element={<NotificationPage />} />} />
         <Route path='/user-profile' element={<ProtectedRoute element={<UserProfilePage />} />} />
-        <Route path='/eventInfoUsers/:id' element={<ProtectedRoute element={<EventInfoUser/>}/>}/>
+        <Route path='/eventInfoUsers/:id' element={<EventInfoUser/>}/>
         
         {/* admin pages */}
         <Route path='/admin/admin-dashboard' element={<AdminDashBoard/>}/>

@@ -72,21 +72,25 @@ const CartPageTwo = () => {
       }, [userInfo.token]);
 
 
-    const handleQuantityChange = (index, change) => {
+
+    const handleQuantityChange = (index, change, max) => {
         setCart(prevCarts => {
             const updatedCarts = [...prevCarts];
             const newQuantity = updatedCarts[index].quantity + change;
+
     
             // Ensure the quantity does not go below 1
             if (newQuantity > 0) {
-                updatedCarts[index].quantity = newQuantity;
+                updatedCarts[index].quantity = (max > updatedCarts[index].quantity && change == 1) ? newQuantity : (change == -1)?newQuantity :updatedCarts[index].quantity;
             }
+
     
             return updatedCarts;
         });
 
         setUpdate(true);
     };
+
 
       
     const removeItem = async(id)=> {
@@ -172,9 +176,9 @@ const CartPageTwo = () => {
                                     <div className="cart-item-quantity">
                                         <MdOutlineDeleteOutline onClick={()=> removeItem(cart.id)} className='icon'/>
                                         <div>
-                                            <button onClick={() => handleQuantityChange(index, -1)}>-</button>
+                                            <button onClick={() => handleQuantityChange(index, -1, cart.available)}>-</button>
                                             <span>{cart.quantity}</span>
-                                            <button onClick={() => handleQuantityChange(index, 1)}>+</button>
+                                            <button onClick={() => handleQuantityChange(index, 1, cart.available)}>+</button>
                                         </div>
                                     </div>
                                 </div>

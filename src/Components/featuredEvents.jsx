@@ -47,17 +47,17 @@ const FeaturedEvents = () => {
     },
   ];
 
-  const userInfo = JSON.parse(localStorage.UserInfo);
+  // const userInfo = JSON.parse(localStorage.UserInfo);
   const [event, setEvent] = useState([]);
 
 
   useEffect(()=> {
     const getEvents= async()=>{
-      console.log(userInfo.token)
+      // console.log(userInfo.token)
       try {
         const result = await axios.get(environment.appUrl + 'events', {
           headers: {
-              Authorization: `Bearer ${userInfo.token}`
+              // Authorization: `Bearer ${userInfo.token}`
           }
         });
         console.log(result.data.event);

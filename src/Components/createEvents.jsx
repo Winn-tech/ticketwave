@@ -16,6 +16,7 @@ const CreateEvents = () => {
     const [categories, setCategories] = useState([]);
     const [isModalOpen, setModalOpen] = useState(false);
     const [costs, setCosts] = useState([]);
+    const [eventId, setEventId] = useState(0);
 
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
@@ -111,7 +112,8 @@ const CreateEvents = () => {
             console.log(result.data);
 
             if(result.data.success) {
-                console.log(result.data)
+                console.log(result.data.event)
+                setEventId(result.data.event.id)
                 notifySuccess(result.data.message)
 
             }else {
@@ -135,7 +137,7 @@ const CreateEvents = () => {
         <div className="create-event-container">
             <div className="header">
                 <div className='first'>Create Event</div>
-                <div className='second'>
+                <div className='second' style={{cursor: 'pointer'}} onClick={()=> {eventId > 0 && navigate(`/eventInfoUsers/${eventId}`)}}>
                     View Submited form
                 </div>
             </div>
