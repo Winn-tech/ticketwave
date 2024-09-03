@@ -98,11 +98,34 @@ body {
   flex-shrink: 0;
   fill: #F04450;
 }
+/* modal notifcation */
+.notification-modal{
+  display: flex;
+  background-color: #fff;
+  width: 547px;
+  padding: 20px 36px 52px 36px;
+  flex-direction: column;
+  align-items: center;
+  gap: 62px;
+  border-radius: 18px;
+  position: absolute;
+  top: 20%;
+}
+.notification-modal p{
+  color: #000;
+  text-align: center;
+  font-family: inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 27px; 
+}
 
 @media (min-width: 768px) {
   .single-notification .desc {
     flex-direction: row;
-    align-items: center;
+    align-items: ce
+    nter;
   }
 
   .single-notification .desc p {

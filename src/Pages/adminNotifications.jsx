@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AdminNavbar from '../Components/admin-componenets/AdminNavbar';
 import AdminSidebar from '../Components/admin-componenets/sidebar';
 import { MdCancel } from "react-icons/md";
 import { FaClockRotateLeft } from "react-icons/fa6";
 import '../styles/adminNotification.css'
+import NotificationModal from '../Components/admin-componenets/notificationModal';
 const AdminNotifications = () => {
+    const [isNotiModalOpen, setNotiModalOpen] = useState(true)
     return (  
         <>
         <AdminNavbar/>
@@ -14,6 +16,16 @@ const AdminNotifications = () => {
                 <div className="admin-notifications">
                     <WithdrawalAlert/>
                     <WithdrawSucess/>
+                    {isNotiModalOpen&& <NotificationModal/>}
+                    {
+        
+        (isOptionsOpen || isSortOpen)&&(
+          <div className="overlay" 
+          onClick={closeOverlay }>
+
+          </div>
+        )
+      }
                 </div>
             </div>  
         </div> 
