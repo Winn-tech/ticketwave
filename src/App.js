@@ -36,6 +36,12 @@ import Navigations from './Components/Navigations/navigations';
 import ProtectedRoute from './Components/Protected';
 import AdminDashBoard from './Pages/adminDashboardPage';
 import Table from './Components/admin-componenets/table';
+import AdminOrders from './Pages/adminOrdersPage';
+import NewTable from './Components/admin-componenets/newTable';
+import Users from './Pages/adminUsersPage';
+import AdminSingleUser from './Pages/adminSingleUser';
+import AdminNotifications from './Pages/adminNotifications';
+import AdminRevenue from './Pages/adminRevenue';
 
 
 function App() {
@@ -67,7 +73,14 @@ function App() {
         
         {/* admin pages */}
         <Route path='/admin/admin-dashboard' element={<AdminDashBoard/>}/>
-        <Route path='/admin/orders-table' element={<Table/>}/>
+        <Route path='/admin/orders-table' element={<NewTable/>}/>
+        <Route path='/admin/users' element={<Users/>}/>
+        <Route path='/admin/orders' element={<AdminOrders/>}/>
+        <Route path='/admin/Revenue' element={<AdminRevenue/>}/>
+        <Route path='/admin/notifications' element={<AdminNotifications/>}/>
+        <Route path='/admin/users/user' element={<AdminSingleUser/>}/>
+        <Route path='/admin/notification' element={<Users/>}/>
+        
       
         
         {/* cart pages */}
@@ -75,15 +88,15 @@ function App() {
         <Route path='/Cart/checkout' element={<ProtectedRoute element={<CartPageTwo />} />} />
 
         {/* help pages */}
-        <Route path='/help' element={<ProtectedRoute element={<HelpPage />} />} />
-        <Route path='/FAQ' element={<ProtectedRoute element={<FAQ />} />} />
-        <Route path='/contact-us' element={<ProtectedRoute element={<ContactUs />} />} />
-
-        {/* more pages */}
-        <Route path='/applauders' element={<ProtectedRoute element={<Applauders />} />} />
-        <Route path='/seat-warmers' element={<ProtectedRoute element={<SeatWarmers />} />} />
-        <Route path='/volunteers' element={<ProtectedRoute element={<Volunteers />} />} />
-        <Route path='/extras' element={<ProtectedRoute element={<Extras />} />} />
+        <Route path='/help' element={ <HelpPage/>}/>
+        <Route path='/FAQ' element={ <FAQ/>}/>
+        <Route path='/contact-us' element={ <ContactUs/>}/>
+         
+         {/* more pages */}
+        <Route path='/applauders' element={<Applauders/>}/>
+        <Route path='/seat-warmers' element={<SeatWarmers/>}/>
+        <Route path='/volunteers' element={<Volunteers/>}/>
+        <Route path='/extras' element={<Extras/>}/>
 
       </Routes>
 

@@ -134,6 +134,7 @@ const SingleNotification = ({notification, userInfo, notifySuccess, idx, notifyE
     }
 
     return(
+<<<<<<< HEAD
         <div className="single-notification" key={idx}>
                     <div className='desc'>
                         <h3>
@@ -147,7 +148,26 @@ const SingleNotification = ({notification, userInfo, notifySuccess, idx, notifyE
                     </div>
                     <div className="date">
                           <FaClockRotateLeft/> <span>{formatDate(notification.created_at)}</span>
+=======
+        <div className="single-notification">
+                    <div className="notification-date">
+                          <FaClockRotateLeft/> <span>1:00 PM at August 7, 2024</span>
+>>>>>>> 49697a5c87e9f3c3586b6c0782cd862a73126496
                     </div>
-                </div>
+                    <div className='desc'>
+                        <div>
+                            <h3>
+                                Ticket Purchased
+                            </h3>
+                            <p>Abdurrazzaq Abdulmuhsin has successfully purchase “Kenny Blaq Oxymoron Regular Ticket <span>1</span> for a sum of #10,000</p>
+                        </div>
+                        
+                        <div>
+                            <MdCancel className='icon'/>
+                        </div>
+                    </div>
+                   
+                    
+     </div>
     )
 }

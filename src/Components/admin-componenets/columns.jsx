@@ -1,26 +1,26 @@
 export const Columns = [
     {
         Header : 'id',
-        accesor : 'id'
+        accessor : 'id'
     },
     {
         Header : 'first name',
-        accesor : 'first_name'
+        accessor : 'first_name'
     }, 
     {
         Header : 'email',
-        accesor : 'email'
+        accessor : 'email'
     }, 
     {
         Header : 'ticket fee',
-        accesor : "ticket fee"
+        accessor : "ticket_fee"
     }, 
     {
         Header : 'event category',
-        accesor : 'event category'
+        accessor : 'event_category'
     },
     {
         Header : 'payment option',
-        accesor : 'payment option'
+        accessor : 'payment_option'
     },
 ] 

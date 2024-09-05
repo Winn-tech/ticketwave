@@ -10,8 +10,12 @@ import { environment } from '../environment';
 import {toast} from 'react-toastify';
 import { useNavigate, Link } from 'react-router-dom';
 import AuthImageSection from './authImageSection';
+<<<<<<< HEAD
 import { auth, googleProvider } from "../firebaseConfig";
 import { signInWithPopup } from "firebase/auth";
+=======
+import {Bars} from 'react-loader-spinner'
+>>>>>>> 49697a5c87e9f3c3586b6c0782cd862a73126496
 
 
 
@@ -189,7 +193,7 @@ const SigninPage = () => {
                   </div>
 
                   <Link to='/forget-password/email' className="forgot-password">Forgot password?</Link>
-                  <button className='login-button' disabled={loading}>Sign In</button>
+                  <button className='login-button' disabled={loading}>{loading ? <Bars color="white" height="16" /> : "Submit" }</button>
                 </form>
               </div>
           </div>
