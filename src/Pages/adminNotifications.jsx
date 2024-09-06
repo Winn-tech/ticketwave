@@ -19,13 +19,13 @@ const AdminNotifications = () => {
                     {/* {isNotiModalOpen&& <NotificationModal/>}
                     {
         
-        (isOptionsOpen || isSortOpen)&&(
-          <div className="overlay" 
-          onClick={closeOverlay }>
+        // (isOptionsOpen || isSortOpen)&&(
+        //   <div className="overlay" 
+        //   onClick={closeOverlay }>
 
           </div>
         )
-      } */}
+      }
                 </div>
             </div>  
         </div> 

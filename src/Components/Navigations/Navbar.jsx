@@ -15,7 +15,7 @@ const Navbar = () => {
     const bottom = position.bottom - 3
     openSubMenu(page, {center, bottom} )
    }
-   const userInfo = JSON.parse(localStorage.UserInfo);
+   const userInfo = localStorage.UserInfo !== undefined && JSON.parse(localStorage.UserInfo);
 
    
 
@@ -34,7 +34,7 @@ const Navbar = () => {
             <div className="navbar-left">
                 <div className="logo">LOGO</div>
                 <div className="greeting">
-                <span role="img" aria-label="wave">👋</span> Hi {userInfo.user.fullname}
+                <span role="img" aria-label="wave">👋</span> Hi {localStorage.UserInfo !== undefined && userInfo.user.first_name}
                 </div>
             </div>
             <div className="navbar-center">
@@ -71,7 +71,7 @@ const Navbar = () => {
                 <Link to={"/user-profile"}> 
                   <div className="profile">
                   <img src="https://placehold.co/30x30" alt="User Profile" className="profile-pic" />
-                  <span>{userInfo.user.fullname}</span>
+                  <span>{localStorage.UserInfo !== undefined && userInfo.user.first_name}</span>
                   </div>
                 </Link>
                 <div  onClick={openSidebar} className='menubar-container'> 

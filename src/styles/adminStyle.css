@@ -57,7 +57,7 @@
         width: 100vw;
         background-color: #3A3A3A;
         opacity: 0.3;
-        position: fixed;
+        /* position: fixed; */
         top: 0;
         z-index: 2; 
     }
