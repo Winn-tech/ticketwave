@@ -1,10 +1,10 @@
 import React, { useMemo } from 'react';
-import { useTable } from 'react-table';
+import { useSortBy, useTable } from 'react-table';
 import MOCK_DATA from './MOCK_DATA.json';
 import { Columns } from './columns';
 import "../../styles/adminDashboard.css"
 
-const Table = () => {
+const Sortingtable = () => {
     const columns = useMemo(() => Columns, []);
     const data = useMemo(() => MOCK_DATA, []);
 
@@ -17,7 +17,7 @@ const Table = () => {
     } = useTable({
         columns,
         data,
-    });
+    }, useSortBy);
 
     return (
         <table {...getTableProps()}>
@@ -25,11 +25,11 @@ const Table = () => {
                 {headerGroups.map((headerGroup) => (
                     <tr {...headerGroup.getHeaderGroupProps()}>
                         {headerGroup.headers.map((column) => (
-                            <th {...column.getHeaderProps()}>{column.render('Header')}</th>
-                        ))}
+                            <th {...column.getHeaderProps(column.getSortByToggleProps())}>{column.render('Header')}</th>
+                        ))} 
                     </tr>
                 ))}
-            </thead>
+            </thead> 
             <tbody {...getTableBodyProps()}>
                 {rows.map(row => {
                     prepareRow(row);
@@ -46,4 +46,4 @@ const Table = () => {
     );
 };
 
-export default Table;
+export default Sortingtable;

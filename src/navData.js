@@ -38,10 +38,10 @@ const NavLink = [
       {
         page: {label:'More', url:'' },
         subPages: [
-          { label: 'Seat warmers', icon: '', url: '/seat-warmers' },
-          { label: 'Applauders', icon: '', url: '/applauders' },
-          { label: 'Volunteers', icon: '', url: '/volunteers' },
-          { label: 'Extras', icon: '', url: '/extras' },
+          { label: 'Seat warmers', icon: '', url: '/more/seat-warmers' },
+          { label: 'Applauders', icon: '', url: '/more/applauders' },
+          { label: 'Volunteers', icon: '', url: '/more/volunteers' },
+          { label: 'Extras', icon: '', url: '/more/extras' },
         ],
       },
     

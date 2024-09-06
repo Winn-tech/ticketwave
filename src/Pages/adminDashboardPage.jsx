@@ -6,6 +6,7 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 import { FaMoneyBills } from "react-icons/fa6";
 import { GrTicket } from "react-icons/gr";
 import "../styles/adminDashboard.css"
+import BarChart from '../Components/admin-componenets/barchat';
 const AdminDashBoard = () => {
     return ( 
         <> 
@@ -56,7 +57,7 @@ const AdminDashBoard = () => {
                     </div>
 
                     <div className='grid-item'>
-                         <div className='icon-container'><FaRegCalendarAlt/></div>
+                         <div className='icon-container'><GrTicket/></div>
                          <div>
                             <p>total events accepted</p>
                             <h2>25</h2>
@@ -64,10 +65,10 @@ const AdminDashBoard = () => {
                     </div>
                      
                     <div className='grid-item'>
-                         <div className='icon-container'><FaRegCalendarAlt/></div>
+                         <div className='icon-container'><FaMoneyBills/></div>
                          <div>
                             <p>total revenue</p>
-                            <h2>₦10,000,000</h2>
+                            <h2>₦1,000,000</h2>
                          </div>
                     </div> 
 
@@ -75,6 +76,9 @@ const AdminDashBoard = () => {
 
                  <div className="graph-container">
                      <p>Ticket Purchaed Overview</p>
+                     <p>Overview</p>
+
+                     <BarChart className="graph" />
 
                  </div>
               </div>
