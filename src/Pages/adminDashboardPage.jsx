@@ -6,7 +6,7 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 import { FaMoneyBills } from "react-icons/fa6";
 import { GrTicket } from "react-icons/gr";
 import "../styles/adminDashboard.css"
-import BarChart from '../Components/admin-componenets/barchat';
+// import BarChart from '../Components/admin-componenets/barchat';
 const AdminDashBoard = () => {
     return ( 
         <> 
@@ -78,7 +78,7 @@ const AdminDashBoard = () => {
                      <p>Ticket Purchaed Overview</p>
                      <p>Overview</p>
 
-                     <BarChart className="graph" />
+                     {/* <BarChart className="graph" /> */}
 
                  </div>
               </div>
