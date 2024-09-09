@@ -30,9 +30,9 @@ const NavLink = [
         page: {label:'Help', url:'#' },
         subPages: [
           { label: 'How it works', icon: '' , url: '/help' },
-          { label: 'FAQs', icon: '' , url: '/FAQ' },
-          { label: 'Ticket Distribution', icon: '', url: '/' },
-          { label: 'Contact Us', icon: '', url: '/contact-us' },
+          { label: 'FAQs', icon: '' , url: '/help/FAQ' },
+          { label: 'Ticket Distribution', icon: '', url: '/help/' },
+          { label: 'Contact Us', icon: '', url: '/help/contact-us' },
         ],
       },
       {

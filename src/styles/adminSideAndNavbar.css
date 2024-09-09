@@ -149,7 +149,12 @@
   transition: color 0.3s;
   padding: 10px 15px;
 }
-.nav-item:hover, .active{
+.nav-item:hover{
+  color: var(--primaryColor) ;
+  border-left: 10px solid var(--primaryColor);
+  background: #a7c8a9;
+}
+.nav-item .active{
   color: var(--primaryColor) ;
   border-left: 10px solid var(--primaryColor);
   background: #a7c8a9;

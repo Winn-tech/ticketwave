@@ -29,6 +29,7 @@ const HeroSection = () => {
     backgroundImage: `url(${heroImages[heroImageIndex]})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
+    color : 'white',
     transition: 'background-image 1s ease-in-out',
    }
 

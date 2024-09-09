@@ -89,14 +89,14 @@ function App() {
 
         {/* help pages */}
         <Route path='/help' element={ <HelpPage/>}/>
-        <Route path='/FAQ' element={ <FAQ/>}/>
-        <Route path='/contact-us' element={ <ContactUs/>}/>
+        <Route path='/help/FAQ' element={ <FAQ/>}/>
+        <Route path='/help/contact-us' element={ <ContactUs/>}/>
          
          {/* more pages */}
-        <Route path='/applauders' element={<Applauders/>}/>
-        <Route path='/seat-warmers' element={<SeatWarmers/>}/>
-        <Route path='/volunteers' element={<Volunteers/>}/>
-        <Route path='/extras' element={<Extras/>}/>
+        <Route path='/more/applauders' element={<Applauders/>}/>
+        <Route path='/more/seat-warmers' element={<SeatWarmers/>}/>
+        <Route path='/more/volunteers' element={<Volunteers/>}/>
+        <Route path='/more/extras' element={<Extras/>}/>
 
       </Routes>
 

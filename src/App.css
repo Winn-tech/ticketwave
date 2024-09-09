@@ -22,33 +22,34 @@ button{
   position: relative;
   width: 100vw;
   height: 100vh;
-  background: url('https://placehold.co/1920x1080') no-repeat center center/cover;
+  background-image: url('https://placehold.co/1920x1080') no-repeat center center/cover;
 }
 
-.overlay {
+.hero-section .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
+  /* background-color: red; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: white;
+  opacity: 1;
 }
 
-.title {
-  color: #FAFAFA;
+.overlay .title {
+  color: #FAFAFA !important;
   text-align: center;
   width: 50%;
   font-family: Inter;
   font-size: 48px;
   font-style: normal;
   font-weight: 600;
-  /* line-height: 50px; */
+  z-index: 2;
   margin-bottom: 1.5rem;
 }
 
@@ -102,48 +103,51 @@ button{
 
 /* eventGateway */
 .event-gateway {
-background-size: cover;
-background-position: center;
-text-align: center;
-padding: 100px 20px;
-background-color: #06061D;
-}
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  height: 256px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #333;
 
+}
+.event-gateway .overlay{
+  background: rgba(45, 45, 45, 0.70);
+}          
 .event-gateway h3 {
   color: #FFF;
-  font-family: Inter;
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 50px; 
-  letter-spacing: 4px;
+font-family: Inter;
+font-size: 40px;
+font-style: normal;
+font-weight: 700;
+line-height: 50px; /* 125% */
+letter-spacing: 4px;
+margin-bottom: 40px;
 }
 
 .create-events-button {
-  background-color: rgba(255, 255, 255, 0.8);
-  color: #333;
-  border: none;
   font-family: Inter;
-  font-size: 20px;
+  font-size: 25px;
   font-style: normal;
   font-weight: 600;
   line-height: 50px; 
   letter-spacing: 1.25px;
-  padding: 0.5rem 0px;
   color: var(--white);
   background: transparent;
-  width: 18%;
+  padding: 15px 50px;
   border: 1px solid var(--white);
   border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s;
-  height: 80px;
   flex-shrink: 0;
 }
 
 .create-events-button:hover {
 background-color: rgba(255, 255, 255, 1);
-color: inherit;
+color: #333;
 }
 
 
