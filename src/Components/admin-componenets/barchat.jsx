@@ -1,5 +1,6 @@
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
+
 import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, Tooltip, Legend } from 'chart.js';
 
 // Register the required components
@@ -8,7 +9,8 @@ ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 const BarChart = () => {
     const data = {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July',
-            'August', 'septemmber', 'October', 'November',],
+            'August', 'September', 'October', 'November'],
+   
         datasets: [
             {
                 label: 'Sales',

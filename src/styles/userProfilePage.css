@@ -21,6 +21,14 @@ button {
 
 .profilePage {
   min-height: 90vh;
+  padding: 5%;
+  
+}
+.mainLoading{
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .profilePage > div {
@@ -107,6 +115,7 @@ button {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  margin-bottom: 0.3rem;
 }
 
 .profilePage .withdraw .price {
@@ -117,8 +126,8 @@ button {
   font-weight: 600;
   z-index: 1;
   line-height: normal;
+  margin-bottom: 0.3rem;
 }
-
 .profilePage .withdraw button {
   border-radius: 5px;
   z-index: 1;
@@ -131,6 +140,16 @@ button {
   gap: 10px;
   border: none;
   width: 30%;
+  /* color: black; */
+  color: #10BE7E;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: Fellix;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.24px;
+
 }
 
 /* Responsive Styles */

@@ -9,6 +9,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { environment } from '../environment';
 import axios from 'axios';
 import {toast} from 'react-toastify';
+import {Bars} from 'react-loader-spinner'
 
 
 
@@ -37,6 +38,7 @@ const UserProfilePage = () => {
             }
           });
           setLoading(false);
+
           console.log(result.data.user);
       
           setInfo(result.data.user)
@@ -65,7 +67,17 @@ const UserProfilePage = () => {
           : `${currencySymbol}${formattedIntegerPart}`;
    }
 
-
+    const {fullname, email} = info
+     if(loading === true){
+      return(
+       <>
+           <Navigations/>
+          <section className='mainLoading'>
+             <Bars color="#66bb6a" height="40" /> 
+          </section>
+       </>
+      )
+     }
     return ( 
         <>
           <Navigations/>
@@ -82,12 +94,12 @@ const UserProfilePage = () => {
                <div className='user-details'>
                      <div className="group">
                         <p className='label'>Full name</p>
-                        <p className='detail'>Nwuizu Oluchukwu Godwin</p>
+                        <p className='detail'>{fullname}</p>
                      </div>
 
                      <div className="group">
                         <p className='label'>Email</p>
-                        <p className='detail'>{info.email}</p>
+                        <p className='detail'>{email}</p>
                      </div>
 
                      <div className="group">
@@ -107,6 +119,7 @@ const UserProfilePage = () => {
                    <p>Available balance</p>
                    <button>Withdraw</button>
                </div>
+               
           </section>
           <Footer/>
         </>

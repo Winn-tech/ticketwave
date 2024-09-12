@@ -1,5 +1,6 @@
 import React from 'react';
 import backgroundImage from '../images/gateway.png'
+import {Link} from 'react-router-dom'
 
 const EventGateway = () => {
     return ( 
@@ -14,7 +15,9 @@ const EventGateway = () => {
        
         <div >
           <h3>Your Gateway to Unforgettable Experiences</h3>
-          <button className="create-events-button">CREATE EVENTS</button>
+          <Link to={"/create-event"} >
+             <button className="create-events-button">CREATE EVENTS</button>
+          </Link>
         </div>
       </div>
      );

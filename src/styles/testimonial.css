@@ -15,14 +15,52 @@
     font-feature-settings: 'liga' off, 'clig' off;
     font-family: Inter;
 }
+
+.testimonial .slider-container{
+    width: 100%;
+    position: relative;
+    margin: 3% 0;
+}
+
+.slick-slide .testifier img{ 
+    width: 88px;
+    height: 88px;
+    flex-shrink: 0;
+    border-radius: 88px;
+} 
+.slider-container .testifier h4{
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+    font-family: Epilogue;
+}
+.slick-active .testifier{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: absolute;
+    bottom: 30px;
+
+}
+.slick-active .testifier p{
+    color: #391400;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: Epilogue;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    /* line-height: 32px; */
+}
 .testimonial .texts p{
     font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 32px; /* 200% */
+    line-height: 32px;
     letter-spacing: 3px;
     text-transform: uppercase;
+    /* margin-bottom: -10px;  */
 }
 .testimonial .texts h3{
     font-family: 'Montserrat', sans-serif;
@@ -32,22 +70,6 @@
     /* line-height: 64px; */
     letter-spacing: -1px;
 }
-.testimonial .slider-container{
-    width: 100%;
-    position: relative;
-    margin: 3% 0;
-}
-/* .testimonial .slider-container  .div{
-    border-radius: 0px 0px 6px 6px;
-    border: 1px solid #F3D1BF;
-    height: 300px;
-    flex-shrink: 0;
-    box-shadow: 0px 32px 64px 0px rgba(57, 20, 0, 0.04);
-    opacity: 0.2429;
-    background-color: #fff;
-    width: 770px;   
-
-} */
 .slick-slide{
     border-radius: 0px 0px 6px 6px;
     border: 1px solid #F3D1BF;
@@ -56,11 +78,21 @@
     box-shadow: 0px 32px 64px 0px rgba(57, 20, 0, 0.04);
     opacity: 0.2429;
     background-color: #fff;
-    width: 770px;   
-    display: flex;
-    flex-direction: column;
+    width: 60vw ;   
+    /* display: flex;
+    flex-direction: column !important;
     justify-items: center;
-    align-items: center;
+    align-items: center !important; */
+    padding: 30px;
+}
+.slick-slide div:first-of-type p{
+    color:  rgba(57, 20, 0, 0.64);
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 25px ;
 }
 
 .slick-active{

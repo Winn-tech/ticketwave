@@ -53,7 +53,7 @@
     text-decoration: none;
 
     }
-    .overlay{
+    .main-container .overlay{
         width: 100vw;
         background-color: #3A3A3A;
         opacity: 0.3;

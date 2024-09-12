@@ -1,4 +1,5 @@
 import React, { Component, useState } from "react";
+import Image from '../images/profile-pic.jpg'
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -14,7 +15,7 @@ function CenterMode() {
     autoplay: true,
     centerPadding: "60px",
     slidesToShow: 1,
-    speed: 3000,
+    speed: 4000,
     arrows: false,
     dots: true,
     afterChange: (current) => setActiveSlide(current),
@@ -42,11 +43,13 @@ function CenterMode() {
                   </p>
                 </div>
                 <div>
-                  <div>
-                    <div>Bolaji Deeproot</div>
+                  <div className="testifier">
                     <div>
-                      <p></p>
-                      <p></p>
+                      <img src={Image} alt="" />
+                    </div>
+                    <div >
+                      <h4>Bolaji Deeproot</h4>
+                      <p>CEO</p>
                     </div>
                   </div>
                 </div>
