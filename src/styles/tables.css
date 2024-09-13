@@ -1,0 +1,113 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primaryColor: #66BB6A;
+}
+table{
+    background-color: white;
+    text-align: center;
+    border: none;
+   
+}
+
+thead{
+    border-radius: 8px 8px 0px 0px;
+    /* opacity: 0.2; */
+    background-color: rgba(26, 225, 152, 0.20);
+    height: 40px;
+    padding:  0 5px;
+    
+    border-top-right-radius: 30px;
+    
+}
+th:first-of-type{
+    border-top-left-radius: 8px;
+}
+th{
+    padding: 0 5px;
+}
+td{
+    border: none;
+    border-bottom: 1px solid rgb(232, 229, 229);
+    color: #3A3A3A;
+    font-family: inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; 
+    letter-spacing: -0.32px;
+}
+th{
+    color: #66BB6A;
+    font-family: inter; 
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    text-align: center;
+}
+.pagination{
+    width: 100%;
+    background-color: white;
+    min-height: fit-content;
+    padding: 30px;
+    padding-bottom: 25px;
+    /* height: 150px; */
+}
+.pagination ul{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    max-width: 100%;
+   
+    
+}
+.pagination ul li{
+    min-width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+}
+.pagination ul .left{
+    position: absolute;
+    color: #3A3A3A;
+    font-size: 16px; 
+    font-weight: 500;
+    height: 36px;
+    padding: 0 20px;
+    left: 0;
+    border-radius: 10px;
+    border: 1px solid rgba(26, 225, 152, 0.30);
+    overflow-x: hidden;
+}
+.pagination ul .right{
+    position: absolute;
+    right: 0;
+    height: 36px;
+    padding: 0px 20px;
+    color: #3A3A3A;
+    font-size: 16px; 
+    font-weight: 500;
+    border-radius: 10px;
+    border: 1px solid rgba(26, 225, 152, 0.30);
+}
+.pagination  .current{
+    background-color: var(--primaryColor);
+    color: white;
+  }
+  .pagination .disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }

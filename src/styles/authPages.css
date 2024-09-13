@@ -197,10 +197,12 @@
   .login-button {
     width: 100%;
     padding: 0.65rem;
-    background-color: var(--primaryColor);
+    background-color: var(--primaryColor) !important; 
     border: none;
     text-align: center;
     border-radius: 4px;
+    display: flex;
+    justify-content: center;
     cursor: pointer;
     font-family: Chivo;
     font-size: 16px;
@@ -209,6 +211,7 @@
     line-height: 18px;
     color: var(--white);
   } 
+  
   .forgot-password h3{
     color: #121212;
     font-family: Chivo;

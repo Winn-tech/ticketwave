@@ -7,7 +7,7 @@ import axios from 'axios';
 
 // import { Link } from 'react-router-dom';
 
-const FeaturedEvents = () => {
+const PopularEvents = () => {
   const events = [
     {
       title: "The Oxymoron of Kenyaflag",
@@ -46,8 +46,7 @@ const FeaturedEvents = () => {
       imageUrl: "https://placehold.co/300x200.png?text=Event+Image",
     },
   ];
-
-  // const userInfo = JSON.parse(localStorage.UserInfo);
+  const userInfo = JSON.parse(localStorage.UserInfo);
   const [event, setEvent] = useState([]);
 
 
@@ -55,7 +54,7 @@ const FeaturedEvents = () => {
     const getEvents= async()=>{
       // console.log(userInfo.token)
       try {
-        const result = await axios.get(environment.appUrl + 'events', {
+        const result = await axios.get(environment.appUrl + 'popular-events', {
           headers: {
               // Authorization: `Bearer ${userInfo.token}`
           }
@@ -78,7 +77,7 @@ const FeaturedEvents = () => {
 
     return ( 
     <div className="featured-events">
-      <h2 className="featured-events-title">Featured Events</h2>
+      <h2 className="featured-events-title">Popular Events</h2>
       { event && event.length > 0 && <div className="featured-events-grid">
   
         {/* {events.map((event, index) => (
@@ -143,4 +142,4 @@ const FeaturedEvents = () => {
      );
 }
  
-export default FeaturedEvents;
+export default PopularEvents;

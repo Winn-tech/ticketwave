@@ -91,7 +91,9 @@ const CreateEvents = () => {
         formData.append("venue_details", e.target[6].value);
         formData.append("event_start", e.target[7].value);
         formData.append("event_description", e.target[8].value);
-        formData.append("event_cost", JSON.stringify(costs));
+        if(costs.length > 0) {
+            formData.append("event_cost", JSON.stringify(costs));
+        }
 
 
         console.log(costs);
@@ -105,8 +107,11 @@ const CreateEvents = () => {
                 }
             });
 
-            e.target.reset();
-            setCosts([]);
+            if(costs.length > 0) {
+                e.target.reset();
+                setCosts([]);
+            }
+
 
             
             console.log(result.data);
@@ -116,7 +121,10 @@ const CreateEvents = () => {
                 setEventId(result.data.event.id)
                 notifySuccess(result.data.message)
 
-            }else {
+            }else if (!result.data.success) {
+                notifyError(result.data.message)
+            }
+            else {
                 notifyError(JSON.stringify(result.data.errors))
             }
             
@@ -124,12 +132,6 @@ const CreateEvents = () => {
             notifyError(JSON.stringify(error))
             
         }
-
-
-
-
-
-
 
     }
 
@@ -145,7 +147,7 @@ const CreateEvents = () => {
                 <div className="form-grid">
                     <div className="form-group">
                         <label htmlFor="event-title">Event Title <span>*</span></label>
-                        <input type="text" id="event-title" placeholder='The Oxymoron of Kenny Blaq' required />
+                        <input type="text" id="event-title" placeholder='eg: The Oxymoron of Kenny Blaq' required />
                     </div>
 
                     <div className="form-group " >
@@ -160,11 +162,15 @@ const CreateEvents = () => {
                         <label htmlFor="event-category">Event Category  <span>*</span></label>
                         <select id="event-category" required>
                             <option value="" disabled selected>--select category--</option>
-                            {categories.map((category, index)=> (
+                            {categories && categories.map((category, index)=> (
                                 <option value={category.name} key={index}>{category.name}</option>
                             ))}
                         </select>
                     </div>
+                    {/* <div className="form-group">
+                        <label htmlFor="event-tag">Event catgory  <span>*</span></label>
+                        <input type="text" id="event-category" required />
+                    </div> */}
 
                     <div className="form-group">
                         <label htmlFor="event-tag">Event Tag  <span>*</span></label>

@@ -148,6 +148,8 @@ const SingleNotification = ({notification, userInfo, notifySuccess, idx, notifyE
                     <div className="date">
                           <FaClockRotateLeft/> <span>{formatDate(notification.created_at)}</span>
                     </div>
-                </div>
+                   
+                    
+     </div>
     )
 }

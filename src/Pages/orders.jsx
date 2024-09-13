@@ -7,6 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { environment } from '../environment';
 import axios from 'axios';
 import {toast} from 'react-toastify';
+import {Bars} from 'react-loader-spinner'
 
 
 const Orders = () => {
@@ -64,10 +65,21 @@ const Orders = () => {
         getRegistrations();
       }, [userInfo.token]);
 
+      if(loading === true){
+        return(
+            <>
+           <Navigations/>
+          <section className='mainLoading'>
+             <Bars color="#66bb6a" height="40" /> 
+          </section>
+       </>
+        )
+      }
 
     return ( 
         <>
            <Navigations/>
+
                <div className="orders">
                 <h2>ORDERS(<span>{orders.length}</span>)</h2>
                 <div className="orders-section">

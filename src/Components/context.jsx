@@ -1,7 +1,5 @@
 import React, { createContext, useState, useContext } from 'react';
-
 import NavLink from '../navData'
-
 const TicketWaveContext = createContext();
 
 const AppProvider = ({ children }) => {
@@ -9,7 +7,10 @@ const AppProvider = ({ children }) => {
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
   const [subMenuLocation, setSubMenuLocation] = useState({})
   const [subMenuPages, setSubMenuPage] = useState({page:{label:''}, subPages:[] })
-
+  const [isOptionsOpen, setIsOptionOpen] = useState(false);
+  const [optionPosition, setOptionsPosition] = useState({ top: 0, left: 0 });
+  const [isSortOpen, setIsSortOpen] = useState(false);
+  const [dropdownPosition, setDropdownPosition] = useState({ top: 0, right: 0 });
 
   const openSidebar = () => {
     setIsSideBarOpen(true);
@@ -25,14 +26,28 @@ const AppProvider = ({ children }) => {
     setIsSubMenuOpen(true)
     const newPage = NavLink.find((targetPage)=>targetPage.page.label === page)
     setSubMenuPage(newPage)
-    // console.log(newPage);
-    
+  }
+  const openSort = (e) => {
+    setIsOptionOpen(false)
+    const top = Math.round(e.target.getBoundingClientRect().top);
+    const right = Math.round(e.target.getBoundingClientRect().right);
+    setDropdownPosition({ top, right });
+    setIsSortOpen(true);
 
+  };
+
+  const closeOverlay =()=>{
+    setIsOptionOpen(false)
+    setIsSortOpen(false)
   }
 
   const closeSubMenu =()=>{
     setIsSubMenuOpen(false)
   }
+
+  const closeSort = () => {
+    setIsSortOpen(false);
+  };
 
 //   contextValue
   const contextValue = {
@@ -43,8 +58,20 @@ const AppProvider = ({ children }) => {
     openSubMenu,
     closeSubMenu,
     subMenuLocation,
-    subMenuPages
-    
+    subMenuPages,
+    isOptionsOpen,
+    optionPosition,
+    setIsOptionOpen,
+    setOptionsPosition,
+    isSortOpen,
+    setIsSortOpen,
+    openSort,
+    dropdownPosition,
+    setDropdownPosition,
+    closeOverlay,
+    dropdownPosition,
+    setDropdownPosition, 
+    closeSort
   };
 
   return (

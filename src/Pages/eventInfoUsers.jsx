@@ -150,13 +150,17 @@ const EventInfoUser = () => {
     }
   };
 
+  
+  const filename = eventInfo?.event_image ? eventInfo.event_image.split('/').pop() : '';
+
 
   return (
+    
     <>
       <Navigations />
       <div className="events-info-container">
         <div className="event-info-img">
-          <img src={eventInfo.event_image} style={{ objectFit: 'cover', objectPosition: 'center' }} alt="" />
+          <img src={`${environment.appUrl}imgs/${filename}`} style={{ objectFit: 'cover', objectPosition: 'center' }} alt="" />
         </div>
         <div className="events-description">
           <h3>Event Description</h3>

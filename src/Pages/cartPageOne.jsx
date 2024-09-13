@@ -27,9 +27,8 @@ const CartPageOne = () => {
     const handleQuantityChange = (index, change, max) => {
         setCart(prevCarts => {
             const updatedCarts = [...prevCarts];
-            const newQuantity = updatedCarts[index].quantity + change;
+            const newQuantity = parseInt(updatedCarts[index].quantity) + change;
 
-    
             // Ensure the quantity does not go below 1
             if (newQuantity > 0) {
                 updatedCarts[index].quantity = (max > updatedCarts[index].quantity && change == 1) ? newQuantity : (change == -1)?newQuantity :updatedCarts[index].quantity;
@@ -41,6 +40,8 @@ const CartPageOne = () => {
 
         setUpdate(true);
     };
+
+    
 
 
     

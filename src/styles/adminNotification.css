@@ -1,7 +1,5 @@
 * {
   box-sizing: border-box;
-  font-style: chivo;
-  overflow-x: hidden;
 }
 
 body {
@@ -16,34 +14,6 @@ body {
   --lighterAsh: #B5B4B4;
   --white: #ffff;
 }
-
-button {
-  cursor: pointer;
-}
-
-.notifications {
-  width: 100vw;
-  padding: 5%;
-  min-height: 90vh;
-}
-
-.notifications-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.notifications > h3 {
-  color: #2D2D2D;
-  font-family: Inter, sans-serif;
-  font-size: 2rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  letter-spacing: 0.9px;
-  margin-bottom: 3%;
-}
-
 .single-notification {
   border-radius: 10px;
   border: 1px solid var(--primaryColor);
@@ -65,7 +35,7 @@ button {
 
 .single-notification .desc {
   display: flex;
-  flex-direction: column; /* Change to column for smaller screens */
+  flex-direction: column;
   justify-content: space-between;
   margin-top: 1rem;
 }
@@ -79,13 +49,46 @@ button {
 }
 
 .single-notification .desc h3 {
-  color: #2D2D2D;
+  color: var(--ash);
+  font-family: Inter, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.single-notification .buttons{
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  margin-top: 1rem;
+}
+.single-notification .buttons .approve{
+  background-color: var(--primaryColor);
+  border: none;
+  width: 300px;
+  height: 56px;
+  flex-shrink: 0;
+  color: #FFF;
+  text-align: center;
   font-family: inter;
-  font-size: 20px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 600;
-  line-height: normal;
-  /* display: none; */
+  border-radius: 50px;
+
+}
+.single-notification .buttons .reject{
+  background-color: white;
+  border: 1px solid #EB5757;;
+  width: 300px;
+  height: 56px;
+  flex-shrink: 0;
+  color:#EB5757;;
+  text-align: center;
+  font-family: inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  border-radius: 50px;
 
 }
 
@@ -95,11 +98,34 @@ button {
   flex-shrink: 0;
   fill: #F04450;
 }
+/* modal notifcation */
+.notification-modal{
+  display: flex;
+  background-color: #fff;
+  width: 547px;
+  padding: 20px 36px 52px 36px;
+  flex-direction: column;
+  align-items: center;
+  gap: 62px;
+  border-radius: 18px;
+  position: absolute;
+  top: 20%;
+}
+.notification-modal p{
+  color: #000;
+  text-align: center;
+  font-family: inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 27px; 
+}
 
 @media (min-width: 768px) {
   .single-notification .desc {
     flex-direction: row;
-    align-items: center;
+    align-items: ce
+    nter;
   }
 
   .single-notification .desc p {
@@ -126,5 +152,14 @@ button {
 
   .single-notification .desc h3 {
     font-size: 1.75rem;
+  }
+}
+
+@media( max-width: 700px){
+  .single-notification .buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 0.7rem;
   }
 }

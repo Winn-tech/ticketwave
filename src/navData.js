@@ -30,18 +30,18 @@ const NavLink = [
         page: {label:'Help', url:'#' },
         subPages: [
           { label: 'How it works', icon: '' , url: '/help' },
-          { label: 'FAQs', icon: '' , url: '/FAQ' },
-          { label: 'Ticket Distribution', icon: '', url: '/' },
-          { label: 'Contact Us', icon: '', url: '/contact-us' },
+          { label: 'FAQs', icon: '' , url: '/help/FAQ' },
+          { label: 'Ticket Distribution', icon: '', url: '/help/' },
+          { label: 'Contact Us', icon: '', url: '/help/contact-us' },
         ],
       },
       {
         page: {label:'More', url:'' },
         subPages: [
-          { label: 'Seat warmers', icon: '', url: '/seat-warmers' },
-          { label: 'Applauders', icon: '', url: '/applauders' },
-          { label: 'Volunteers', icon: '', url: '/volunteers' },
-          { label: 'Extras', icon: '', url: '/extras' },
+          { label: 'Seat warmers', icon: '', url: '/more/seat-warmers' },
+          { label: 'Applauders', icon: '', url: '/more/applauders' },
+          { label: 'Volunteers', icon: '', url: '/more/volunteers' },
+          { label: 'Extras', icon: '', url: '/more/extras' },
         ],
       },
     
