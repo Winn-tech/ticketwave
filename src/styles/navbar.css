@@ -102,6 +102,10 @@
   .menubar-container{
     display: none;
   }
+  .munubar{
+    width: 27px;
+    height: 27px;
+  }
 
 
 
