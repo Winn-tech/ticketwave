@@ -49,6 +49,8 @@ const AdminOrders = () => {
                 </div>
 
                 <NewTable/>
+                
+       
             </div>
           </div>
           {isSortOpen  && (
@@ -67,11 +69,11 @@ const AdminOrders = () => {
           </ul>
         </div>
       )}
-      {
+     {
         
         isSortOpen&&(
-          <div className="overlay" onClick={closeOverlay }>
-
+          <div className="over-lay" onClick={closeOverlay }>
+               
           </div>
         )
       }

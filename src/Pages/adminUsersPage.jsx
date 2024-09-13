@@ -59,7 +59,7 @@ const Users = () => {
       {
         
         (isOptionsOpen || isSortOpen)&&(
-          <div className="overlay" 
+          <div className="over-lay" 
           onClick={closeOverlay }>
 
           </div>

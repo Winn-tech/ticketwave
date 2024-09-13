@@ -19,7 +19,7 @@ const HomePage = () => {
            <Testimonials/>
            <Footer/>
            
-        </>
+        </>    
      );
 }
  

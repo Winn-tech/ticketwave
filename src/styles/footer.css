@@ -15,7 +15,7 @@ footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: fit-content;
+    height: 100px;
     padding: 0 5%;
     color: white;
     position: static;
@@ -58,18 +58,23 @@ footer p{
 @media (min-width: 576px) and (max-width: 767.98px){
   footer{
     display: block;
+    height: fit-content;
+
   }
 }
     
    /* Styles for small phones */
   @media (max-width: 575.98px) { 
-   
+   .footer{
+    height: fit-content;
+   }
     footer p{
       font-family: Inter;
       font-size: 16px;
       font-style: normal;
       font-weight: 700;
-      line-height: 28px;
+      margin-bottom: 10px;
+      text-align: center;
       }
       footer{
         display: flex;
