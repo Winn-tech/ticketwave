@@ -32,7 +32,7 @@ button{
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  /* background-color: red; */
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -87,6 +87,8 @@ button{
   position: absolute;
   top: auto;
   left: 1 rem;
+  height: 15px;
+  width: 15px;
 }
 .search-button {
   background: var(--primaryColor);
@@ -123,7 +125,7 @@ font-family: Inter;
 font-size: 40px;
 font-style: normal;
 font-weight: 700;
-line-height: 50px; /* 125% */
+/* line-height: 50px;  */
 letter-spacing: 4px;
 margin-bottom: 40px;
 }
@@ -171,6 +173,17 @@ color: #333;
 }
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) { 
+  .overlay .title {
+    color: #FAFAFA !important;
+    text-align: center;
+    width: 100%;
+    font-family: Inter;
+    font-size: normal;
+    font-style: normal;
+    font-weight: 600;
+    /* z-index: 2; */
+    margin-bottom: 1.5rem;
+  }
   .create-events-button{
     margin-top: 7%;
     font-family: Inter;
@@ -207,6 +220,9 @@ color: #333;
     
    /* Styles for small phones */
   @media (max-width: 575.98px) { 
+    .search-input {
+      margin-left: 0.5rem;
+    }
     .hero-section {
       position: relative;
       width: 100%;
@@ -214,7 +230,7 @@ color: #333;
       background: url('https://placehold.co/1920x1080') no-repeat center center/cover;
     }
     
-  .title {
+  .overlay .title {
     color: #FAFAFA;
     text-align: center;
     width: 80%;
@@ -251,14 +267,15 @@ color: #333;
     flex-shrink: 0;
   }
   .event-gateway{
-    padding: 100px 5%;
+    padding: 0px 5%;
   }
   .event-gateway h3{
-    font-size: 25px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 700;
-    line-height: 50px; 
+    /* line-height: 50px;  */
     letter-spacing: 4px;
+    margin-bottom: 10px;
   }
 /* FEATURED EVENTS GRID */
 

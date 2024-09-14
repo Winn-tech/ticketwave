@@ -7,7 +7,7 @@ const EventGateway = () => {
       <div className="event-gateway"
         style={{
           backgroundImage: `url(${backgroundImage})`,
-          // height: '256px',
+          height: '256px',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}

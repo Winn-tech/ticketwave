@@ -42,6 +42,9 @@ import Users from './Pages/adminUsersPage';
 import AdminSingleUser from './Pages/adminSingleUser';
 import AdminNotifications from './Pages/adminNotifications';
 import AdminRevenue from './Pages/adminRevenue';
+import AdminSignIn from './Pages/adminSignInPage';
+import AdminForgetPassword from './Pages/adminForgetPassword';
+import AdminResetPass from './Pages/adminResetPassword';
 
 
 function App() {
@@ -80,6 +83,9 @@ function App() {
         <Route path='/admin/notifications' element={<AdminNotifications/>}/>
         <Route path='/admin/users/user' element={<AdminSingleUser/>}/>
         <Route path='/admin/notification' element={<Users/>}/>
+        <Route path='/admin/auth' element={<AdminSignIn/>}/>
+        <Route path='/admin/forget' element={<AdminForgetPassword/>}/>
+        <Route path='/admin/reset' element={<AdminResetPass/>}/>
         
       
         

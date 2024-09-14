@@ -5,13 +5,13 @@ import { useGlobalContext } from '../context';
 import { FaTimes } from "react-icons/fa";
 import NavLink from "../../navData"
 const SideBar = () => {
-  const {isSideBarOpen, closeSidebar, openSidebar} = useGlobalContext()
+  const {isSideBarOpen, closeSidebar, } = useGlobalContext()
   // console.log(closeSidebar, isSideBarOpen);
   
   
   
     return (  
-        <div className={isSideBarOpen ? "sidebar show " : "sidebar"}>
+        <div className={isSideBarOpen ? "sidebar show " : "sidebar"} onClick={closeSidebar}>
             <div className='sidebar-center'>
             <div className="head">
                <div className="logo">

@@ -67,7 +67,6 @@
     font-size: 56px;
     font-style: normal;
     font-weight: 700;
-    /* line-height: 64px; */
     letter-spacing: -1px;
 }
 .slick-slide{
@@ -79,10 +78,6 @@
     opacity: 0.2429;
     background-color: #fff;
     width: 60vw ;   
-    /* display: flex;
-    flex-direction: column !important;
-    justify-items: center;
-    align-items: center !important; */
     padding: 30px;
 }
 .slick-slide div:first-of-type p{
@@ -96,8 +91,7 @@
 }
 
 .slick-active{
-    /* transition: transform 0.3s ease; */
-    /* transform: scaleY(1.5);  */
+    
     opacity: 1;
     /* width : 50% !important */
      
@@ -108,3 +102,13 @@
   .slick-prev{
     width: 25%;
   }
+  @media (max-width: 750px) { 
+    .testimonial .texts h3{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 35px;
+        font-style: normal;
+        font-weight: 600;
+        letter-spacing: -1px;
+    }
+   
+}
