@@ -107,32 +107,7 @@ function App() {
       </Routes>
 
 
-       {/* <SigninPage/> */}
-       {/* <SignupPage/> */}
-       {/* <ForgetPassOne/> */}
-       {/* <ForgetPassTwo/> */}
-       {/* <ForgetPassThre/> */}
-       {/* <PasswordResetConfirmation/> */}
-       {/* <HomePage/> */}
-       {/* <HeroSection/> */}
-       {/* <FeaturedEvents/> */}
-        {/* <CreateEventForm/> */}
-        {/* <CreateEventPage/> */}
-        {/* <CreateEventAdmin/> */}
-        {/* <EventInfoUser/> */}
-        {/* <EditEventPage/> */}
-        {/* <CartPageOne/> */}
-        {/* <CartPopularEvents/> */}
-        {/* <CartPageTwo/> */}
-        {/* <HelpPage/> */}
-        {/* <FAQ/> */}
-        {/* <SeatWarmers/> */}
-        {/* <Applauders/> */}
-        {/* <Volunteers/> */}
-        {/* {/* <Extras/> */}
-        {/* <Orders/> */}
-        {/* <ContactUs/>s */}
-        {/* <AuthImageSection/> */}
+      
     </div>
   );
 }

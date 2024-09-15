@@ -8,44 +8,7 @@ import axios from 'axios';
 // import { Link } from 'react-router-dom';
 
 const PopularEvents = () => {
-  const events = [
-    {
-      title: "The Oxymoron of Kenyaflag",
-      date: "Date: 12/01/2023",
-      location: "Location: Nairobi",
-      imageUrl: "https://placehold.co/300x200.png?text=Event+Image",
-    },
-    {
-      title: "The Oxymoron of Kenyaflag",
-      date: "Date: 12/01/2023",
-      location: "Location: Nairobi",
-      imageUrl: "https://placehold.co/300x200.png?text=Event+Image",
-    },
-    {
-      title: "The Oxymoron of Kenyaflag",
-      date: "Date: 12/01/2023",
-      location: "Location: Nairobi",
-      imageUrl: "https://placehold.co/300x200.png?text=Event+Image",
-    },
-    {
-      title: "The Oxymoron of Kenyaflag",
-      date: "Date: 12/01/2023",
-      location: "Location: Nairobi",
-      imageUrl: "https://placehold.co/300x200.png?text=Event+Image",
-    },
-    {
-      title: "The Oxymoron of Kenyaflag",
-      date: "Date: 12/01/2023",
-      location: "Location: Nairobi",
-      imageUrl: "https://placehold.co/300x200.png?text=Event+Image",
-    },
-    {
-      title: "The Oxymoron of Kenyaflag",
-      date: "Date: 12/01/2023",
-      location: "Location: Nairobi",
-      imageUrl: "https://placehold.co/300x200.png?text=Event+Image",
-    },
-  ];
+  
   const userInfo = JSON.parse(localStorage.UserInfo);
   const [event, setEvent] = useState([]);
 
@@ -56,7 +19,7 @@ const PopularEvents = () => {
       try {
         const result = await axios.get(environment.appUrl + 'popular-events', {
           headers: {
-              // Authorization: `Bearer ${userInfo.token}`
+              Authorization: `Bearer ${userInfo.token}`
           }
         });
         console.log(result.data.event);
@@ -64,9 +27,10 @@ const PopularEvents = () => {
         
       } catch (error) {
         console.log(error);
+        toast.error("Failed to load events");
         setEvent([]);
-      }
-
+     }
+     
 
     }
 
@@ -80,19 +44,7 @@ const PopularEvents = () => {
       <h2 className="featured-events-title">Popular Events</h2>
       { event && event.length > 0 && <div className="featured-events-grid">
   
-        {/* {events.map((event, index) => (
-          <div className="event-card" key={index}>
-            <img src={event.imageUrl} alt="Event" className="event-card__image" />
-            <div className="event-card-content">
-              <h3 className="event-title">{event.title}</h3>
-              <p className="event-date">{event.date}</p>
-              <p className="event-label">{event.label}</p>
-              <Link to={'/eventInfoUsers'}>
-                  <button className="more-info-button" > More Info </button>
-              </Link>
-            </div>
-          </div>
-        ))} */}
+       
         {event.map((event, index) => {
   // Check if event_image is null or undefined
   const imageUrl = event.event_image ? new URL(event.event_image) : null;

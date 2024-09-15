@@ -9,6 +9,8 @@ import { GrTicket } from "react-icons/gr";
 import "../styles/adminDashboard.css"
 import { environment } from '../environment';
 import axios from 'axios';
+import {Bars} from 'react-loader-spinner'
+
 
 const AdminDashBoard = () => {
   const userInfo = JSON.parse(localStorage.UserInfo);
@@ -73,7 +75,9 @@ const AdminDashBoard = () => {
             <div>Something</div>
           </div>
           {loading ? (
-            <div className="loading">Loading...</div>
+           <section className='mainLoading'>
+           <Bars color="#66bb6a" height="40" /> 
+        </section>
           ) : (
             <div className="dashboard-grid">
               <DashboardCard 
