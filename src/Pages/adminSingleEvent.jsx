@@ -14,6 +14,8 @@ const AdminSingleEvent = () => {
     const [eventId, setEventId] = useState();
 
     useEffect(()=>{
+        let url = window.location.href;
+        let Eventid = url.slice(url.lastIndexOf('/') + 1);
         const getEventInfo = async () => {
             try {
               const result = await axios.get(environment.appUrl + 'events/' + Eventid, {
@@ -22,13 +24,7 @@ const AdminSingleEvent = () => {
                 }
               });
               setEventInfo(result.data.event);
-      
-              // Initialize ticket counts based on the event costs
-              const initialCounts = {};
-              result.data.event.costs.forEach(cost => {
-                initialCounts[cost.level] = 0;
-              });
-              setTicketCounts(initialCounts);
+              console.log(result.data.event)
       
             } catch (error) {
               console.log(error);
@@ -38,7 +34,7 @@ const AdminSingleEvent = () => {
       
           getEventInfo();
 
-    }, [])
+    }, [eventId])
 
     return (  
         <>
@@ -59,8 +55,13 @@ const AdminSingleEvent = () => {
                          back bigger and better !! Get ready for a wild night of music comedy, vibes, and non-stop partying!
                          We’re bringing the energy like never before! Date -28th July 2024.
                         </p>
-                        <p>Venue -Eko Hotel & Suites .</p>
-                        <p>#ticketwave #TheOxymoronOfKennyBlaq #CatchingCruise</p>
+                        <p>{`Venue- ${eventInfo.venue_details}`}</p>
+                        <p>
+                            {/* {eventInfo.tags.map((tag) => (
+                                    
+                                    <span key={tag.id} className="event-tag">{tag.name}</span>
+                                ))} */}
+                        </p>
                     </div>
                     <div className="ticket-policy">
                          <h3>Ticket Prices</h3>

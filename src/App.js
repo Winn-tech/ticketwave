@@ -1,8 +1,4 @@
 import './App.css';
-import AuthImageSection from './Components/authImageSection';
-import CartPopularEvents from './Components/cartPopularEvent';
-import PasswordResetConfirmation from './Components/confirmForgetPass';
-import CreateEventForm from './Components/createEvents';
 import FeaturedEvents from './Components/featuredEvents';
 import ForgetPassOne from './Components/forgetPassOne';
 import ForgetPassThre from './Components/ForgetPassThree';
@@ -89,7 +85,7 @@ function App() {
         <Route path='/admin/forget' element={<AdminForgetPassword/>}/>
         <Route path='/admin/reset' element={<AdminResetPass/>}/>
         <Route path='/admin/events' element={<AdminEventsPage/>}/>
-        <Route path='/admin/events/more-info' element={<AdminSingleEvent/>}/>
+        <Route path='/admin/events/more-info/:id' element={<AdminSingleEvent/>}/>
 
         
       

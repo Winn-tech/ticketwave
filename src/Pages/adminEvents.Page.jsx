@@ -56,11 +56,11 @@ const AdminEventsPage = () => {
               <li
                 key={index}
                 onClick={() => handleTabChange(index)}
-                className={catIndex === index ? "active" : ""}
+                className={catIndex === index ? "active" : "" }
               >
                 {category}
               </li>
-            ))}
+            )) }
           </ul>
 
           {/* Loader */}
@@ -75,7 +75,7 @@ const AdminEventsPage = () => {
                   <div className="event-card" key={index}>
                     <img src={event.event_image} alt="" />
                     <p>{event.event_title}</p>
-                    <Link to={`/eventInfoUsers/${event.id}`}>
+                    <Link to={`/admin/events/more-info/${event.id}`}>
                       <button className="more-info-button">More Info</button>
                     </Link>
                   </div>
