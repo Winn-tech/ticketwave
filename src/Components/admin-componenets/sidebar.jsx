@@ -38,9 +38,9 @@ const AdminSidebar = () => {
           </li>
 
           <li>
-            <NavLink className="nav-item" to={'/admin/revenue'}>
+            <NavLink className="nav-item" to={'/admin/events'}>
                <span><FaMoneyBills/></span> 
-               <span> Revenue</span>
+               <span> Events</span>
             </NavLink>
           </li>
         </ul>

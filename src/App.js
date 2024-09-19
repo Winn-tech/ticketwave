@@ -45,6 +45,8 @@ import AdminRevenue from './Pages/adminRevenue';
 import AdminSignIn from './Pages/adminSignInPage';
 import AdminForgetPassword from './Pages/adminForgetPassword';
 import AdminResetPass from './Pages/adminResetPassword';
+import AdminEventsPage from './Pages/adminEvents.Page';
+import AdminSingleEvent from './Pages/adminSingleEvent';
 
 
 function App() {
@@ -86,6 +88,9 @@ function App() {
         <Route path='/admin/auth' element={<AdminSignIn/>}/>
         <Route path='/admin/forget' element={<AdminForgetPassword/>}/>
         <Route path='/admin/reset' element={<AdminResetPass/>}/>
+        <Route path='/admin/events' element={<AdminEventsPage/>}/>
+        <Route path='/admin/events/more-info' element={<AdminSingleEvent/>}/>
+
         
       
         

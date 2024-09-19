@@ -9,13 +9,15 @@ const AdminResetPass = () => {
     return ( 
         <div className="admin-auth">
            <div>
-                <h3>Sign in to TicketWave</h3>
+                <h3>Forget Password</h3>
                 <article>
                     <p>We sent a password reset link to kel....@gmail.com. Click on the link in your email to reset your password.</p> 
             
-                    <img src={adminPng} alt="avatar" />
+                    <center>
+                       <img src={adminPng} alt="avatar" />
+                    </center>
                 </article>
-                <button>Login</button>
+                <button>Reset Password</button>
            </div>
         </div>
      );

@@ -99,6 +99,20 @@ body {
   fill: #F04450;
 }
 /* modal notifcation */
+.notification-overlay{
+  position: fixed;
+  top: 0;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  z-index: 4;
+  background: rgba(0, 0, 0, 0.5);
+  
+  /* opacity: 0.3 ; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .notification-modal{
   display: flex;
   background-color: #fff;
@@ -108,8 +122,11 @@ body {
   align-items: center;
   gap: 62px;
   border-radius: 18px;
-  position: absolute;
-  top: 20%;
+  
+}
+.notification-modal img{
+  height: 150px;
+  width: 150px;
 }
 .notification-modal p{
   color: #000;
