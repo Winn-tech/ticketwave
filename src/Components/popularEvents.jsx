@@ -9,7 +9,7 @@ import axios from 'axios';
 
 const PopularEvents = () => {
   
-  const userInfo = JSON.parse(localStorage.UserInfo);
+  // const userInfo = JSON.parse(localStorage.UserInfo);
   const [event, setEvent] = useState([]);
 
 
@@ -19,7 +19,7 @@ const PopularEvents = () => {
       try {
         const result = await axios.get(environment.appUrl + 'popular-events', {
           headers: {
-              Authorization: `Bearer ${userInfo.token}`
+              // Authorization: `Bearer ${userInfo.token}`
           }
         });
         console.log(result.data.event);
