@@ -1,8 +1,4 @@
 import './App.css';
-import AuthImageSection from './Components/authImageSection';
-import CartPopularEvents from './Components/cartPopularEvent';
-import PasswordResetConfirmation from './Components/confirmForgetPass';
-import CreateEventForm from './Components/createEvents';
 import FeaturedEvents from './Components/featuredEvents';
 import ForgetPassOne from './Components/forgetPassOne';
 import ForgetPassThre from './Components/ForgetPassThree';
@@ -45,6 +41,8 @@ import AdminRevenue from './Pages/adminRevenue';
 import AdminSignIn from './Pages/adminSignInPage';
 import AdminForgetPassword from './Pages/adminForgetPassword';
 import AdminResetPass from './Pages/adminResetPassword';
+import AdminEventsPage from './Pages/adminEvents.Page';
+import AdminSingleEvent from './Pages/adminSingleEvent';
 
 
 function App() {
@@ -86,6 +84,9 @@ function App() {
         <Route path='/admin/auth' element={<AdminSignIn/>}/>
         <Route path='/admin/forget' element={<AdminForgetPassword/>}/>
         <Route path='/admin/reset' element={<AdminResetPass/>}/>
+        <Route path='/admin/events' element={<AdminEventsPage/>}/>
+        <Route path='/admin/events/more-info/:id' element={<AdminSingleEvent/>}/>
+
         
       
         

@@ -4,9 +4,9 @@ import AdminSidebar from '../Components/admin-componenets/sidebar';
 import { MdCancel } from "react-icons/md";
 import { FaClockRotateLeft } from "react-icons/fa6";
 import '../styles/adminNotification.css'
-import NotificationModal from '../Components/admin-componenets/notificationModal';
+import NotificationModal from '../Components/admin-componenets/notificationAcceptModal';
 const AdminNotifications = () => {
-    // const [isNotiModalOpen, setNotiModalOpen] = useState(true)
+    const [isNotiModalOpen, setNotiModalOpen] = useState(false)
     return (  
         <>
         <AdminNavbar/>
@@ -16,19 +16,10 @@ const AdminNotifications = () => {
                 <div className="admin-notifications">
                     <WithdrawalAlert/>
                     <WithdrawSucess/>
-                    {/* {isNotiModalOpen&& <NotificationModal/>}
-                    {
-        
-        (isOptionsOpen || isSortOpen)&&(
-          <div className="overlay" 
-          onClick={closeOverlay }>
-
-          </div>
-        )
-      } */}
                 </div>
             </div>  
         </div> 
+        {isNotiModalOpen &&<NotificationModal/>} 
        </>
     );
 }
@@ -56,7 +47,7 @@ const WithdrawalAlert =()=>{
             </div>
            
             <div className="buttons">
-                <button className='approve'> Approve </button>
+                {/* <button className='approve' onClick={setNotiModalOpen(!isNotiModalOpen)}> Approve </button> */}
                 <button className='reject'> Ignore  </button>
             </div>        
         </div>

@@ -30,7 +30,7 @@ const PopularEvents = () => {
         toast.error("Failed to load events");
         setEvent([]);
      }
-     
+ 
 
     }
 
