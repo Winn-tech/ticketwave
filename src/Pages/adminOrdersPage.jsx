@@ -1,11 +1,174 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import AdminNavbar from '../Components/admin-componenets/AdminNavbar';
 import AdminSidebar from '../Components/admin-componenets/sidebar';
 import '../styles/adminOrders.css'
 import NewTable from '../Components/admin-componenets/newTable';
 import { useGlobalContext } from '../Components/context';
+import axios from 'axios';
+import { environment } from '../environment';
+import {toast} from 'react-toastify';
+
 const AdminOrders = () => {
   const {isetIsSortOpen, closeOverlay, closeSort, dropdownPosition, setDropdownPosition, isSortOpen, setIsSortOpen, openSort} = useGlobalContext()
+  const userInfo = JSON.parse(localStorage.UserInfo);
+
+  const [orders, setOrders] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [filtdate, setFiltDate] = useState('');
+
+
+  const getOrders= async()=>{
+    try {
+      setLoading(true);
+      const result = await axios.get(environment.appUrl + 'registrations', {
+        headers: {
+            Authorization: `Bearer ${userInfo.token}`
+        }
+      });
+      setLoading(false);
+
+      console.log(result.data);
+      setOrders(result.data.registration);
+      
+    } catch (error) {
+      console.log(error);
+      toast.error("Failed to load events");
+      setOrders([]);
+   }
+   
+
+  }
+
+  const getOrders2= async()=>{
+    try {
+      setLoading(true);
+      const result = await axios.get(environment.appUrl + 'soldTicketsByDate/'+ filtdate, {
+        headers: {
+            Authorization: `Bearer ${userInfo.token}`
+        }
+      });
+      setLoading(false);
+
+      console.log(result.data);
+      setOrders(result.data.registrations);
+      
+    } catch (error) {
+      console.log(error);
+      toast.error("Failed to load events");
+      setOrders([]);
+   }
+   
+
+  }
+
+  useEffect(()=> {
+    if(filtdate !== '') {
+      getOrders2();
+    }else {
+      getOrders();
+    }
+  }, [filtdate])
+
+
+  const sortByname=async()=> {
+    try {
+      setLoading(true);
+      const result = await axios.get(environment.appUrl + 'registrations-by-name', {
+        headers: {
+            Authorization: `Bearer ${userInfo.token}`
+        }
+      });
+      setLoading(false);
+
+      console.log(result.data);
+      setOrders(result.data.registration);
+      
+    } catch (error) {
+      console.log(error);
+      toast.error("Failed to load events");
+      setOrders([]);
+   }
+   
+
+  }
+
+
+
+  const sortByorderId=async()=> {
+    try {
+      setLoading(true);
+      const result = await axios.get(environment.appUrl + 'registrations-by-orderid', {
+        headers: {
+            Authorization: `Bearer ${userInfo.token}`
+        }
+      });
+      setLoading(false);
+
+      console.log(result.data);
+      setOrders(result.data.registration);
+      
+    } catch (error) {
+      console.log(error);
+      toast.error("Failed to load events");
+      setOrders([]);
+   }
+   
+
+  }
+
+
+  
+  const sortByFee=async()=> {
+    try {
+      setLoading(true);
+      const result = await axios.get(environment.appUrl + 'registrations-by-fee', {
+        headers: {
+            Authorization: `Bearer ${userInfo.token}`
+        }
+      });
+      setLoading(false);
+
+      console.log(result.data);
+      setOrders(result.data.registration);
+      
+    } catch (error) {
+      console.log(error);
+      toast.error("Failed to load events");
+      setOrders([]);
+   }
+   
+
+  }
+
+
+  const searchOrders =async(e)=> {
+    console.log(e.target.value)
+    try {
+      if(e.target.value !==  '') {
+        setLoading(true);
+        const result = await axios.get(environment.appUrl + 'registrations-by-param/'+e.target.value, {
+          headers: {
+              Authorization: `Bearer ${userInfo.token}`
+          }
+        });
+        setLoading(false);
+  
+        console.log(result.data);
+        setOrders(result.data.registration);
+      }else {
+        getOrders();
+      }
+      
+    } catch (error) {
+      console.log(error);
+      toast.error("Failed to load events");
+      setOrders([]);
+   }
+  }
+
+
+
+
     return ( 
         <>
           <AdminNavbar/>
@@ -15,11 +178,32 @@ const AdminOrders = () => {
                 <div className="heading">
                   <div>
                      <h3>Orders</h3>
-                     <p>1000 orders</p>
+                     <p>{orders.length} orders</p>
                   </div>
-                  <div>
-                       something
-                  </div>
+                  <div className='date_cont'>
+              <input onChange={(e)=> {
+                setFiltDate(e.target.value);
+              }} className='filter_date' type="date"  name="" id="" />
+              <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.33334 2.08301V5.20801" stroke="#344054" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16.6667 2.08301V5.20801" stroke="#344054" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3.64584 9.46875H21.3542" stroke="#344054" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M21.875 8.85384V17.708C21.875 20.833 20.3125 22.9163 16.6667 22.9163H8.33333C4.6875 22.9163 3.125 20.833 3.125 17.708V8.85384C3.125 5.72884 4.6875 3.64551 8.33333 3.64551H16.6667C20.3125 3.64551 21.875 5.72884 21.875 8.85384Z" stroke="#344054" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16.3486 14.2708H16.358" stroke="#344054" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16.3486 17.3958H16.358" stroke="#344054" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12.4953 14.2708H12.5047" stroke="#344054" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12.4953 17.3958H12.5047" stroke="#344054" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8.63991 14.2708H8.64926" stroke="#344054" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8.63991 17.3958H8.64926" stroke="#344054" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+
+              {filtdate !== '' ? filtdate : 'Today'}
+
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="#344054" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+
+            </div>
                 </div>
 
                 <div className="second-heading">
@@ -29,7 +213,7 @@ const AdminOrders = () => {
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M8.45958 0C13.1243 0 16.9185 3.79428 16.9185 8.45896C16.9185 10.6597 16.074 12.667 14.6919 14.1734L17.4114 16.8873C17.6659 17.1418 17.6668 17.5535 17.4123 17.808C17.2855 17.9366 17.1178 18 16.951 18C16.7851 18 16.6183 17.9366 16.4906 17.8098L13.7383 15.0651C12.2904 16.2246 10.4546 16.9188 8.45958 16.9188C3.79491 16.9188 -0.000244141 13.1236 -0.000244141 8.45896C-0.000244141 3.79428 3.79491 0 8.45958 0ZM8.45958 1.30298C4.51329 1.30298 1.30274 4.51266 1.30274 8.45896C1.30274 12.4053 4.51329 15.6158 8.45958 15.6158C12.405 15.6158 15.6156 12.4053 15.6156 8.45896C15.6156 4.51266 12.405 1.30298 8.45958 1.30298Z" fill="#66BB6A"/>
                     </g>
                   </svg>
-                     <input type="text" placeholder='Search for order ID, customer, order status or something...'/>
+                     <input onChange={searchOrders} type="text" placeholder='Search for order ID, customer, order status or something...'/>
                   </div>
                   <aside>
                     <div onClick={openSort}>
@@ -48,7 +232,7 @@ const AdminOrders = () => {
                   </aside>
                 </div>
 
-                <NewTable/>
+                <NewTable orders={orders} />
                 
        
             </div>
@@ -63,9 +247,9 @@ const AdminOrders = () => {
           }}
         >
           <ul onClick={closeSort}>
-            <li>Name A-Z</li>
-            <li>Total Ticket Sold</li>
-            <li>Highest Amount Made</li>
+            <li onClick={sortByname}>Name A-Z</li>
+            <li onClick={sortByFee}>Ticket fee</li>
+            <li onClick={sortByorderId}>Order ID</li>
           </ul>
         </div>
       )}

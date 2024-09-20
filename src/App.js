@@ -81,7 +81,7 @@ function App() {
         <Route path='/admin/orders' element={<AdminOrders/>}/>
         <Route path='/admin/Revenue' element={<AdminRevenue/>}/>
         <Route path='/admin/notifications' element={<AdminNotifications/>}/>
-        <Route path='/admin/users/user' element={<AdminSingleUser/>}/>
+        <Route path='/admin/users/:id' element={<AdminSingleUser/>}/>
         <Route path='/admin/notification' element={<Users/>}/>
         <Route path='/admin/auth' element={<AdminSignIn/>}/>
         <Route path='/admin/forget' element={<AdminForgetPassword/>}/>
