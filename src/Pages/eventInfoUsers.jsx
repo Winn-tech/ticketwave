@@ -160,7 +160,7 @@ const EventInfoUser = () => {
       <Navigations />
       <div className="events-info-container">
         <div className="event-info-img">
-          <img src={`${environment.appUrl}imgs/${filename}`} style={{ objectFit: 'cover', objectPosition: 'center' }} alt="" />
+          <img src={eventInfo?.event_image} style={{ objectFit: 'cover', objectPosition: 'center' }} alt="" />
         </div>
         <div className="events-description">
           <h3>Event Description</h3>

@@ -14,17 +14,24 @@ const AdminEventsPage = () => {
 
   const categories = ["All Events", "Accepted Events", "Rejected Events"];
   const endpoints = [
-        environment.appUrl + 'events', 
+        environment.appUrl + 'all_events', 
         environment.appUrl + 'events', 
         environment.appUrl + 'pending_events', 
   ];
+  const userInfo = JSON.parse(localStorage.UserInfo);
+
 
   // Fetch events based on the selected category (tab)
   useEffect(() => {
     const fetchEvents = async () => {
       setLoading(true);
       try {
-        const response = await axios.get(endpoints[catIndex]); // Fetch from relevant endpoint
+        const headers = {
+          Authorization: `Bearer ${userInfo.token}`,
+          ContentType: 'application/json',
+          Accept: 'application/json',
+        };
+        const response = await axios.get(endpoints[catIndex], {headers}); // Fetch from relevant endpoint
        console.log(response.data)
         setWaveEvents(response.data.event); // Assuming data is in response.data
       } catch (error) {

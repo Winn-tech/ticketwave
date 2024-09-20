@@ -1,6 +1,8 @@
 import Reac,{useState} from 'react';
 import '../styles/admin-auth.css'
 import adminPng from '../assets/authAvatar.png'
+import { Link } from 'react-router-dom';
+
 const AdminResetPass = () => {
     
     const [loading, setLoading] = useState(false);
@@ -17,7 +19,8 @@ const AdminResetPass = () => {
                        <img src={adminPng} alt="avatar" />
                     </center>
                 </article>
-                <button>Reset Password</button>
+                
+            <Link to="/admin/auth" style={{ textDecoration: 'none', color: 'inherit' }}><button>Back to Login</button></Link>
            </div>
         </div>
      );

@@ -88,7 +88,7 @@ const UsersTable = ({ users2 }) => {
               <td>{user.user.email}</td>
               <td>{user.totalEvents}</td>
               <td>{user.totalSold}</td>
-              <td>{user.user.account_balance}</td>
+              <td>₦{user.user.account_balance + user.withdraw_total}</td>
               <td onClick={(e) => openOptions(e, user)} style={{ cursor: 'pointer' }}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path d="M10 19C10 20.1 10.9 21 12 21C13.1 21 14 20.1 14 19C14 17.9 13.1 17 12 17C10.9 17 10 17.9 10 19Z" stroke="#3A3A3A" strokeWidth="1.5" />

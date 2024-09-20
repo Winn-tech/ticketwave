@@ -43,6 +43,8 @@ import AdminForgetPassword from './Pages/adminForgetPassword';
 import AdminResetPass from './Pages/adminResetPassword';
 import AdminEventsPage from './Pages/adminEvents.Page';
 import AdminSingleEvent from './Pages/adminSingleEvent';
+import ProtectedAdminRoute from './Components/protectedAdmin';
+import AdminForgetPasswordMain from './Pages/AdminForgetPasswordMain';
 
 
 function App() {
@@ -73,19 +75,20 @@ function App() {
         <Route path='/eventInfoUsers/:id' element={<EventInfoUser/>}/>
         
         {/* admin pages */}
-        <Route path='/admin/admin-dashboard' element={<AdminDashBoard/>}/>
-        <Route path='/admin/orders-table' element={<NewTable/>}/>
-        <Route path='/admin/users' element={<Users/>}/>
-        <Route path='/admin/orders' element={<AdminOrders/>}/>
-        <Route path='/admin/Revenue' element={<AdminRevenue/>}/>
-        <Route path='/admin/notifications' element={<AdminNotifications/>}/>
-        <Route path='/admin/users/:id' element={<AdminSingleUser/>}/>
-        <Route path='/admin/notification' element={<Users/>}/>
+        <Route path='/admin/admin-dashboard' element={<ProtectedAdminRoute element={<AdminDashBoard/>} /> }/>
+        <Route path='/admin/orders-table' element={<ProtectedAdminRoute element={<NewTable/>} />} />
+        <Route path='/admin/users' element={<ProtectedAdminRoute element={<Users/>} />} />
+        <Route path='/admin/orders' element={<ProtectedAdminRoute element={<AdminOrders/>} />} />
+        <Route path='/admin/Revenue' element={<ProtectedAdminRoute element={<AdminRevenue/>} />} />
+        <Route path='/admin/notifications' element={<ProtectedAdminRoute element={<AdminNotifications/>} />} />
+        <Route path='/admin/users/:id' element={<ProtectedAdminRoute element={<AdminSingleUser/>} />} />
+        <Route path='/admin/notification' element={<ProtectedAdminRoute element={<Users/>} />} />
         <Route path='/admin/auth' element={<AdminSignIn/>}/>
         <Route path='/admin/forget' element={<AdminForgetPassword/>}/>
         <Route path='/admin/reset' element={<AdminResetPass/>}/>
-        <Route path='/admin/events' element={<AdminEventsPage/>}/>
-        <Route path='/admin/events/more-info/:id' element={<AdminSingleEvent/>}/>
+        <Route path='/admin/forget-password' element={<AdminForgetPasswordMain/>}/>
+        <Route path='/admin/events' element={<ProtectedAdminRoute element={<AdminEventsPage/>} />} />
+        <Route path='/admin/events/more-info/:id' element={<ProtectedAdminRoute element={<AdminSingleEvent/>} />} />
 
         
       
