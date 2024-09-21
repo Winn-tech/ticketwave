@@ -43,6 +43,7 @@ import AdminForgetPassword from './Pages/adminForgetPassword';
 import AdminResetPass from './Pages/adminResetPassword';
 import AdminEventsPage from './Pages/adminEvents.Page';
 import AdminSingleEvent from './Pages/adminSingleEvent';
+import EventsPage from './Pages/eventsPage';
 
 
 function App() {
@@ -62,12 +63,7 @@ function App() {
         <Route path="/" element={<HomePage/>} />
         <Route path='/orders' element={<ProtectedRoute element={<Orders />} />} />
         <Route path='/create-event' element={<ProtectedRoute element={<CreateEventPage />} />} />
-        <Route path='/events' element={
-            <>
-              <Navigations />
-              <FeaturedEvents />
-            </>
-          } />
+        <Route path='/events' element={<EventsPage/>}/>
         <Route path='/notifications' element={<ProtectedRoute element={<NotificationPage />} />} />
         <Route path='/user-profile' element={<ProtectedRoute element={<UserProfilePage />} />} />
         <Route path='/eventInfoUsers/:id' element={<EventInfoUser/>}/>

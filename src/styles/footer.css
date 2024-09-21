@@ -50,13 +50,24 @@ footer p{
 
   @media(min-width: 760px){
     .footer{
-      height: 100px;
+      /* height: 100px; */
+      padding: 2% 0;
     }
   }
 
     /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) { 
-    
+  footer{
+    display: flex;
+        flex-direction: column;
+        padding: 2% 0;
+        /* height: 50px; */
+
+  }
+  footer p{
+    font-size: 16px;
+    text-align: center;
+  }
 }
 
 /* Small devices (landscape phonespx and up) */
