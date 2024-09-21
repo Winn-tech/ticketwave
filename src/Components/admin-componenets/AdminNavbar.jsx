@@ -8,7 +8,7 @@ const AdminNavbar = () => {
             
             <aside>
                 <div>
-                    <h3>Hi Godwin</h3>
+                    <h3>Hi Admin</h3>
                     <p>Let’s get productive today!</p>
                 </div>
             </aside>
@@ -36,7 +36,7 @@ const AdminNavbar = () => {
                </Link>
 
                 <div className>
-                     <h3>Godwim</h3>
+                     <h3>Boss</h3>
                      <p>admin</p>
                 </div>
             </aside>

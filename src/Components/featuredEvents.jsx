@@ -73,7 +73,7 @@ const FeaturedEvents = () => {
 
     getEvents();
 
-  }, [])
+  }, []);
 
 
     return ( 
@@ -96,8 +96,8 @@ const FeaturedEvents = () => {
         ))} */}
         {event.map((event, index) => {
   // Check if event_image is null or undefined
-  const imageUrl = event.event_image ? new URL(event.event_image) : null;
-  const filename = imageUrl ? imageUrl.pathname.split('/').pop() : '';
+  // const imageUrl = event.event_image ? new URL(event.event_image) : null;
+  // const filename = imageUrl ? imageUrl.pathname.split('/').pop() : '';
 
   return (
     <div className="event-card" key={index}>
@@ -111,7 +111,7 @@ const FeaturedEvents = () => {
         />
       ) : (
         <img
-          src={`${environment.appUrl}imgs/${filename}`}
+          src={event.event_image}
           style={{ height: '250px', objectFit: 'cover' }}
           alt="Event"
           className="event-card__image"

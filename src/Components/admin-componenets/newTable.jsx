@@ -6,11 +6,12 @@ import _ from 'lodash';
 import { GrLinkPrevious } from "react-icons/gr";
 import { GrLinkNext } from "react-icons/gr";
 
-const NewTable = () => {
+const NewTable = ({orders}) => {
     
     const [data, setData] = useState(MOCK_DATA);
-    const [count, setCount] = useState(data.length);
-    const [numberOfColumns, setNumberOfColumns] = useState(20);
+    // const [count, setCount] = useState(data.length);
+    const [count, setCount] = useState(orders.length);
+    const [numberOfColumns, setNumberOfColumns] = useState(12);
     const [currentPage, setCurrentPage] = useState(1);
     const pagesCount = Math.ceil(count / numberOfColumns);
     
@@ -23,7 +24,8 @@ const NewTable = () => {
         return _(items).slice(startIndex).take(numberOfColumns).value();
     };
 
-    const paginatedData = paginate(data);
+    // const paginatedData = paginate(data);
+    const paginatedData = paginate(orders);
 
     // Pagination logic to display 4 pages at a time with ellipses
     const getPageNumbers = () => {
@@ -52,11 +54,15 @@ const NewTable = () => {
 
     const pageNumbers = getPageNumbers();
 
+    function addCommasToNumber(number) {
+        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+    
     return ( 
         <>
             {/* <h3>There are <span>{count}</span> orders</h3> */}
             
-            <table>()
+            <table>
                 <thead>
                     <tr>
                         <th>Order Id</th>
@@ -68,16 +74,16 @@ const NewTable = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {paginatedData.map((singleOrder) => {
-                        const { id, first_name, email, event_category, payment_option, ticket_fee } = singleOrder;
+                    {paginatedData.map((singleOrder, index) => {
+                        // const { id, first_name, email, event_category, payment_option, ticket_fee } = singleOrder;
                         return (
-                            <tr key={id}>
-                                <td>{id}</td>
-                                <td>{first_name}</td>
-                                <td>{email}</td>
-                                <td>{ticket_fee}</td>
-                                <td>{event_category}</td>
-                                <td>{payment_option}</td>
+                            <tr key={index}>
+                                <td>{singleOrder.reference}</td>
+                                <td>{singleOrder.user.fullname}</td>
+                                <td>{singleOrder.user.email}</td>
+                                <td>₦{addCommasToNumber(singleOrder.ticket_cost * singleOrder.ticket_quantity)}</td>
+                                <td>{singleOrder.event.event_category}</td>
+                                <td>paystack</td>
                             </tr>
                         )
                     })}

@@ -24,6 +24,11 @@ const AdminDashBoard = () => {
     revenue: 0,
   });
 
+  const [filtdate, setFiltDate] = useState('');
+  const [year, setYear] = useState();
+
+
+
   const fetchData = async () => {
     try {
       setLoading(true);
@@ -58,9 +63,54 @@ const AdminDashBoard = () => {
     }
   };
 
+
+  const fetchData2 = async () => {
+    try {
+      setLoading(true);
+      const headers = {
+        Authorization: `Bearer ${userInfo.token}`,
+        ContentType: 'application/json',
+        Accept: 'application/json',
+      };
+
+      // Fetch all data in parallel
+      const [users, acceptedEvents, pendingEvents, ticketsSold, revenue] = await Promise.all([
+        axios.get(`${environment.appUrl}usersbydate/${filtdate}`, { headers }),
+        axios.get(`${environment.appUrl}acceptedEventsByDate/${filtdate}`, { headers }),
+        axios.get(`${environment.appUrl}pendingEventsByDate/${filtdate}`, { headers }),
+        axios.get(`${environment.appUrl}soldTicketsByDate/${filtdate}`, { headers }),
+        axios.get(`${environment.appUrl}revenuebydate/${filtdate}`, { headers }),
+      ]);
+
+      // Set state once all data is received
+      setDashboardData({
+        totalUsers: users.data.total,
+        acceptedEvents: acceptedEvents.data.count_accepted,
+        pendingEvents: pendingEvents.data.count_pending,
+        ticketsSold: ticketsSold.data.total,
+        revenue: revenue.data.total_balance,
+      });
+
+      setLoading(false);
+    } catch (error) {
+      console.error("Error fetching dashboard data:", error);
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
-    fetchData();
-  }, [userInfo.token]);
+    const currentYear = new Date().getFullYear();
+    setYear(currentYear)
+    if(filtdate !== '') {
+      fetchData2();
+    }else {
+      fetchData();
+    }
+  }, [userInfo.token, filtdate]);
+
+
+
+  
 
   const { totalUsers, acceptedEvents, pendingEvents, ticketsSold, revenue } = dashboardData;
 
@@ -72,7 +122,33 @@ const AdminDashBoard = () => {
         <div className="sub-container">
           <div className="heading">
             <h3>Overview</h3>
-            <div>Something</div>
+            <div className='date_cont'>
+              <input onChange={(e)=> {
+                setFiltDate(e.target.value);
+                const dateStr = e.target.value;
+                const year = dateStr.split('-')[0];
+                setYear(year);
+              }} className='filter_date' type="date"  name="" id="" />
+              <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.33334 2.08301V5.20801" stroke="#344054" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16.6667 2.08301V5.20801" stroke="#344054" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3.64584 9.46875H21.3542" stroke="#344054" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M21.875 8.85384V17.708C21.875 20.833 20.3125 22.9163 16.6667 22.9163H8.33333C4.6875 22.9163 3.125 20.833 3.125 17.708V8.85384C3.125 5.72884 4.6875 3.64551 8.33333 3.64551H16.6667C20.3125 3.64551 21.875 5.72884 21.875 8.85384Z" stroke="#344054" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16.3486 14.2708H16.358" stroke="#344054" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16.3486 17.3958H16.358" stroke="#344054" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12.4953 14.2708H12.5047" stroke="#344054" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12.4953 17.3958H12.5047" stroke="#344054" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8.63991 14.2708H8.64926" stroke="#344054" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8.63991 17.3958H8.64926" stroke="#344054" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+
+              {filtdate !== '' ? filtdate : 'Today'}
+
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="#344054" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+
+            </div>
           </div>
           {loading ? (
            <section className='mainLoading'>
@@ -119,7 +195,7 @@ const AdminDashBoard = () => {
 
           <div className="graph-container">
             <p>Ticket Purchased Overview</p>
-            <BarChart className="graph" />
+            <BarChart year={year} filtdate={filtdate} className="graph" />
           </div>
         </div>
       </div>

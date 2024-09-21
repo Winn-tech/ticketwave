@@ -102,3 +102,19 @@
     color: var(--primaryColor);
     opacity: 0.5;
 }
+
+
+.date_cont {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.date_cont .filter_date {
+    position: absolute;
+    width: 87%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    opacity: 0;
+}

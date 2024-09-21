@@ -4,16 +4,121 @@ import AdminSidebar from '../Components/admin-componenets/sidebar';
 import UsersTable from '../Components/admin-componenets/usersTable';
 import '../styles/adminStyle.css';
 import { useGlobalContext } from '../Components/context';
+import { environment } from '../environment';
+import {toast} from 'react-toastify';
+import axios from 'axios';
+
 
 const Users = () => {
   const {isSortOpen, closeSort, closeOverlay, openSort, setIsSortOpen, dropdownPosition, setIsOptionOpen, isOptionsOpen} = useGlobalContext()
   const [overlayHeight, setOverlayHeight] = useState(0)
+  const userInfo = JSON.parse(localStorage.UserInfo);
+  const [loading, setLoading] = useState(false);
+  const [users, setUsers] = useState([]);
+
+
+
+
+
+
+  const getUsers= async()=>{
+    try {
+      setLoading(true);
+      const result = await axios.get(environment.appUrl + 'usersWithTicketSold', {
+        headers: {
+            Authorization: `Bearer ${userInfo.token}`
+        }
+      });
+      setLoading(false);
+
+      console.log(result.data);
+      setUsers(result.data.users);
+      
+    } catch (error) {
+      console.log(error);
+      toast.error("Failed to load events");
+      setUsers([]);
+   }
+   
+
+  }
+
   useEffect(()=>{
      if (isSortOpen === true) {
       document.body.style.overflow = 'hidden';
     }
+
+    getUsers();
     
   }, [])
+
+
+  const usersByName = async () => {
+    try {
+      setLoading(true);
+      const result = await axios.get(environment.appUrl + 'usersWithTicketSoldSortByName', {
+        headers: {
+            Authorization: `Bearer ${userInfo.token}`
+        }
+      });
+      setLoading(false);
+
+      console.log(result.data);
+      setUsers(result.data.users);
+      
+    } catch (error) {
+      console.log(error);
+      toast.error("Failed to load events");
+      setUsers([]);
+   }
+  }
+
+
+
+
+  const usersBySold = async()=> {
+    try {
+      setLoading(true);
+      const result = await axios.get(environment.appUrl + 'usersWithTicketSoldSortByTicketSold', {
+        headers: {
+            Authorization: `Bearer ${userInfo.token}`
+        }
+      });
+      setLoading(false);
+
+      console.log(result.data);
+      setUsers(result.data.users);
+      
+    } catch (error) {
+      console.log(error);
+      toast.error("Failed to load events");
+      setUsers([]);
+   }
+  }
+
+
+  const usersByAmount = async() => {
+    try {
+      setLoading(true);
+      const result = await axios.get(environment.appUrl + 'usersWithTicketSoldSortByHighestAmount', {
+        headers: {
+            Authorization: `Bearer ${userInfo.token}`
+        }
+      });
+      setLoading(false);
+
+      console.log(result.data);
+      setUsers(result.data.users);
+      
+    } catch (error) {
+      console.log(error);
+      toast.error("Failed to load events");
+      setUsers([]);
+   }
+  }
+
+
+
   return (
     <>
       <AdminNavbar />
@@ -23,7 +128,7 @@ const Users = () => {
           <div className="heading">
             <div>
               <h3>Users</h3>
-              <p>1000 Users</p>
+              <p>{users.length} Users</p>
             </div>
             <div onClick={openSort}>
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -35,7 +140,7 @@ const Users = () => {
               Sort
             </div>
           </div>
-          <UsersTable />
+          <UsersTable users2={users} />
         </div>
       </div>
       
@@ -49,9 +154,9 @@ const Users = () => {
           }}
         >
           <ul onClick={closeSort}>
-            <li>Name A-Z</li>
-            <li>Total Ticket Sold</li>
-            <li>Highest Amount Made</li>
+            <li onClick={usersByName}>Name A-Z</li>
+            <li onClick={usersBySold}>Total Ticket Sold</li>
+            <li onClick={usersByAmount}>Highest Amount Made</li>
           </ul>
         </div>
       )}

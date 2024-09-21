@@ -90,7 +90,8 @@ const CreateEvents = () => {
         formData.append('event_website', e.target[5].value);
         formData.append("venue_details", e.target[6].value);
         formData.append("event_start", e.target[7].value);
-        formData.append("event_description", e.target[8].value);
+        formData.append("event_end", e.target[8].value);
+        formData.append("event_description", e.target[9].value);
         if(costs.length > 0) {
             formData.append("event_cost", JSON.stringify(costs));
         }
@@ -193,7 +194,13 @@ const CreateEvents = () => {
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="event-date">Event Date & Time</label>
+                        <label htmlFor="event-date">Event Start Date & Time</label>
+                        <input type="datetime-local" id="event-date" required />
+                        {/* <input type="time" id="event-time" required /> */}
+                   </div>
+                   
+                   <div className="form-group">
+                        <label htmlFor="event-date">Event End Date & Time</label>
                         <input type="datetime-local" id="event-date" required />
                         {/* <input type="time" id="event-time" required /> */}
                    </div>

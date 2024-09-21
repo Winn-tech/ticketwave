@@ -167,7 +167,7 @@ const CartPageTwo = () => {
                         return (
                             <div className="cart-item" style={{marginBottom: '10px'}} key={index}>
                                 <img
-                                    src={cart.event.event_image !== null ? `${environment.appUrl}imgs/${filename}` :"https://placehold.co/100x100"}
+                                    src={cart.event.event_image !== null ? cart.event.event_image :"https://placehold.co/100x100"}
                                     alt={cart.event.event_title}
                                     className="cart-item-image"
                                 />
