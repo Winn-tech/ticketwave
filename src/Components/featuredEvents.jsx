@@ -8,44 +8,7 @@ import axios from 'axios';
 // import { Link } from 'react-router-dom';
 
 const FeaturedEvents = () => {
-  const events = [
-    {
-      title: "The Oxymoron of Kenyaflag",
-      date: "Date: 12/01/2023",
-      location: "Location: Nairobi",
-      imageUrl: "https://placehold.co/300x200.png?text=Event+Image",
-    },
-    {
-      title: "The Oxymoron of Kenyaflag",
-      date: "Date: 12/01/2023",
-      location: "Location: Nairobi",
-      imageUrl: "https://placehold.co/300x200.png?text=Event+Image",
-    },
-    {
-      title: "The Oxymoron of Kenyaflag",
-      date: "Date: 12/01/2023",
-      location: "Location: Nairobi",
-      imageUrl: "https://placehold.co/300x200.png?text=Event+Image",
-    },
-    {
-      title: "The Oxymoron of Kenyaflag",
-      date: "Date: 12/01/2023",
-      location: "Location: Nairobi",
-      imageUrl: "https://placehold.co/300x200.png?text=Event+Image",
-    },
-    {
-      title: "The Oxymoron of Kenyaflag",
-      date: "Date: 12/01/2023",
-      location: "Location: Nairobi",
-      imageUrl: "https://placehold.co/300x200.png?text=Event+Image",
-    },
-    {
-      title: "The Oxymoron of Kenyaflag",
-      date: "Date: 12/01/2023",
-      location: "Location: Nairobi",
-      imageUrl: "https://placehold.co/300x200.png?text=Event+Image",
-    },
-  ];
+  
 
   // const userInfo = JSON.parse(localStorage.UserInfo);
   const [event, setEvent] = useState([]);
@@ -79,7 +42,8 @@ const FeaturedEvents = () => {
     return ( 
     <div className="featured-events">
       <h2 className="featured-events-title">Featured Events</h2>
-      { event && event.length > 0 && <div className="featured-events-grid">
+      {
+       event && event.length > 0 && <div className="featured-events-grid">
   
         {/* {events.map((event, index) => (
           <div className="event-card" key={index}>

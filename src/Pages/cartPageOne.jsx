@@ -2,12 +2,12 @@ import {React, useEffect, useState} from 'react';
 import '../styles/cart.css'
 import Footer from '../Components/footer';
 import { MdCancel } from "react-icons/md";
-import CartPopularEvents from '../Components/cartPopularEvent';
 import Navigations from '../Components/Navigations/navigations';
 import { Link, useNavigate } from 'react-router-dom';
 import { environment } from '../environment';
 import axios from 'axios';
 import {toast} from 'react-toastify';
+import PopularEvents from '../Components/popularEvents';
 
 
 
@@ -216,7 +216,7 @@ const CartPageOne = () => {
                      <button className="proceed-button" onClick={()=>{ update ? updateCart() : navigate('/Cart/checkout')}}>Proceed</button>
                 {/* </Link> */}
                
-                <CartPopularEvents/>
+                <PopularEvents/>
           </div>
            <Footer/>
         </>

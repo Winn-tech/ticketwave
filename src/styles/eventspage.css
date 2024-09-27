@@ -12,7 +12,7 @@
   }
   .events-container .heading{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 
   }
   .events-container .heading h3{
@@ -36,7 +36,7 @@
     font-weight: 400;
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     border-radius: 8px;
   }
   .events-container .icon{

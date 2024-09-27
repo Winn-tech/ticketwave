@@ -13,6 +13,8 @@ import axios from 'axios';
 import { environment } from '../environment';
 import { auth, googleProvider } from "../firebaseConfig";
 import { signInWithPopup } from "firebase/auth";
+import {Bars} from 'react-loader-spinner'
+
 
 
 
@@ -177,7 +179,7 @@ const SignupPage = () => {
                   </div>
 
                     <a href="#" className="forgot-password">Forgot password?</a>
-                    <button className="login-button" disabled={loading}>Sign Up</button>
+                    <button className="login-button" disabled={loading}>{loading ? <Bars color="white" height="16" /> : "Sign up" }</button>
                     <div className='terms'>
                         <input type='checkbox'/> agree to Farm  <a href='#'>Terms of Service</a> and <a href='#'>Privacy Policy</a>
                     </div>

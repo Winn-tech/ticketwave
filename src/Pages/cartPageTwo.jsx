@@ -1,6 +1,5 @@
 import {useState, React, useEffect} from 'react';
 import { MdOutlineDeleteOutline } from "react-icons/md";
-import CartPopularEvents from '../Components/cartPopularEvent';
 import Footer from '../Components/footer';
 import Navigations from '../Components/Navigations/navigations';
 import { Link, useNavigate } from 'react-router-dom';
@@ -8,6 +7,7 @@ import { environment } from '../environment';
 import axios from 'axios';
 import {toast} from 'react-toastify';
 import { PaystackButton } from 'react-paystack';
+import PopularEvents from '../Components/popularEvents';
 
 
 
@@ -296,7 +296,7 @@ const CartPageTwo = () => {
                     />
                 </div>
               </section>
-            <CartPopularEvents/>
+               <PopularEvents/>
             </div>
             <Footer/>
            

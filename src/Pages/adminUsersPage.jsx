@@ -10,7 +10,7 @@ import axios from 'axios';
 
 
 const Users = () => {
-  const {isSortOpen, closeSort, closeOverlay, openSort, setIsSortOpen, dropdownPosition, setIsOptionOpen, isOptionsOpen} = useGlobalContext()
+  const {isSortOpen, closeSort, closeOverlay, openSort, setIsSortOpen,dropdownPosition, setIsOptionOpen, isOptionsOpen} = useGlobalContext()
   const [overlayHeight, setOverlayHeight] = useState(0)
   const userInfo = JSON.parse(localStorage.UserInfo);
   const [loading, setLoading] = useState(false);

@@ -5,6 +5,8 @@ import axios from 'axios'; // Import axios for the request
 import { environment } from '../environment';
 import { toast } from 'react-toastify';
 import { Link, useNavigate } from 'react-router-dom';
+import {Bars} from 'react-loader-spinner'
+
 
 const AdminSignIn = () => {
     const [email, setEmail] = useState('');
@@ -91,7 +93,7 @@ const AdminSignIn = () => {
                     </div>
                     <p className='alt'> <Link to='/admin/forget' style={{textDecoration: 'none', color: 'inherit',}}>Forget Password</Link></p>
                     <button type="submit" disabled={loading}>
-                        {loading ? "Logging in..." : "Login"}
+                    {loading ? <Bars color="white" height="16" /> : "Login" }
                     </button>
                 </form>
            </div>

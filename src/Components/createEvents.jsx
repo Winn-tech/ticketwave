@@ -199,11 +199,7 @@ const CreateEvents = () => {
                         {/* <input type="time" id="event-time" required /> */}
                    </div>
                    
-                   <div className="form-group">
-                        <label htmlFor="event-date">Event End Date & Time</label>
-                        <input type="datetime-local" id="event-date" required />
-                        {/* <input type="time" id="event-time" required /> */}
-                   </div>
+                   
                 </div>
                 
                 
@@ -216,7 +212,7 @@ const CreateEvents = () => {
                     <label htmlFor="event-cost">Event Cost <span>*</span></label>
                     {/* <input type="number" id="event-cost" onFocus={handleInputFocus} required/>  */}
                     
-                    {costs.length > 0 && <div style={{marginBottom: '20px'}} className="ticket-costs">
+                    { costs.length > 0 && <div style={{marginBottom: '20px'}} className="ticket-costs">
                         {costs.map((cost, index) => (
                         <div key={index} className="ticket-cost-item">
                             <h2>{cost.level}, ₦{cost.cost}, Available: {cost.available}</h2>

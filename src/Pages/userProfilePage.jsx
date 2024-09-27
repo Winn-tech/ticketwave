@@ -10,6 +10,7 @@ import { environment } from '../environment';
 import axios from 'axios';
 import {toast} from 'react-toastify';
 import {Bars} from 'react-loader-spinner'
+import ClientWithdrawal from '../Components/clientWithdrawal';
 
 
 
@@ -17,12 +18,16 @@ const UserProfilePage = () => {
    const userInfo = JSON.parse(localStorage.UserInfo);
    const [loading, setLoading] = useState(false);
    const [info, setInfo] = useState([]);
+   const [openWithdraw, setOpenWithdraw] = useState(false)
+   
+
+
    const navigate = useNavigate();
 
    
    const notifySuccess = (message) => {
       toast.success(message);
-   };
+   };  
 
    const notifyError = (message) => {
          toast.error(message);
@@ -117,11 +122,15 @@ const UserProfilePage = () => {
                 </div>
                    <p className='price'>{formatMoney(info.account_balance, '₦')}</p>
                    <p>Available balance</p>
-                   <button>Withdraw</button>
+                   <button onClick={()=>setOpenWithdraw(true)}>Withdraw</button>
                </div>
+              
                
           </section>
           <Footer/>
+          {
+                  openWithdraw && <ClientWithdrawal setOpenWithdraw={setOpenWithdraw}/>
+               }
            </>
      );
 }

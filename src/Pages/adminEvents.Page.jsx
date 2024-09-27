@@ -80,8 +80,8 @@ const AdminEventsPage = () => {
               {waveEvents.length > 0 ? (
                 waveEvents.map((event, index) => (
                   <div className="event-card" key={index}>
-                    <img src={event.event_image} alt="" />
-                    <p>{event.event_title}</p>
+                    <img src={event.event_image} alt="" style={{ height: '250px', width: "100%", objectFit: 'cover' }}/>
+                    <p style={{ margin: '20px 0px' }}>{event.event_title}</p>
                     <Link to={`/admin/events/more-info/${event.id}`}>
                       <button className="more-info-button">More Info</button>
                     </Link>
