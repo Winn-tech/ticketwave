@@ -1,0 +1,34 @@
+[
+    {
+        "id": "001", 
+        "path": "./avatar1.png"
+    },
+    {
+        "id": "002", 
+        "path": "./avatar2.png"
+    },
+    {
+        "id": "003", 
+        "path": "./avatar3.png"
+    },
+    {
+        "id": "004", 
+        "path": "./avatar4.png"
+    },
+    {
+        "id": "005", 
+        "path": "./avatar5.png"
+    },
+     {
+        "id": "006", 
+        "path": "./avatar6.png"
+    },
+     {
+        "id": "007", 
+        "path": "./avatar7.png"
+    }, {
+        "id": "008", 
+        "path": "./avatar8.png"
+    }
+
+]

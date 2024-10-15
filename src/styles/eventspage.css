@@ -7,12 +7,13 @@
   
   .events-container {
     padding: 5%;
-    min-height: 90vh;
+    /* min-height: 90vh;klpop */
     /* background-color: red; */
   }
   .events-container .heading{
     display: flex;
     justify-content: space-between;
+    margin-bottom: 5%;
 
   }
   .events-container .heading h3{
@@ -36,7 +37,6 @@
     font-weight: 400;
     display: flex;
     align-items: center;
-    /* justify-content: center; */
     border-radius: 8px;
   }
   .events-container .icon{
@@ -45,4 +45,16 @@
   }
   .featured-events-section{
     min-height: 50vh;
+    margin-bottom: 10%;
   }
+    @media (min-width: 576px) and (max-width: 767.98px){
+      .events-container .heading h3{
+        font-size: 25px;
+      }
+    }
+    @media (max-width: 500px){
+      .events-container .heading h3{
+        font-size: 17px;
+      }
+    }
+

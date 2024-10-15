@@ -2,10 +2,10 @@
     text-align: center;
     margin: 5%;
   }
-  .featured-events .featured-events-title{
+   .featured-events-title{
     color: var(--primaryColor);
     text-align: center;
-    font-family: Recoleta;
+    font-family: Inter;
     font-size: 30px;
     font-style: normal;
     font-weight: 700;
@@ -19,15 +19,16 @@
      min-height: fit-content;
    }
    
-   .featured-events .event-card{
+  .event-card{
     border-radius: 10px;
     background: #FFF;
-    box-shadow: 0px 0px 30px 0px rgba(221, 221, 221, 0.50);
+    box-shadow: 0px 0px 30px 0px rgba(197, 197, 197, 0.5);
+    
    
     padding: 1.5rem;
     text-align: left;
   }
-  .featured-events .event-card .event-title{
+ .event-card .event-title{
     color: var(--primaryColor);
     font-family: Inter;
     font-size: 20px;
@@ -40,7 +41,8 @@
   .featured-events .event-card img{
   width: 100%;
   border-radius: 5px;
- 
+  height: 250px;
+  object-fit: cover;
   }
   .featured-events .event-date{
   color: #1A1A1A;
@@ -53,7 +55,7 @@
   margin: 0.5rem 0;
   text-transform: capitalize;
   }
-  .featured-events .more-info-button{
+   .more-info-button{
   text-align: center;
   width: 100%;
   border-radius: 6px;
@@ -70,7 +72,7 @@
   line-height: 20px; 
   }
 
-  .featured-events .view-more-button{
+  .view-more-button{
     margin-top: 7%;
     color: var(--primaryColor);
     font-family: Inter;

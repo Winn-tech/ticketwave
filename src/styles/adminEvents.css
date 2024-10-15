@@ -14,7 +14,6 @@
     align-items: center;
     color:  #9c9b9b;
     margin-top: auto;
-    /* opacity: 0.6 ; */
     cursor: pointer;
 }
 
@@ -121,7 +120,6 @@
         background-color: white;
         color: #66BB6A;
         border: 1px solid #66BB6A;
-        /* box-shadow: -5px 10px 10px rgba(0, 0, 0, 0.5) */
 
     }
     .event-info .accept-reject button:first-of-type{

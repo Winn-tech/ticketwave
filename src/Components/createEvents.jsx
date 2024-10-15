@@ -17,6 +17,7 @@ const CreateEvents = () => {
     const [isModalOpen, setModalOpen] = useState(false);
     const [costs, setCosts] = useState([]);
     const [eventId, setEventId] = useState(0);
+    const [selectedCategory, setSelectedCategory] = useState("");  
 
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
@@ -161,10 +162,15 @@ const CreateEvents = () => {
 
                     <div className="form-group">
                         <label htmlFor="event-category">Event Category  <span>*</span></label>
-                        <select id="event-category" required>
-                            <option value="" disabled selected>--select category--</option>
-                            {categories && categories.map((category, index)=> (
-                                <option value={category.name} key={index}>{category.name}</option>
+                        <select 
+                            id="event-category" 
+                            required 
+                            value={selectedCategory} 
+                            onChange={(e) => setSelectedCategory(e.target.value)} // Handle the change event
+                        >
+                            <option value="" disabled>--select category--</option> {/* No need for selected attribute */}
+                            {categories && categories.map((category, index) => (
+                            <option value={category.name} key={index}>{category.name}</option>
                             ))}
                         </select>
                     </div>
@@ -195,6 +201,12 @@ const CreateEvents = () => {
 
                     <div className="form-group">
                         <label htmlFor="event-date">Event Start Date & Time</label>
+                        <input type="datetime-local" id="event-date" required />
+                        {/* <input type="time" id="event-time" required /> */}
+                   </div>
+
+                   <div className="form-group">
+                        <label htmlFor="event-date">Event End Date & Time</label>
                         <input type="datetime-local" id="event-date" required />
                         {/* <input type="time" id="event-time" required /> */}
                    </div>
