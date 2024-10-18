@@ -5,13 +5,14 @@ import { useGlobalContext } from '../context';
 import { FaTimes } from "react-icons/fa";
 import NavLink from "../../navData"
 const SideBar = () => {
-  const {isSideBarOpen, closeSidebar, openSidebar} = useGlobalContext()
+  const {isSideBarOpen, closeSidebar, } = useGlobalContext()
+  const userInfo = localStorage.UserInfo !== undefined && JSON.parse(localStorage.UserInfo);
   // console.log(closeSidebar, isSideBarOpen);
   
   
   
     return (  
-        <div className={isSideBarOpen ? "sidebar show " : "sidebar"}>
+        <div className={isSideBarOpen ? "sidebar show " : "sidebar"} onClick={closeSidebar}>
             <div className='sidebar-center'>
             <div className="head">
                <div className="logo">
@@ -26,7 +27,7 @@ const SideBar = () => {
             <Link to={"/user-profile"} className='user-profile' onClick={closeSidebar}>  
                   <div className='user-profile' >
                   <img src="https://placehold.co/30x30" alt="User Profile" className="profile-pic" />
-                  <span>Godwin</span>
+                  <span>{localStorage.UserInfo !== undefined && userInfo.user.first_name}</span>
                   </div>
             </Link>
 

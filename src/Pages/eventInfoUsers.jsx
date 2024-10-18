@@ -150,13 +150,17 @@ const EventInfoUser = () => {
     }
   };
 
+  
+  const filename = eventInfo?.event_image ? eventInfo.event_image.split('/').pop() : '';
+
 
   return (
+    
     <>
       <Navigations />
       <div className="events-info-container">
         <div className="event-info-img">
-          <img src={eventInfo.event_image} style={{ objectFit: 'cover', objectPosition: 'center' }} alt="" />
+          <img src={eventInfo?.event_image} style={{ objectFit: 'cover', objectPosition: 'center' }} alt="" />
         </div>
         <div className="events-description">
           <h3>Event Description</h3>
@@ -202,7 +206,7 @@ const EventInfoUser = () => {
                   <span className="btn" onClick={() => handleIncrement(cost.level, cost.available)}>+</span>
                 </p>
                 <p>{cost.level} "{eventInfo.event_title}"</p>
-                <p className="price"> - ₦ {cost.cost}</p>
+                <p className="price"> ₦ {cost.cost}</p>
                 <p>Available: {cost.available}</p>
               </div>
             ))}
@@ -240,24 +244,3 @@ export default EventInfoUser;
 
 
 
-
-{/* {[
-    { type: 'regular', label: 'Regular Tickets "KennyBlaq"', price: 20000 },
-    { type: 'earlyBirdK', label: 'Early Bird Regular Tickets "KB"', price: 15000 },
-    { type: 'earlyBirdX', label: 'Early Bird VIP Tickets "X"', price: 25000 },
-    { type: 'vip', label: 'VIP Tickets "KennyBlaq"', price: 50000 },
-    { type: 'vvip', label: 'VVIP Tickets "KennyBlaq"', price: 80000 },
-    ].map(({ type, label, price }) => (
-<div className="ticket-item" key={type}>
-    <p className="button-group">
-      <span className="btn" onClick={() => handleDecrement(type)}>-</span>
-      <span>{ticketCounts[type]}</span>
-      <span  className="btn" onClick={() => handleIncrement(type)}>+</span>
-    </p>
-
-    <p>{label}</p>
-    <p className="price">  - ₦ {price}</p>
-    
-    <p>Available: 402</p>
-</div>
-))} */}

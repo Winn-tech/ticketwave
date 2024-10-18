@@ -15,7 +15,7 @@ footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100px;
+    height: 150px;
     padding: 0 5%;
     color: white;
     position: static;
@@ -25,7 +25,7 @@ footer{
     }
 
 footer p{
-      /* font-feature-settings: 'clig' off, 'liga' off; */
+     
       font-family: Inter;
       font-size: 24px;
       font-style: normal;
@@ -35,6 +35,7 @@ footer p{
  footer> div{
   display: flex;
   gap: 0 5%;
+  min-width: fit-content;
  }   
   
   footer>div .icon{
@@ -47,10 +48,26 @@ footer p{
     border-radius: 5px;
   }  
 
+  @media(min-width: 760px){
+    .footer{
+      /* height: 100px; */
+      padding: 2% 0;
+    }
+  }
 
     /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) { 
-    
+  footer{
+    display: flex;
+        flex-direction: column;
+        padding: 2% 0;
+        /* height: 50px; */
+
+  }
+  footer p{
+    font-size: 16px;
+    text-align: center;
+  }
 }
 
 /* Small devices (landscape phonespx and up) */
@@ -58,18 +75,28 @@ footer p{
 @media (min-width: 576px) and (max-width: 767.98px){
   footer{
     display: block;
+    height: max-content;
+
+  }
+  footer p{
+    font-size: 16px;
+    text-align: center;
   }
 }
     
    /* Styles for small phones */
   @media (max-width: 575.98px) { 
-   
+   .footer{
+    min-height: max-content;
+    display: block;
+   }
     footer p{
       font-family: Inter;
-      font-size: 16px;
+      font-size: 14px;
       font-style: normal;
-      font-weight: 700;
-      line-height: 28px;
+      font-weight: 500;
+      margin-bottom: 10px;
+      text-align: center;
       }
       footer{
         display: flex;

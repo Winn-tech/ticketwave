@@ -9,6 +9,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { environment } from '../environment';
 import axios from 'axios';
 import {toast} from 'react-toastify';
+import {Bars} from 'react-loader-spinner'
+import ClientWithdrawal from '../Components/clientWithdrawal';
+import Useravatars from '../Components/useravatars';
 
 
 
@@ -16,12 +19,14 @@ const UserProfilePage = () => {
    const userInfo = JSON.parse(localStorage.UserInfo);
    const [loading, setLoading] = useState(false);
    const [info, setInfo] = useState([]);
+   const [openWithdraw, setOpenWithdraw] = useState(false)
+   const [openAvatars, setOpenAvatars] = useState(false)
+   
    const navigate = useNavigate();
 
-   
    const notifySuccess = (message) => {
       toast.success(message);
-   };
+   };  
 
    const notifyError = (message) => {
          toast.error(message);
@@ -37,6 +42,7 @@ const UserProfilePage = () => {
             }
           });
           setLoading(false);
+
           console.log(result.data.user);
       
           setInfo(result.data.user)
@@ -65,9 +71,20 @@ const UserProfilePage = () => {
           : `${currencySymbol}${formattedIntegerPart}`;
    }
 
-
+    const {fullname, email} = info
+     if(loading === true){
+      return(
+       <>
+           <Navigations/>
+          <section className='mainLoading'>
+             <Bars color="#66bb6a" height="40" /> 
+          </section>
+       </>
+      )
+     }
     return ( 
         <>
+
           <Navigations/>
           <section className='profilePage'>
                <div className="header">
@@ -77,17 +94,17 @@ const UserProfilePage = () => {
                     <div>
                         <img src={ProfilePic} alt="user image" />
                     </div>
-                    <p><LuUploadCloud/>  Upload Picture</p>
+                    <p onClick={()=>setOpenAvatars(true)}><LuUploadCloud/>  Upload Picture</p>
                </div>
                <div className='user-details'>
                      <div className="group">
                         <p className='label'>Full name</p>
-                        <p className='detail'>Nwuizu Oluchukwu Godwin</p>
+                        <p className='detail'>{fullname}</p>
                      </div>
 
                      <div className="group">
                         <p className='label'>Email</p>
-                        <p className='detail'>{info.email}</p>
+                        <p className='detail'>{email}</p>
                      </div>
 
                      <div className="group">
@@ -105,11 +122,20 @@ const UserProfilePage = () => {
                 </div>
                    <p className='price'>{formatMoney(info.account_balance, '₦')}</p>
                    <p>Available balance</p>
-                   <button>Withdraw</button>
+                   <button onClick={()=>setOpenWithdraw(true)}>Withdraw</button>
                </div>
+              
+               
           </section>
           <Footer/>
-        </>
+          {
+                  openWithdraw && <ClientWithdrawal setOpenWithdraw={setOpenWithdraw}/>
+               }
+            {
+               openAvatars && <Useravatars setOpenAvatars={setOpenAvatars}/> 
+            }
+              
+           </>
      );
 }
  

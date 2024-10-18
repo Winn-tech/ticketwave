@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/help.css'
 import Footer from '../Components/footer';
+import { Link } from 'react-router-dom';
 import Navigations from '../Components/Navigations/navigations';
 const HelpPage = () => {
     return ( 
@@ -33,7 +34,9 @@ const HelpPage = () => {
                     For payment made  – once the payment process is completed, your barcode ticket(s) will be sent immediately to the email address you provided while registering
                     </dd>
                 </dl>
-                <button>FREQUENTLY ASKED QUESTIONS</button>
+                <Link to={'/help/FAQ'}>
+                  <button>FREQUENTLY ASKED QUESTIONS</button>
+                </Link>
             </div>
 
             <div className="organizers">

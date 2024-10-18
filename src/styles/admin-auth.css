@@ -1,0 +1,122 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+:root {
+    --primaryColor: #66bb6a;
+}
+.admin-auth{
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.admin-auth>div h3{
+    color: var(--primaryColor);
+    font-family: Inter;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-align: center;
+}
+.admin-auth p:first-of-type{
+    color: #7C7C7C;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 5px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.input-con{
+    display: flex;
+    position: relative;
+    margin-bottom: 40px;
+}
+.input-con .icon{
+    position: absolute;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    top: 18px;
+    right:10px;
+}
+
+.input-con input{
+    width: 470px;
+    height: 56px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 1px solid #D9DCE0;
+    font-family: inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    padding: 0px 10px;
+    background-color: #FFF;
+}
+.input-con:last-of-type{
+    margin-bottom: 0%;
+}
+.input-con:first-of-type{
+    margin-bottom: 40px;
+}
+.input-con input::placeholder{
+    color: #676767;
+}
+.admin-auth button{
+    background-color: var(--primaryColor);
+    /* display: flex; */
+    width: 470px;
+    height: 62px;
+    text-align: center;
+    color: #FFF;
+    font-family: inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    border-radius: 84px;
+    margin-bottom: 40px;
+    box-shadow: 4px 5px 5px #b0dab2;
+}
+
+.admin-auth p:last-of-type{
+    color: #072052;
+    text-align: right;
+    font-family: inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    /* line-height: 24px;  */
+}
+.admin-auth p:last-of-type span{
+    color: var(--primaryColor);
+}
+.admin-auth .alt{
+    color: var(--primaryColor);
+    text-align: right;
+    margin: 15px;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.admin-auth article{
+    margin: 40px auto;
+    width: 470px;;
+}
+.admin-auth article p{
+    text-align: center !important;
+}
+
+
+/* .admin-auth article p{
+    width: 50%;
+} */

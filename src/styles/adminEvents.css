@@ -1,0 +1,138 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.events-types{
+    width: 100%;
+    border-radius: 10px;
+    padding: 0% 30px;
+    box-shadow: 0px 2x 10px 0px #1AE1980D;
+    background-color: white;
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color:  #9c9b9b;
+    margin-top: auto;
+    cursor: pointer;
+}
+
+.events-types ul li{
+    font-family: inter;
+    font-size: 18px;
+    font-weight: 500;
+}
+.events-types .active{
+    color:#66BB6A;
+    /* opacity: 1; */
+    /* display: none; */
+}
+.events-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300.8px, 1fr));
+    gap: 30px;
+     min-height: fit-content;
+     margin-top: 1rem;
+    /* display: none; */
+}
+.events-grid .event-card{
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 0px 30px 0px rgba(221, 221, 221, 0.50);
+    padding: 1.5rem;
+    text-align: left;
+  }
+   .event-card p{
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    text-align: left;
+    color: #66BB6A;
+    
+
+  }
+  .sub-container .more-info-button{
+    text-align: center;
+    width: 100%;
+    border-radius: 6px;
+    padding: 0.5rem 0;
+    outline: none;
+    background-color: var(--primaryColor);
+    border: none;
+    box-shadow: 0px 1px 2px 0px rgba(105, 81, 255, 0.05);
+    color: #FFF;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; 
+    }
+    .sub-container .event-info>div{
+       margin-bottom: 30px;
+    }
+    .sub-container .event-info h3{
+        font-family: Inter;
+        font-size: 20px;
+        font-weight: 600;
+        color: #2D2D2D;
+        margin-bottom: 20px;
+        /* display: none; */
+
+    }
+    .sub-container .event-info p{
+        font-family: Inter;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 20px;
+        color:#2D2D2D;
+        margin-bottom: 10px;
+        opacity: 0.8;
+
+    }
+    .sub-container .event-info .ticket-policy div{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex-shrink: 0;
+        gap: 10px 50px;
+    }
+    .ticket-prices div p{
+        min-width: fit-content;
+        display: flex;
+        margin-right: 40px;
+        flex-shrink: 0;
+    }
+    .event-info .accept-reject{
+        display: flex;
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+    .sub-container .event-info button{
+        height: 56px;
+        font-family: inter;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 28.8px;
+        text-align: center;
+        width: 100%;
+        border-radius: 70px;
+        background-color: white;
+        color: #66BB6A;
+        border: 1px solid #66BB6A;
+
+    }
+    .event-info .accept-reject button:first-of-type{
+        background-color: #66BB6A;
+        width: 50%;
+        color: white;
+        border: none;
+    }
+    .event-info .accept-reject button:last-of-type{
+        background-color: #f44f4f;
+        border: none;
+        width: 50%;
+        color: white;
+    }
+  
+

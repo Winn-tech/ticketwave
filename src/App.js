@@ -1,8 +1,4 @@
 import './App.css';
-import AuthImageSection from './Components/authImageSection';
-import CartPopularEvents from './Components/cartPopularEvent';
-import PasswordResetConfirmation from './Components/confirmForgetPass';
-import CreateEventForm from './Components/createEvents';
 import FeaturedEvents from './Components/featuredEvents';
 import ForgetPassOne from './Components/forgetPassOne';
 import ForgetPassThre from './Components/ForgetPassThree';
@@ -36,6 +32,20 @@ import Navigations from './Components/Navigations/navigations';
 import ProtectedRoute from './Components/Protected';
 import AdminDashBoard from './Pages/adminDashboardPage';
 import Table from './Components/admin-componenets/table';
+import AdminOrders from './Pages/adminOrdersPage';
+import NewTable from './Components/admin-componenets/newTable';
+import Users from './Pages/adminUsersPage';
+import AdminSingleUser from './Pages/adminSingleUser';
+import AdminNotifications from './Pages/adminNotifications';
+import AdminRevenue from './Pages/adminRevenue';
+import AdminSignIn from './Pages/adminSignInPage';
+import AdminForgetPassword from './Pages/adminForgetPassword';
+import AdminResetPass from './Pages/adminResetPassword';
+import AdminEventsPage from './Pages/adminEvents.Page';
+import AdminSingleEvent from './Pages/adminSingleEvent';
+import ProtectedAdminRoute from './Components/protectedAdmin';
+import AdminForgetPasswordMain from './Pages/AdminForgetPasswordMain';
+import EventsPage from './Pages/eventsPage';
 
 
 function App() {
@@ -55,19 +65,28 @@ function App() {
         <Route path="/" element={<HomePage/>} />
         <Route path='/orders' element={<ProtectedRoute element={<Orders />} />} />
         <Route path='/create-event' element={<ProtectedRoute element={<CreateEventPage />} />} />
-        <Route path='/events' element={
-            <>
-              <Navigations />
-              <FeaturedEvents />
-            </>
-          } />
+        <Route path='/events' element={<EventsPage/>}/>
         <Route path='/notifications' element={<ProtectedRoute element={<NotificationPage />} />} />
         <Route path='/user-profile' element={<ProtectedRoute element={<UserProfilePage />} />} />
         <Route path='/eventInfoUsers/:id' element={<EventInfoUser/>}/>
         
         {/* admin pages */}
-        <Route path='/admin/admin-dashboard' element={<AdminDashBoard/>}/>
-        <Route path='/admin/orders-table' element={<Table/>}/>
+        <Route path='/admin/admin-dashboard' element={<ProtectedAdminRoute element={<AdminDashBoard/>} /> }/>
+        <Route path='/admin/orders-table' element={<ProtectedAdminRoute element={<NewTable/>} />} />
+        <Route path='/admin/users' element={<ProtectedAdminRoute element={<Users/>} />} />
+        <Route path='/admin/orders' element={<ProtectedAdminRoute element={<AdminOrders/>} />} />
+        <Route path='/admin/Revenue' element={<ProtectedAdminRoute element={<AdminRevenue/>} />} />
+        <Route path='/admin/notifications' element={<ProtectedAdminRoute element={<AdminNotifications/>} />} />
+        <Route path='/admin/users/:id' element={<ProtectedAdminRoute element={<AdminSingleUser/>} />} />
+        <Route path='/admin/notification' element={<ProtectedAdminRoute element={<Users/>} />} />
+        <Route path='/admin/auth' element={<AdminSignIn/>}/>
+        <Route path='/admin/forget' element={<AdminForgetPassword/>}/>
+        <Route path='/admin/reset' element={<AdminResetPass/>}/>
+        <Route path='/admin/forget-password' element={<AdminForgetPasswordMain/>}/>
+        <Route path='/admin/events' element={<ProtectedAdminRoute element={<AdminEventsPage/>} />} />
+        <Route path='/admin/events/more-info/:id' element={<ProtectedAdminRoute element={<AdminSingleEvent/>} />} />
+
+        
       
         
         {/* cart pages */}
@@ -75,45 +94,20 @@ function App() {
         <Route path='/Cart/checkout' element={<ProtectedRoute element={<CartPageTwo />} />} />
 
         {/* help pages */}
-        <Route path='/help' element={<ProtectedRoute element={<HelpPage />} />} />
-        <Route path='/FAQ' element={<ProtectedRoute element={<FAQ />} />} />
-        <Route path='/contact-us' element={<ProtectedRoute element={<ContactUs />} />} />
-
-        {/* more pages */}
-        <Route path='/applauders' element={<ProtectedRoute element={<Applauders />} />} />
-        <Route path='/seat-warmers' element={<ProtectedRoute element={<SeatWarmers />} />} />
-        <Route path='/volunteers' element={<ProtectedRoute element={<Volunteers />} />} />
-        <Route path='/extras' element={<ProtectedRoute element={<Extras />} />} />
+        <Route path='/help' element={ <HelpPage/>}/>
+        <Route path='/help/FAQ' element={ <FAQ/>}/>
+        <Route path='/help/contact-us' element={ <ContactUs/>}/>
+         
+         {/* more pages */}
+        <Route path='/more/applauders' element={<Applauders/>}/>
+        <Route path='/more/seat-warmers' element={<SeatWarmers/>}/>
+        <Route path='/more/volunteers' element={<Volunteers/>}/>
+        <Route path='/more/extras' element={<Extras/>}/>
 
       </Routes>
 
 
-       {/* <SigninPage/> */}
-       {/* <SignupPage/> */}
-       {/* <ForgetPassOne/> */}
-       {/* <ForgetPassTwo/> */}
-       {/* <ForgetPassThre/> */}
-       {/* <PasswordResetConfirmation/> */}
-       {/* <HomePage/> */}
-       {/* <HeroSection/> */}
-       {/* <FeaturedEvents/> */}
-        {/* <CreateEventForm/> */}
-        {/* <CreateEventPage/> */}
-        {/* <CreateEventAdmin/> */}
-        {/* <EventInfoUser/> */}
-        {/* <EditEventPage/> */}
-        {/* <CartPageOne/> */}
-        {/* <CartPopularEvents/> */}
-        {/* <CartPageTwo/> */}
-        {/* <HelpPage/> */}
-        {/* <FAQ/> */}
-        {/* <SeatWarmers/> */}
-        {/* <Applauders/> */}
-        {/* <Volunteers/> */}
-        {/* {/* <Extras/> */}
-        {/* <Orders/> */}
-        {/* <ContactUs/>s */}
-        {/* <AuthImageSection/> */}
+      
     </div>
   );
 }

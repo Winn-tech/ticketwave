@@ -1,0 +1,120 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primaryColor: #66BB6A;
+}
+.main-container{
+    display: flex;
+    align-items: flex-start;
+}
+
+.main-container .sub-container{
+    padding: 3%;
+    background: #F7F7F7;
+    width: 100%;
+    height: auto; 
+    min-height: 100%;
+    margin-left: 20vw;
+    margin-top: 80px;
+    overflow-x: scroll;
+    
+}
+.main-container .sub-container .heading{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.5rem ;
+}
+.main-container .sub-container .heading div:first-of-type{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.main-container .sub-container .heading div:first-of-type p{
+    color: #66BB6A;
+    padding: 4px 11px;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    border-radius: 28px;
+    background-color: rgba(208, 223, 253, 0.30);
+}
+.main-container .sub-container .heading h3{
+    color: #344054;
+    font-family: inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+}
+.main-container .sub-container .second-heading{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+}
+.sub-container .second-heading aside{
+    display: flex;
+    gap: 30px;
+    color: var(--primaryColor);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+}
+.sub-container .second-heading aside div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 120px;
+    height: 47px;
+    flex-shrink: 0;
+    background-color: white;
+    border-radius: 8px;
+}
+.second-heading .input-container{
+    width: 600px;
+    height: 47px;
+    flex-shrink: 0;
+    border: 1px solid var(--primaryColor);
+    color: var(--primaryColor);
+    opacity: 0.5;
+    position: relative;
+    border-radius: 8px;
+}
+.second-heading .icon{
+    position: absolute;
+    top: 14px;
+}
+.second-heading .input-container input{
+    height: 100%;
+    width: 100%;
+    margin-left: 45px;
+    border: none;
+    outline: none;
+}
+.input-container input::placeholder{
+    color: var(--primaryColor);
+    opacity: 0.5;
+}
+
+
+.date_cont {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.date_cont .filter_date {
+    position: absolute;
+    width: 87%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    opacity: 0;
+}

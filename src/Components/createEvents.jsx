@@ -17,6 +17,7 @@ const CreateEvents = () => {
     const [isModalOpen, setModalOpen] = useState(false);
     const [costs, setCosts] = useState([]);
     const [eventId, setEventId] = useState(0);
+    const [selectedCategory, setSelectedCategory] = useState("");  
 
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
@@ -90,8 +91,11 @@ const CreateEvents = () => {
         formData.append('event_website', e.target[5].value);
         formData.append("venue_details", e.target[6].value);
         formData.append("event_start", e.target[7].value);
-        formData.append("event_description", e.target[8].value);
-        formData.append("event_cost", JSON.stringify(costs));
+        formData.append("event_end", e.target[8].value);
+        formData.append("event_description", e.target[9].value);
+        if(costs.length > 0) {
+            formData.append("event_cost", JSON.stringify(costs));
+        }
 
 
         console.log(costs);
@@ -105,8 +109,11 @@ const CreateEvents = () => {
                 }
             });
 
-            e.target.reset();
-            setCosts([]);
+            if(costs.length > 0) {
+                e.target.reset();
+                setCosts([]);
+            }
+
 
             
             console.log(result.data);
@@ -116,7 +123,10 @@ const CreateEvents = () => {
                 setEventId(result.data.event.id)
                 notifySuccess(result.data.message)
 
-            }else {
+            }else if (!result.data.success) {
+                notifyError(result.data.message)
+            }
+            else {
                 notifyError(JSON.stringify(result.data.errors))
             }
             
@@ -124,12 +134,6 @@ const CreateEvents = () => {
             notifyError(JSON.stringify(error))
             
         }
-
-
-
-
-
-
 
     }
 
@@ -145,7 +149,7 @@ const CreateEvents = () => {
                 <div className="form-grid">
                     <div className="form-group">
                         <label htmlFor="event-title">Event Title <span>*</span></label>
-                        <input type="text" id="event-title" placeholder='The Oxymoron of Kenny Blaq' required />
+                        <input type="text" id="event-title" placeholder='eg: The Oxymoron of Kenny Blaq' required />
                     </div>
 
                     <div className="form-group " >
@@ -158,13 +162,22 @@ const CreateEvents = () => {
 
                     <div className="form-group">
                         <label htmlFor="event-category">Event Category  <span>*</span></label>
-                        <select id="event-category" required>
-                            <option value="" disabled selected>--select category--</option>
-                            {categories.map((category, index)=> (
-                                <option value={category.name} key={index}>{category.name}</option>
+                        <select 
+                            id="event-category" 
+                            required 
+                            value={selectedCategory} 
+                            onChange={(e) => setSelectedCategory(e.target.value)} // Handle the change event
+                        >
+                            <option value="" disabled>--select category--</option> {/* No need for selected attribute */}
+                            {categories && categories.map((category, index) => (
+                            <option value={category.name} key={index}>{category.name}</option>
                             ))}
                         </select>
                     </div>
+                    {/* <div className="form-group">
+                        <label htmlFor="event-tag">Event catgory  <span>*</span></label>
+                        <input type="text" id="event-category" required />
+                    </div> */}
 
                     <div className="form-group">
                         <label htmlFor="event-tag">Event Tag  <span>*</span></label>
@@ -187,10 +200,18 @@ const CreateEvents = () => {
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="event-date">Event Date & Time</label>
+                        <label htmlFor="event-date">Event Start Date & Time</label>
                         <input type="datetime-local" id="event-date" required />
                         {/* <input type="time" id="event-time" required /> */}
                    </div>
+
+                   <div className="form-group">
+                        <label htmlFor="event-date">Event End Date & Time</label>
+                        <input type="datetime-local" id="event-date" required />
+                        {/* <input type="time" id="event-time" required /> */}
+                   </div>
+                   
+                   
                 </div>
                 
                 
@@ -203,7 +224,7 @@ const CreateEvents = () => {
                     <label htmlFor="event-cost">Event Cost <span>*</span></label>
                     {/* <input type="number" id="event-cost" onFocus={handleInputFocus} required/>  */}
                     
-                    {costs.length > 0 && <div style={{marginBottom: '20px'}} className="ticket-costs">
+                    { costs.length > 0 && <div style={{marginBottom: '20px'}} className="ticket-costs">
                         {costs.map((cost, index) => (
                         <div key={index} className="ticket-cost-item">
                             <h2>{cost.level}, ₦{cost.cost}, Available: {cost.available}</h2>

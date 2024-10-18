@@ -89,6 +89,8 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    color: white;
+    text-decoration: none;
   }
   
   .profile-pic {
@@ -99,6 +101,10 @@
   }
   .menubar-container{
     display: none;
+  }
+  .menubar{
+    width: 27px;
+    height: 27px;
   }
 
 

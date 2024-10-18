@@ -1,0 +1,60 @@
+:root {
+    --primaryColor: #66BB6A;
+    --ash: #324148B2;
+    --lighterAsh: #B5B4B4;
+    --white: #ffff;
+  }
+  
+  .events-container {
+    padding: 5%;
+    /* min-height: 90vh;klpop */
+    /* background-color: red; */
+  }
+  .events-container .heading{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5%;
+
+  }
+  .events-container .heading h3{
+    color: #2D2D2D;
+    font-family: Inter;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.9px;
+  }
+  .events-container .heading div{
+    background-color: var(--primaryColor);
+    width: 98px;
+    height: 42px;
+    flex-shrink: 0;
+    color: white;
+    font-family: "Open Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+  }
+  .events-container .icon{
+    height : 20px;
+    width: 20px;
+  }
+  .featured-events-section{
+    min-height: 50vh;
+    margin-bottom: 10%;
+  }
+    @media (min-width: 576px) and (max-width: 767.98px){
+      .events-container .heading h3{
+        font-size: 25px;
+      }
+    }
+    @media (max-width: 500px){
+      .events-container .heading h3{
+        font-size: 17px;
+      }
+    }
+

@@ -1,6 +1,5 @@
 import {useState, React, useEffect} from 'react';
 import { MdOutlineDeleteOutline } from "react-icons/md";
-import CartPopularEvents from '../Components/cartPopularEvent';
 import Footer from '../Components/footer';
 import Navigations from '../Components/Navigations/navigations';
 import { Link, useNavigate } from 'react-router-dom';
@@ -8,6 +7,7 @@ import { environment } from '../environment';
 import axios from 'axios';
 import {toast} from 'react-toastify';
 import { PaystackButton } from 'react-paystack';
+import PopularEvents from '../Components/popularEvents';
 
 
 
@@ -76,7 +76,7 @@ const CartPageTwo = () => {
     const handleQuantityChange = (index, change, max) => {
         setCart(prevCarts => {
             const updatedCarts = [...prevCarts];
-            const newQuantity = updatedCarts[index].quantity + change;
+            const newQuantity = parseInt(updatedCarts[index].quantity) + change;
 
     
             // Ensure the quantity does not go below 1
@@ -160,12 +160,16 @@ const CartPageTwo = () => {
 
               <section>
                 <div>
-                    {carts.map((cart, index)=> (    
+                    {carts.map((cart, index) => {
+                        const imageUrl = cart.event.event_image ? new URL(cart.event.event_image) : null;
+                        const filename = imageUrl ? imageUrl.pathname.split('/').pop() : '';   
+
+                        return (
                             <div className="cart-item" style={{marginBottom: '10px'}} key={index}>
                                 <img
-                                src={cart.event.event_image !== null ? cart.event.event_image :"https://placehold.co/100x100"}
-                                alt="The Oxymoron of Kenny Blaq"
-                                className="cart-item-image"
+                                    src={cart.event.event_image !== null ? cart.event.event_image :"https://placehold.co/100x100"}
+                                    alt={cart.event.event_title}
+                                    className="cart-item-image"
                                 />
                                 <div className="cart-item-details">
                                     <div>
@@ -174,7 +178,7 @@ const CartPageTwo = () => {
                                     </div>
 
                                     <div className="cart-item-quantity">
-                                        <MdOutlineDeleteOutline onClick={()=> removeItem(cart.id)} className='icon'/>
+                                        <MdOutlineDeleteOutline onClick={() => removeItem(cart.id)} className='icon'/>
                                         <div>
                                             <button onClick={() => handleQuantityChange(index, -1, cart.available)}>-</button>
                                             <span>{cart.quantity}</span>
@@ -182,10 +186,10 @@ const CartPageTwo = () => {
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
+                        );
+                    })}
 
-                        ))}
                 </div>
 
                 <div className="order-summary">
@@ -292,7 +296,7 @@ const CartPageTwo = () => {
                     />
                 </div>
               </section>
-            <CartPopularEvents/>
+               <PopularEvents/>
             </div>
             <Footer/>
            

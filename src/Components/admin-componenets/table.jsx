@@ -5,7 +5,7 @@ import { Columns } from './columns';
 import "../../styles/adminDashboard.css"
 
 const Table = () => {
-    const columns = useMemo(() => Columns, []); // Fix: Use Columns instead of columns
+    const columns = useMemo(() => Columns, []);
     const data = useMemo(() => MOCK_DATA, []);
 
     const {

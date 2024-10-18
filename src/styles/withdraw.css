@@ -1,0 +1,132 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+.withdraw-overlay{
+    background: rgba(138, 136, 136, 0.5);
+    width: 100vw;
+    /* height:auto; */
+    height: 130vh;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    display: flex;
+    z-index: 2;
+}
+.withdraw-container{
+    width: 576px;
+    height: 552px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: #FFF;
+    padding: 40px;
+    margin: auto;
+}
+.withdraw-container p{
+    color: #66BB6A;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 44px;
+}
+.withdraw-container form{
+    display: flex;
+    flex-direction: column;
+    gap: 44px 0;
+}
+.withdraw-container form input{
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    width: 100%;
+    height: 60px;
+    flex-shrink: 0;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid #BDBDBD;
+    background-color: #FFF;
+}
+.withdraw-container form input::placeholder{
+    color: #9C9C9C;
+}
+.withdraw-container form div{
+    display: flex;
+    justify-content: space-between;
+}
+.withdraw-container form div button{
+    border-radius: 6px;
+    height: 60px;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    width: 48%;
+}
+.withdraw-container form div button:disabled{
+    opacity: 0.5;
+}
+.withdraw-container form div button:first-of-type{
+    background-color: #FFF;
+    color: #66BB6A;
+    border: 1px solid #66BB6A;
+}
+.withdraw-container form div button:last-of-type{
+    color: white;
+    background-color: #66BB6A;
+}
+@media (max-width: 768px) {
+    .withdraw-overlay{
+        top: 55px;
+    }
+    .withdraw-container {
+        width: 90%; /* Use 90% width on smaller screens */
+        padding: 20px; /* Reduce padding */
+    }
+
+    .withdraw-container p {
+        font-size: 20px; /* Smaller font for heading */
+    }
+
+    .withdraw-container form {
+        gap: 20px 0; /* Reduced gap between inputs */
+    }
+
+    .withdraw-container form input {
+        font-size: 14px; /* Smaller font size */
+        height: 50px; /* Smaller input height */
+        padding: 15px; /* Smaller padding */
+    }
+
+    .withdraw-container form div button {
+        font-size: 16px; /* Smaller font size */
+        height: 50px; /* Smaller button height */
+    }
+}
+@media (max-width: 480px) {
+    .withdraw-container {
+        width: 95%; /* Even narrower width */
+        padding: 15px; 
+    }
+
+    .withdraw-container p {
+        font-size: 18px; 
+    }
+
+    .withdraw-container form {
+        gap: 16px 0; 
+    }
+
+    .withdraw-container form input {
+        font-size: 14px;
+        height: 45px; 
+        padding: 12px; 
+    }
+    .withdraw-container form div button {
+        font-size: 14px;
+        height: 45px; 
+    }
+}

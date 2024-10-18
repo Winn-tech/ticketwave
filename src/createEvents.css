@@ -171,17 +171,18 @@
     margin-bottom: 15px;
   }
   
-  button {
-    background-color: #007bff;
-    color: white;
+  /* button { */
+    /* background-color: #007bff; */
+    /* color: white;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-  }
+    background-color: #66BB6A;
+  } */
   
-  button:hover {
+  /* button:hover {
     background-color: #0056b3;
-  }
+  }     */
   .save-btn {
     display: flex;
     width: 100%;
@@ -248,5 +249,13 @@
   
   .remove-cost:hover {
     transform: scale(1.1);
+  }
+  @media (max-width: 768px) {
+    .create-event-container .form-grid {
+      grid-template-columns: 1fr;
+    }
+    .submit-button {
+      width: 100%;
+    }
   }
   

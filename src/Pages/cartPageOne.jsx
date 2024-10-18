@@ -2,12 +2,12 @@ import {React, useEffect, useState} from 'react';
 import '../styles/cart.css'
 import Footer from '../Components/footer';
 import { MdCancel } from "react-icons/md";
-import CartPopularEvents from '../Components/cartPopularEvent';
 import Navigations from '../Components/Navigations/navigations';
 import { Link, useNavigate } from 'react-router-dom';
 import { environment } from '../environment';
 import axios from 'axios';
 import {toast} from 'react-toastify';
+import PopularEvents from '../Components/popularEvents';
 
 
 
@@ -27,9 +27,8 @@ const CartPageOne = () => {
     const handleQuantityChange = (index, change, max) => {
         setCart(prevCarts => {
             const updatedCarts = [...prevCarts];
-            const newQuantity = updatedCarts[index].quantity + change;
+            const newQuantity = parseInt(updatedCarts[index].quantity) + change;
 
-    
             // Ensure the quantity does not go below 1
             if (newQuantity > 0) {
                 updatedCarts[index].quantity = (max > updatedCarts[index].quantity && change == 1) ? newQuantity : (change == -1)?newQuantity :updatedCarts[index].quantity;
@@ -41,6 +40,8 @@ const CartPageOne = () => {
 
         setUpdate(true);
     };
+
+    
 
 
     
@@ -215,7 +216,7 @@ const CartPageOne = () => {
                      <button className="proceed-button" onClick={()=>{ update ? updateCart() : navigate('/Cart/checkout')}}>Proceed</button>
                 {/* </Link> */}
                
-                <CartPopularEvents/>
+                <PopularEvents/>
           </div>
            <Footer/>
         </>

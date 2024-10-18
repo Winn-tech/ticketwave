@@ -12,6 +12,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import AuthImageSection from './authImageSection';
 import { auth, googleProvider } from "../firebaseConfig";
 import { signInWithPopup } from "firebase/auth";
+import {Bars} from 'react-loader-spinner'
 
 
 
@@ -189,7 +190,7 @@ const SigninPage = () => {
                   </div>
 
                   <Link to='/forget-password/email' className="forgot-password">Forgot password?</Link>
-                  <button className='login-button' disabled={loading}>Sign In</button>
+                  <button className='login-button' disabled={loading}>{loading ? <Bars color="white" height="16" /> : "Submit" }</button>
                 </form>
               </div>
           </div>
