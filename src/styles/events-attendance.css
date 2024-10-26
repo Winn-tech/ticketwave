@@ -63,20 +63,30 @@
   } 
 
 
-  .verification-container p{
-    color: var(--primaryColor);
-    justify-content: center;
-    margin-bottom: 10px;
+  .verification-container h3{
+    color: #2D2D2D;
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.9px;
+  margin-bottom: 1.7rem;
   }
 
   .verification-container input{
-    border: 5px solid #abe0ad;
-    height: 4rem;
-    border-radius: 10px;
+    border-radius: 5px;
+    border: 1px solid #CECECE;
+    background: #FAFAFA;
+    height: 54px;
+    flex-shrink: 0;
     width: 100%;
-    outline: none;
-    text-align: center;
+    margin-bottom: 2rem;
+    padding: 10px;
 
+  }
+  .verification-container label{
+    margin-bottom: 10px;
   }
   .verification-container input:active{
     border: 20px #66BB6A;
@@ -88,18 +98,129 @@
   }
 
   .verification-container button{
-    width: 30%;
+    color: #FFF;
+    text-align: center;
+    font-family: Chivo;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    border-radius: 5px;
+    height: 52px;
     background-color: var(--primaryColor);
-    margin: auto;
-    height: 50px;
-    color: #fff;
-    font-size: 500;
-    outline: none;
     border: none;
-    border-radius: 10px;
-    margin-top: 1.5rem;
+    outline: none;
     display: flex;
     justify-content: center;
     align-items: center;
 
   }
+
+  /* Base Styles */
+.verification-container h3 {
+  color: #2D2D2D;
+  font-family: Inter, sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.9px;
+  margin-bottom: 1.7rem;
+}
+
+.verification-container input {
+  border-radius: 5px;
+  border: 1px solid #CECECE;
+  background: #FAFAFA;
+  height: 54px;
+  flex-shrink: 0;
+  width: 100%;
+  margin-bottom: 2rem;
+  padding: 10px;
+}
+
+.verification-container label {
+  margin-bottom: 10px;
+}
+
+.verification-container input:active {
+  border: 1px solid #66BB6A; /* Corrected from 20px border to 1px */
+}
+
+.verification-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.verification-container button {
+  color: #FFF;
+  text-align: center;
+  font-family: Chivo, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  border-radius: 5px;
+  height: 52px;
+  background-color: var(--primaryColor);
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Responsive Adjustments */
+
+/* Tablets and Smaller Laptops */
+@media (max-width: 1024px) {
+  .verification-container h3 {
+    font-size: 28px;
+  }
+
+  .verification-container input {
+    height: 50px;
+  }
+
+  .verification-container button {
+    height: 48px;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .verification-container h3 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .verification-container input {
+    height: 48px;
+  }
+
+  .verification-container button {
+    height: 46px;
+    font-size: 14px;
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+  .verification-container h3 {
+    font-size: 22px;
+    margin-bottom: 1.2rem;
+  }
+
+  .verification-container input {
+    height: 46px;
+    padding: 8px;
+  }
+
+  .verification-container button {
+    height: 44px;
+    font-size: 14px;
+  }
+
+  .verification-container {
+    padding: 10px; /* Add padding for smaller screens */
+  }
+}
