@@ -84,6 +84,8 @@
     border-radius: 84px;
     margin-bottom: 40px;
     box-shadow: 4px 5px 5px #b0dab2;
+    border: none;
+    outline: none;
 }
 
 .admin-auth p:last-of-type{

@@ -149,6 +149,9 @@
   transition: color 0.3s;
   padding: 10px 15px;
 }
+.sidebar-nav .nav-item .ticket-icon{
+  color: #66BB6A;
+}
 .nav-item:hover{
   color: var(--primaryColor) ;
   border-left: 10px solid var(--primaryColor);

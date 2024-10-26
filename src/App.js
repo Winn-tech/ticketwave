@@ -46,6 +46,10 @@ import AdminSingleEvent from './Pages/adminSingleEvent';
 import ProtectedAdminRoute from './Components/protectedAdmin';
 import AdminForgetPasswordMain from './Pages/AdminForgetPasswordMain';
 import EventsPage from './Pages/eventsPage';
+import EventAttendance from './Pages/eventOwnersSignIn';
+import EventOwnerAttendance from './Pages/eventOwnerAttendance';
+import ProtectedCreatorRoute from './Components/protectedCreator';
+import ApprovedAttendance from './Components/Navigations/approvedAttendance';
 
 
 function App() {
@@ -72,7 +76,6 @@ function App() {
         
         {/* admin pages */}
         <Route path='/admin/admin-dashboard' element={<ProtectedAdminRoute element={<AdminDashBoard/>} /> }/>
-        <Route path='/admin/orders-table' element={<ProtectedAdminRoute element={<NewTable/>} />} />
         <Route path='/admin/users' element={<ProtectedAdminRoute element={<Users/>} />} />
         <Route path='/admin/orders' element={<ProtectedAdminRoute element={<AdminOrders/>} />} />
         <Route path='/admin/Revenue' element={<ProtectedAdminRoute element={<AdminRevenue/>} />} />
@@ -87,7 +90,11 @@ function App() {
         <Route path='/admin/events/more-info/:id' element={<ProtectedAdminRoute element={<AdminSingleEvent/>} />} />
 
         
-      
+      {/* event owners */}
+      <Route path='/events-signin' element={<EventAttendance/>}/>
+      <Route path='events-attendance' element={<EventOwnerAttendance/>}/>
+      <Route path='/admin/admin-dashboard' element={<ProtectedCreatorRoute element={<EventAttendance/>} />}/>
+      <Route path='events-attendance/tickets-verified' element={<ApprovedAttendance/>}/>
         
         {/* cart pages */}
         <Route path='/Cart' element={<ProtectedRoute element={<CartPageOne />} />} />

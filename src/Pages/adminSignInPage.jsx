@@ -73,6 +73,7 @@ const AdminSignIn = () => {
                 <p>Welcome back! Please enter your details.</p>
                 <form onSubmit={loginFunc}>
                     <div className="input-con">
+                     
                         <input 
                             type="text" 
                             placeholder='Email address' 
