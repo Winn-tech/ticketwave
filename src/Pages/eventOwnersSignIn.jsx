@@ -29,23 +29,27 @@ const EventAttendance = () =>{
   
           setLoading(true)
   
-          const result = await axios.post(environment.appUrl + 'login', {
+          const result = await axios.post(environment.appUrl + 'event-login', {
             email: email,
             password: password,
-            UniqueCode: UniqueCode,
+            event_code: UniqueCode,
           });
   
           setLoading(false)
+          console.log(result.data)
   
           if(result.data.success) {
             notifySuccess(result.data.message)
   
-            // navigate('/', { replace: true });
+            navigate('/events-attendance', { replace: true });
   
             localStorage.setItem('UserInfo', JSON.stringify(result.data))
+           
+            
           }
           else {
             notifyError(result.data.errors ? JSON.stringify(result.data.errors) : result.data.message);
+            console.log("hello",result.data);
           }
   
       } catch (error) {

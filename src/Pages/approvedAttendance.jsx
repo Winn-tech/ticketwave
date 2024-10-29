@@ -1,10 +1,23 @@
-import React from 'react'
-import CreatorsNavbar from '../event-creators/creators-navbar'
-import CreatorsSidebar from '../event-creators/creatorsSidebar'
+import React, { useEffect } from 'react'
+import axios from 'axios'
+import { environment } from '../environment'
+import CreatorsNavbar from '../Components/event-creators/creators-navbar'
+import CreatorsSidebar from '../Components/event-creators/creatorsSidebar'
+
 
 const ApprovedAttendance = () => {
+    
+    useEffect(()=>{
+       const getVerifiedTickets = async () =>{
+         const verifiedTickets = await axios.get(`${environment}/validated-tickets/type/1/users`) 
+        console.log(verifiedTickets.data);
+        
+      }
+      getVerifiedTickets()
+    },[])
   return (
    <>
+
        <CreatorsNavbar/>
        <div className="main-container">
        <CreatorsSidebar/>

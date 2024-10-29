@@ -28,12 +28,9 @@ import NotificationPage from './Pages/NotificationPage';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import UserProfilePage from './Pages/userProfilePage';
-import Navigations from './Components/Navigations/navigations';
 import ProtectedRoute from './Components/Protected';
 import AdminDashBoard from './Pages/adminDashboardPage';
-import Table from './Components/admin-componenets/table';
 import AdminOrders from './Pages/adminOrdersPage';
-import NewTable from './Components/admin-componenets/newTable';
 import Users from './Pages/adminUsersPage';
 import AdminSingleUser from './Pages/adminSingleUser';
 import AdminNotifications from './Pages/adminNotifications';
@@ -49,7 +46,8 @@ import EventsPage from './Pages/eventsPage';
 import EventAttendance from './Pages/eventOwnersSignIn';
 import EventOwnerAttendance from './Pages/eventOwnerAttendance';
 import ProtectedCreatorRoute from './Components/protectedCreator';
-import ApprovedAttendance from './Components/Navigations/approvedAttendance';
+import ApprovedAttendance from './Pages/approvedAttendance';
+
 
 
 function App() {
@@ -92,8 +90,8 @@ function App() {
         
       {/* event owners */}
       <Route path='/events-signin' element={<EventAttendance/>}/>
-      <Route path='events-attendance' element={<EventOwnerAttendance/>}/>
-      <Route path='/admin/admin-dashboard' element={<ProtectedCreatorRoute element={<EventAttendance/>} />}/>
+      <Route path='events-attendance' element={<ProtectedCreatorRoute element={<EventAttendance/>}/>}/>
+      {/* <Route path='/admin/admin-dashboard' element={<ProtectedCreatorRoute element={<EventAttendance/>} />}/> */}
       <Route path='events-attendance/tickets-verified' element={<ApprovedAttendance/>}/>
         
         {/* cart pages */}
