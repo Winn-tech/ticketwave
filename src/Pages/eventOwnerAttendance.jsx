@@ -29,7 +29,7 @@ const EventOwnerAttendance = () => {
 
         try {
             const response = await axios.post(
-                `${environment.appUrl}validated-tickets/${eventId}`,
+                `${environment.appUrl}validated-ticket`,
                 {
                     event_name: eventName,
                     ticket_code: UniquePin,
