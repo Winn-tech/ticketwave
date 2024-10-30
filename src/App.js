@@ -90,7 +90,7 @@ function App() {
         
       {/* event owners */}
       <Route path='/events-signin' element={<EventAttendance/>}/>
-      <Route path='events-attendance' element={<ProtectedCreatorRoute element={<EventAttendance/>}/>}/>
+      <Route path='events-attendance' element={<ProtectedCreatorRoute element={<EventOwnerAttendance/>}/>}/>
       {/* <Route path='/admin/admin-dashboard' element={<ProtectedCreatorRoute element={<EventAttendance/>} />}/> */}
       <Route path='events-attendance/tickets-verified' element={<ApprovedAttendance/>}/>
         

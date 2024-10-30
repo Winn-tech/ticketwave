@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { GrTicket } from "react-icons/gr";
 import { BiLogOut } from "react-icons/bi";
 import { NavLink } from 'react-router-dom';
+// import { environment } from '../environment';
+import axios from 'axios';
 
 const CreatorsSidebar = () => {
+    const [tickCategories, setTickCategories] = useState([])
+
+    
+    useEffect(()=>{
+        const fetchTicketCategories = async () => {
+            // const response = await axios.get(environment )
+        }
+
+    },[])
     
   return (
     <div className="admin-sidebar">

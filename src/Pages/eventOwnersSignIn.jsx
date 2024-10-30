@@ -42,6 +42,8 @@ const EventAttendance = () =>{
             notifySuccess(result.data.message)
   
             navigate('/events-attendance', { replace: true });
+            console.log("local sto", result.data);
+            
   
             localStorage.setItem('UserInfo', JSON.stringify(result.data))
            
@@ -49,7 +51,7 @@ const EventAttendance = () =>{
           }
           else {
             notifyError(result.data.errors ? JSON.stringify(result.data.errors) : result.data.message);
-            console.log("hello",result.data);
+            // console.log("hello",result.data);
           }
   
       } catch (error) {

@@ -1,12 +1,14 @@
-import React from 'react'
+import React from 'react';
 import { Navigate } from 'react-router-dom';
 
 const ProtectedCreatorRoute = ({ element }) => {
   const userInfo = localStorage.getItem('UserInfo');
-  const isAuthenticated = !!userInfo;
-  const isEventreator = isAuthenticated ? JSON.parse(userInfo).user.admin : false; // Safely parse and check admin status
+  const parsedUserInfo = userInfo ? JSON.parse(userInfo) : null;
 
-  return isAuthenticated && isEventreator ? element : <Navigate to="/events-signin" />;
-}
+  // Adjust the condition based on the actual structure of your user info
+  const isAuthenticated = parsedUserInfo && parsedUserInfo.message === 'logged in'; 
 
-export default ProtectedCreatorRoute
+  return isAuthenticated ? element : <Navigate to="/events-signin" />;
+};
+
+export default ProtectedCreatorRoute;
