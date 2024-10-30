@@ -25,7 +25,7 @@ const EventOwnerAttendance = () => {
 
         const userInfo = JSON.parse(localStorage.getItem('UserInfo')); // Get user info from localStorage
         const eventId = JSON.parse(localStorage.getItem("EventId"))
-        const eventName = localStorage.getItem('eventTitle')
+        const eventName = localStorage.getItem('EventTitle')
 
         try {
             const response = await axios.post(
@@ -37,12 +37,14 @@ const EventOwnerAttendance = () => {
                 },
                 {
                     headers: {
-                        Authorization: `Bearer ${userInfo?.token}`, // Use optional chaining to avoid errors if userInfo is null
+                        Authorization: `Bearer ${userInfo?.token}`, 
                     },
                 }
             );
 
             setLoading(false);
+            console.log( "attendane",eventName);
+            
            
             console.log(response.data);
 
