@@ -36,13 +36,17 @@ const EventAttendance = () =>{
           });
   
           setLoading(false)
-          console.log(result.data)
-  
+          
+          localStorage.setItem('EventId', JSON.stringify(UniqueCode));
+          const EventName = result.data.event.event_title
+          // console.log(result.data.event.event_title);
+          localStorage.setItem('EventTitle', JSON.stringify(EventName))
+          
           if(result.data.success) {
             notifySuccess(result.data.message)
   
             navigate('/events-attendance', { replace: true });
-            console.log("local sto", result.data);
+          
             
   
             localStorage.setItem('UserInfo', JSON.stringify(result.data))

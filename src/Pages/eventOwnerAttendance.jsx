@@ -24,13 +24,16 @@ const EventOwnerAttendance = () => {
         setLoading(true);
 
         const userInfo = JSON.parse(localStorage.getItem('UserInfo')); // Get user info from localStorage
+        const eventId = JSON.parse(localStorage.getItem("EventId"))
+        const eventName = localStorage.getItem('eventTitle')
 
         try {
             const response = await axios.post(
-                `${environment.appUrl}validated-tickets`,
+                `${environment.appUrl}validated-tickets/${eventId}`,
                 {
                     event_name: eventName,
                     ticket_code: UniquePin,
+                    
                 },
                 {
                     headers: {
@@ -40,6 +43,7 @@ const EventOwnerAttendance = () => {
             );
 
             setLoading(false);
+           
             console.log(response.data);
 
             // Handle success response
@@ -53,6 +57,8 @@ const EventOwnerAttendance = () => {
             notifyError(error.response?.data?.message || 'An error occurred during validation.');
             console.error('Error validating ticket:', error);
         }
+        setEventName('')
+        setUniquecode('')
     };
 
     return (
