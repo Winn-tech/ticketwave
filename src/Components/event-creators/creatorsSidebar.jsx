@@ -4,6 +4,7 @@ import { BiLogOut } from "react-icons/bi";
 import { NavLink } from 'react-router-dom';
 import { environment } from '../../environment';
 import axios from 'axios';
+import LogoutButton from '../logoutButton';
 
 const CreatorsSidebar = () => {
     const [tickCategories, setTickCategories] = useState([]);
@@ -46,9 +47,11 @@ const CreatorsSidebar = () => {
                     ))}
                 </ul>
             </nav>
-            <button className="logout-button">
+            {/* <button className="logout-button">
                 <BiLogOut /> Logout
-            </button>
+            </button> */}
+           <LogoutButton data="UserInfo" destination="event-signin" />
+
         </div>
     );
 };
