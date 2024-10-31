@@ -6,15 +6,24 @@ import CreatorsSidebar from '../Components/event-creators/creatorsSidebar'
 
 
 const ApprovedAttendance = () => {
+    // const { id } = useParams();
     
-    useEffect(()=>{
-       const getVerifiedTickets = async () =>{
-         const verifiedTickets = await axios.get(`${environment}/validated-tickets/type/1/users`) 
-        console.log(verifiedTickets.data);
-        
-      }
-      getVerifiedTickets()
-    },[])
+    // useEffect(()=>{
+    //    const getData = async () =>{
+    //     try {
+    //         const response = await axios.get(`${environment.appUrl}validated-tickets/event/${eventId}`, {
+    //             headers: {
+    //                 Authorization: `Bearer ${userInfo?.token}`,
+    //             },
+    //         });
+    //         console.log(response);
+            
+    //     } catch (error) {
+            
+    //     }
+    //    }
+    //    getData()
+    // },[])j
   return (
    <>
 

@@ -37,21 +37,16 @@ const EventAttendance = () =>{
   
           setLoading(false)
           
-          localStorage.setItem('EventId', JSON.stringify(UniqueCode));
-          const EventName = result.data.event.event_title
-          // console.log(result.data.event.event_title);
-          localStorage.setItem('EventTitle', JSON.stringify(EventName))
+          const eventId = result.data.event.id
+          // event_zSZ33
+          localStorage.setItem('eventId', JSON.stringify(eventId))
           
           if(result.data.success) {
             notifySuccess(result.data.message)
   
             navigate('/events-attendance', { replace: true });
           
-            
-  
             localStorage.setItem('UserInfo', JSON.stringify(result.data))
-           
-            
           }
           else {
             notifyError(result.data.errors ? JSON.stringify(result.data.errors) : result.data.message);
