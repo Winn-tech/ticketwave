@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import CreatorsNavbar from '../Components/event-creators/creators-navbar';
 import CreatorsSidebar from '../Components/event-creators/creatorsSidebar';
 import { environment } from '../environment';
@@ -13,10 +13,14 @@ const EventOwnerAttendance = () => {
     const [loading, setLoading] = useState(false);
     const [scannerActive, setScannerActive] = useState(false); // State to control scanner visibility
 
-    // Initialize QR scanner when eventId element is present
+    // Ref for the scanner container
+    const scannerContainerId = 'scanner-container';
+
+    // Initialize QR scanner when scannerActive changes
     useEffect(() => {
         if (scannerActive) {
-            const scanner = new Html5QrcodeScanner('eventId', {  // Target the element with id="eventId"
+            // Initialize the scanner and render it into the div with id 'scanner-container'
+            const scanner = new Html5QrcodeScanner(scannerContainerId, {
                 qrbox: {
                     height: 250,
                     width: 250,
@@ -25,14 +29,16 @@ const EventOwnerAttendance = () => {
             });
 
             const success = (result) => {
-                setTicketCode(result); // Set the scanned ticket code
-                scanner.clear(); // Clear the scanner once a code is successfully read
+                setTicketCode(result); 
+                scanner.clear(); // Clear scanner after a successful scan
+                setScannerActive(false); // Optionally deactivate scanner after success
             };
 
             const error = (err) => {
                 toast.error(`QR scanner error: ${err}`);
             };
 
+            // Render the scanner inside the container and handle success/error
             scanner.render(success, error);
 
             // Cleanup the scanner when the component unmounts or when we deactivate it
@@ -85,8 +91,6 @@ const EventOwnerAttendance = () => {
             console.error('Error validating ticket:', error);
         }
 
-        // Reset state after the ticket verification
-        setEventName('');
         setTicketCode('');
     };
 
@@ -132,6 +136,14 @@ const EventOwnerAttendance = () => {
                                 {loading ? <Bars color="white" height="20" /> : 'Validate Ticket'}
                             </button>
                         </form>
+
+                        {/* The QR Scanner will be rendered inside this div */}
+                        <div
+                            id={scannerContainerId}
+                            style={{ width: '100%', height: '300px', marginTop: '20px', border: '1px solid #ccc' }}
+                        >
+                            {/* QR scanner renders inside this div */}
+                        </div>
                     </div>
                 </div>
             </div>
