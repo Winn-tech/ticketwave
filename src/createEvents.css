@@ -110,6 +110,9 @@
     font-weight: 600;
     line-height: normal;
 }
+.create-event-container textarea{
+  padding: 10px;
+}
 .submit-button{
     display: flex;
     width: 400px;
@@ -169,6 +172,14 @@
   
   .form-group {
     margin-bottom: 15px;
+  }
+  .add-button{
+    background-color: var(--primaryColor);
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    text-transform: capitalize;
+    border-radius: 8px;
   }
   
   /* button { */

@@ -1,0 +1,212 @@
+*{
+    padding: 0;
+    margin: 0;
+    /* font-style: ; */
+    box-sizing: border-box;
+}
+
+:root{
+    --primaryColor: #66BB6A;
+}
+
+/* navbar */
+.admin-navbar{
+  width: 80vw;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  border-bottom: 2px solid #eaeaea;;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  background-color: #fff;
+  left: 20vw;
+}
+.admin-navbar aside:first-of-type h3{
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--primaryColor);
+}
+.admin-navbar aside:first-of-type p{
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  color: var(--primaryColor);
+  opacity: 0.6;
+}
+
+.admin-navbar .second{
+  display: flex;
+  gap: 2.5rem;
+
+}
+.second .search{
+  position: relative;
+}
+.second .search input{
+  width: 280px;
+  height:  46px;
+  background-color: #F3F4F6;
+  border-radius: 10px;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  padding-left: 35px;
+  border: none;
+}
+.second .search input::placeholder{
+  color: #9C9C9C;
+  font-size: 15px;
+}
+.search .icon{
+  position: absolute;
+  left: 4px;
+  top: 15px;
+}
+
+
+.admin-navbar .second div:last-of-type h3{
+  color: var(--primaryColor);
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+}
+.admin-navbar .second div:last-of-type p{
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  color: #9C9C9C;
+  text-align: center;
+}
+.second .notification{
+  height: fit-content;
+  width: fit-content;
+  position: relative;
+}
+.second .notification .dot{
+  position: absolute;
+  top: 0;
+  right: 10%;
+}
+/* sidebar */
+.admin-sidebar{
+    width: 20vw;
+    height: 100vh;
+    background-color: #fff;
+    border-right: 2px solid #eaeaea;
+    /* border-top: 1px solid #eaeaea; */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+}
+
+.admin-sidebar .logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primaryColor);
+  font-family: "Frank Ruhl Libre";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: 0.3px;
+  width: 100%;
+  min-height: 80px;
+  border-bottom: 2px solid #eaeaea;
+}
+
+.admin-sidebar ul{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem 0;
+  margin-top: 1.5rem;
+}
+.sidebar-nav {
+  flex-grow: 1;
+}
+  
+.sidebar-nav .nav-item {
+  text-decoration: none;
+  color: #9C9C9C;
+  display: flex;
+  gap: 10px;
+  font-family: inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s;
+  padding: 10px 15px;
+}
+.sidebar-nav .nav-item .ticket-icon{
+  color: #66BB6A;
+}
+.nav-item:hover{
+  color: var(--primaryColor) ;
+  border-left: 10px solid var(--primaryColor);
+  background: #a7c8a9;
+}
+.sidebar-nav ul .active{
+  color: var(--primaryColor) ;
+  border-left: 10px solid var(--primaryColor);
+  background: #a7c8a9;
+}
+.active span{
+  color: var(--primaryColor);
+}
+ 
+.logout-button {
+  background-color: transparent;
+  border: none;
+  color: #EB5757;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; 
+  text-align: left;
+  padding-left: 15px;
+  margin-bottom: 100px;
+}
+.scan-button{
+    background-color: var(--primaryColor);
+    color: white;
+    font-size: large;
+    font-family: inter;
+    padding: 10px 15px;
+    border-radius: 7px;
+    text-transform: capitalize;
+    border: none;
+}
+@media (min-width : 920px) {
+    .scan-button{
+        display: none;
+    }
+    
+}
+@media (max-width: 920px) {
+    .admin-sidebar .logo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primaryColor);
+        font-family: "Frank Ruhl Libre";
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 0.3px;
+        width: 100%;
+        border-bottom: 2px solid #eaeaea;
+      }
+}

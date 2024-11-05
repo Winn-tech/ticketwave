@@ -150,6 +150,16 @@
   display: flex;
   flex-direction: column;
 }
+.verification-container form p{
+  color: #2D2D2D;
+  text-align: center;
+  font-family: inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: left;
+}
 
 .verification-container button {
   color: #FFF;
@@ -168,6 +178,8 @@
   align-items: center;
   cursor: pointer;
 }
+
+
 
 /* Responsive Adjustments */
 
@@ -222,5 +234,10 @@
 
   .verification-container {
     padding: 10px; /* Add padding for smaller screens */
+  }
+}
+@media (max-width: 920px) {
+  .verification-container form p{
+    display: none;
   }
 }

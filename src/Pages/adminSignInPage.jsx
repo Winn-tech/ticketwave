@@ -94,7 +94,7 @@ const AdminSignIn = () => {
                     </div>
                     <p className='alt'> <Link to='/admin/forget' style={{textDecoration: 'none', color: 'inherit',}}>Forget Password</Link></p>
                     <button type="submit" disabled={loading}>
-                    {loading ? <Bars color="white" height="16" /> : "Login" }
+                    {loading ? <Bars color="white" height="20" /> : "Login" }
                     </button>
                 </form>
            </div>

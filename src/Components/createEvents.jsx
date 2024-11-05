@@ -8,6 +8,7 @@ import { useNavigate, Link } from 'react-router-dom';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import Modal from './CostModal';
 import {toast} from 'react-toastify';
+import {Bars} from 'react-loader-spinner'
 
 
 
@@ -97,11 +98,9 @@ const CreateEvents = () => {
             formData.append("event_cost", JSON.stringify(costs));
         }
 
-
-        console.log(costs);
-
-
+        setLoading(true)
         try {
+            
             const result = await axios.post(environment.appUrl + 'events', formData, {
                 headers: {
                     Authorization: `Bearer ${userInfo.token}`,
@@ -117,6 +116,7 @@ const CreateEvents = () => {
 
             
             console.log(result.data);
+            setLoading(false)
 
             if(result.data.success) {
                 console.log(result.data.event)
@@ -174,10 +174,7 @@ const CreateEvents = () => {
                             ))}
                         </select>
                     </div>
-                    {/* <div className="form-group">
-                        <label htmlFor="event-tag">Event catgory  <span>*</span></label>
-                        <input type="text" id="event-category" required />
-                    </div> */}
+                    
 
                     <div className="form-group">
                         <label htmlFor="event-tag">Event Tag  <span>*</span></label>
@@ -202,13 +199,13 @@ const CreateEvents = () => {
                     <div className="form-group">
                         <label htmlFor="event-date">Event Start Date & Time</label>
                         <input type="datetime-local" id="event-date" required />
-                        {/* <input type="time" id="event-time" required /> */}
+                       
                    </div>
 
                    <div className="form-group">
                         <label htmlFor="event-date">Event End Date & Time</label>
                         <input type="datetime-local" id="event-date" required />
-                        {/* <input type="time" id="event-time" required /> */}
+                        
                    </div>
                    
                    
@@ -222,7 +219,6 @@ const CreateEvents = () => {
 
                 <div className="form-group">
                     <label htmlFor="event-cost">Event Cost <span>*</span></label>
-                    {/* <input type="number" id="event-cost" onFocus={handleInputFocus} required/>  */}
                     
                     { costs.length > 0 && <div style={{marginBottom: '20px'}} className="ticket-costs">
                         {costs.map((cost, index) => (
@@ -242,13 +238,13 @@ const CreateEvents = () => {
                         </div>
                         ))}
                     </div>}
-                    <button type='button' onClick={handleInputFocus}>add</button>
+                    <button type='button' className='add-button' onClick={handleInputFocus}>add</button>
                  </div> 
                  {/* Modal Component */}
                 <Modal isOpen={isModalOpen} onClose={closeModal} setCosts={setCosts} costs={costs} />
 
                  <p>Please note that you can add as many cost of tickets as possible based on levels as you wish</p>
-                <button type="submit" className="submit-button">Create Event</button>
+                <button type="submit" className="submit-button">{loading? <Bars color="white" height="20" /> : "Create Event"}</button>
             </form>
             <p className='note'>Please note that in the case of needing  volunteers, seat warmers, applauders or extras, you can reach out to us via email or any of our social media handle and we will get back to you in a jiffy whether they are available or not</p>
         </div>

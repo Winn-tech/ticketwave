@@ -1,6 +1,4 @@
 import React from 'react';
-import Notification from '../../assets/notification.svg';
-import { RiNotification2Line } from "react-icons/ri";
 import { Link } from 'react-router-dom';
 const AdminNavbar = () => {
     return (  

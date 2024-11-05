@@ -37,7 +37,7 @@ const CreatorsSidebar = () => {
         <div className="admin-sidebar">
             <div className="logo">Ticketwave</div>
             <nav className="sidebar-nav">
-                <ul>
+                {/* <ul>
                     {tickCategories.map((category) => (
                         <li key={category.event_id}>
                             <NavLink className="nav-item" to={`/events-attendance/tickets-verified/${category.event_id}`}>
@@ -47,6 +47,24 @@ const CreatorsSidebar = () => {
                             </NavLink>
                         </li>
                     ))}
+                </ul> */}
+
+                <ul>
+                    
+                        <li>
+                            <NavLink className="nav-item" to={`/events-attendance/tickets-verified`}>
+                                <span style={{ color: "black" }}>Gold</span>
+                                {/* <span className='ticket-icon'><GrTicket /></span>  */}
+                                {/* <span>({category.validated_tickets.length})</span> */}
+                            </NavLink>
+                       </li>
+                       <li>
+                            <NavLink className="nav-item" to={`/events-attendance/tickets-verified`}>
+                                <span style={{ color: "black" }}>Silver</span>
+                                <span className='ticket-icon'><GrTicket /></span> 
+                                <span>(700)</span>
+                            </NavLink>
+                       </li>
                 </ul>
             </nav>
             {/* <button className="logout-button">

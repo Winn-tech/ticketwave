@@ -72,7 +72,9 @@
 }
 .admin-auth button{
     background-color: var(--primaryColor);
-    /* display: flex; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 470px;
     height: 62px;
     text-align: center;
