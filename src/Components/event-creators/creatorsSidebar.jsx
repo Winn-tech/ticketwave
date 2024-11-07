@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { GrTicket } from "react-icons/gr";
-import { BiLogOut } from "react-icons/bi";
 import { NavLink } from 'react-router-dom';
 import { environment } from '../../environment';
 import axios from 'axios';
 import LogoutButton from '../logoutButton';
+import { useGlobalContext } from '../context';
 
 const CreatorsSidebar = () => {
+    const { openScannedTicket, setOpenScannedTicket} = useGlobalContext()
     const [tickCategories, setTickCategories] = useState([]);
 
     const userInfo = JSON.parse(localStorage.getItem('UserInfo'));
@@ -34,10 +35,10 @@ const CreatorsSidebar = () => {
     }, [eventName, eventId, userInfo?.token]);
 
     return (
-        <div className="admin-sidebar">
+        <div className="creator-sidebar">
             <div className="logo">Ticketwave</div>
             <nav className="sidebar-nav">
-                {/* <ul>
+                <ul>
                     {tickCategories.map((category) => (
                         <li key={category.event_id}>
                             <NavLink className="nav-item" to={`/events-attendance/tickets-verified/${category.event_id}`}>
@@ -47,26 +48,14 @@ const CreatorsSidebar = () => {
                             </NavLink>
                         </li>
                     ))}
-                </ul> */}
-
-                <ul>
-                    
-                        <li>
-                            <NavLink className="nav-item" to={`/events-attendance/tickets-verified`}>
-                                <span style={{ color: "black" }}>Gold</span>
-                                {/* <span className='ticket-icon'><GrTicket /></span>  */}
-                                {/* <span>({category.validated_tickets.length})</span> */}
-                            </NavLink>
-                       </li>
-                       <li>
-                            <NavLink className="nav-item" to={`/events-attendance/tickets-verified`}>
-                                <span style={{ color: "black" }}>Silver</span>
-                                <span className='ticket-icon'><GrTicket /></span> 
-                                <span>(700)</span>
-                            </NavLink>
-                       </li>
                 </ul>
             </nav>
+            <button 
+                className='check'
+                onClick={()=>setOpenScannedTicket(!openScannedTicket)}
+                >
+                    check scanned tickets
+            </button>
             {/* <button className="logout-button">
                 <BiLogOut /> Logout
             </button> */}

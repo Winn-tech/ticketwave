@@ -1,37 +1,66 @@
 import React, { useState, useEffect, useRef } from 'react';
+import NavLink from '../navData';
 import CreatorsNavbar from '../Components/event-creators/creators-navbar';
 import CreatorsSidebar from '../Components/event-creators/creatorsSidebar';
+import '../styles/events-attendance.css'
 import { environment } from '../environment';
 import { toast } from 'react-toastify';
 import { Bars } from 'react-loader-spinner';
 import { Html5QrcodeScanner } from 'html5-qrcode';
 import axios from 'axios';
+import { useGlobalContext } from '../Components/context';
+
 
 const EventOwnerAttendance = () => {
+    const { openScannedTicket,setOpenScannedTicket} = useGlobalContext()
     const [ticketCode, setTicketCode] = useState('');
     const [eventName, setEventName] = useState('');
     const [loading, setLoading] = useState(false);
-    const [scannerActive, setScannerActive] = useState(false); // State to control scanner visibility
+    const [tickCategories, setTickCategories] = useState([]);
+    const [scannerActive, setScannerActive] = useState(false)
+
+    const userInfo = JSON.parse(localStorage.getItem('UserInfo'));
+    const eventId = JSON.parse(localStorage.getItem("eventId"));
+    
 
     // Ref for the scanner container
     const scannerContainerId = 'scanner-container';
 
-    // Initialize QR scanner when scannerActive changes
+    
     useEffect(() => {
-        if (scannerActive) {
-            // Initialize the scanner and render it into the div with id 'scanner-container'
+        const fetchTicketCategories = async () => {
+            try {
+                const response = await axios.get(`${environment.appUrl}validated-tickets/event/${eventId}`, {
+                    headers: {
+                        Authorization: `Bearer ${userInfo?.token}`,
+                    },
+                });
+                
+                // Assuming response contains categories with names and counts
+                console.log(response.data.ticket_types);
+                
+                setTickCategories(response.data.ticket_types);
+            } catch (error) {
+                console.error("Error fetching ticket categories:", error);
+            }
+        };
+        fetchTicketCategories();
+    }, [eventName, eventId, userInfo?.token]);
+
+    useEffect(() => {
+        if (scannerActive === true) {
             const scanner = new Html5QrcodeScanner(scannerContainerId, {
                 qrbox: {
                     height: 250,
                     width: 250,
                 },
-                fps: 5,
+                fps: 1,
             });
 
             const success = (result) => {
                 setTicketCode(result); 
-                scanner.clear(); // Clear scanner after a successful scan
-                setScannerActive(false); // Optionally deactivate scanner after success
+                scanner.clear();
+                setScannerActive(false); 
             };
 
             const error = (err) => {
@@ -101,7 +130,17 @@ const EventOwnerAttendance = () => {
                 <CreatorsSidebar />
                 <div className="sub-container">
                     <div className="verification-container">
+                        <div className="head">
                         <h3>VALIDATE TICKETS</h3>
+                        <button 
+                            type='button'
+                            disabled={scannerActive}
+                            onClick={()=>setScannerActive(true)}
+                            className='scanButton'
+                        >
+                            {scannerActive? "scanning": "scan"}
+                        </button>  
+                        </div>
                         <form onSubmit={verifyTickets}>
                             <label htmlFor="eventName">Event Name</label>
                             <input
@@ -123,27 +162,38 @@ const EventOwnerAttendance = () => {
                             />
                             <p>Note: Scanning of Tickets is available on mobile only</p>
 
-                            {/* Button to activate scanner */}
-                            <button
-                                type="button"
-                                onClick={() => setScannerActive(true)}
-                                disabled={scannerActive || loading}
-                            >
-                                {scannerActive ? 'Scanner Activated' : 'Activate Scanner'}
-                            </button>
-
+                            
+                            
                             <button type="submit" disabled={loading}>
                                 {loading ? <Bars color="white" height="20" /> : 'Validate Ticket'}
                             </button>
                         </form>
 
-                        {/* The QR Scanner will be rendered inside this div */}
-                        <div
+                        
+                        <div 
+                            className={scannerActive? "showScanBox": "scanBox"}
                             id={scannerContainerId}
-                            style={{ width: '100%', height: '300px', marginTop: '20px', border: '1px solid #ccc' }}
+                            
                         >
-                            {/* QR scanner renders inside this div */}
                         </div>
+                        {openScannedTicket && (
+                            <section className="show-scanned" onClick={()=>setOpenScannedTicket(false)}>
+                                <div className="scanned-content" >
+                                    <h4>Categories:</h4>
+                                    <ul>
+                                        {tickCategories.map((category) => (
+                                            <li key={category.event_id}>
+                                                <NavLink className="nav-item" to={`/events-attendance/tickets-verified/${category.event_id}`}>
+                                                    <span style={{ color: "black" }}>{category.level}</span>
+    
+                                                    <span>({category.validated_tickets.length})</span>
+                                                </NavLink>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </section>
+                        )}
                     </div>
                 </div>
             </div>

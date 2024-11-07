@@ -11,6 +11,7 @@ const AppProvider = ({ children }) => {
   const [optionPosition, setOptionsPosition] = useState({ top: 0, left: 0 });
   const [isSortOpen, setIsSortOpen] = useState(false);
   const [dropdownPosition, setDropdownPosition] = useState({ top: 0, right: 0 });
+  const [openScannedTicket, setOpenScannedTicket] = useState(false)
 
   const openSidebar = () => {
     setIsSideBarOpen(true);
@@ -71,7 +72,9 @@ const AppProvider = ({ children }) => {
     closeOverlay,
     dropdownPosition,
     setDropdownPosition, 
-    closeSort
+    closeSort,
+    openScannedTicket,
+    setOpenScannedTicket
   };
 
   return (

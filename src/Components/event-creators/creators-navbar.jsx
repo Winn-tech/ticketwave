@@ -1,7 +1,10 @@
 import React from 'react'
 import '../../styles/creatorsNavbar.css'
+import { useGlobalContext } from '../context'
 
 const CreatorsNavbar = () => {
+  const {scannerActive, setScannerActive} = useGlobalContext()
+
     const userInfo = localStorage.UserInfo !== undefined && JSON.parse(localStorage.UserInfo);
   return (
     
@@ -13,9 +16,7 @@ const CreatorsNavbar = () => {
             </div>
             
         </aside>
-        <aside>
-              <button className='scan-button'>scan</button>
-        </aside>
+        
         
     </nav>
   )

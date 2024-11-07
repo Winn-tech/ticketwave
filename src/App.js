@@ -1,20 +1,14 @@
 import './App.css';
-import FeaturedEvents from './Components/featuredEvents';
 import ForgetPassOne from './Components/forgetPassOne';
 import ForgetPassThre from './Components/ForgetPassThree';
 import ForgetPassTwo from './Components/forgetPassTwo';
-import HeroSection from './Components/HeroSection';
-// import Navbar from './Components/Navbar';
 import SigninPage from './Components/signin';
-import SignIn from './Components/signin';
 import SignupPage from './Components/signup';
 import Applauders from './Pages/applauders';
 import CartPageOne from './Pages/cartPageOne';
 import CartPageTwo from './Pages/cartPageTwo';
 import ContactUs from './Pages/ContactUsPage';
 import CreateEventPage from './Pages/createEventpage';
-import CreateEventAdmin from './Pages/createEventsAdmin';
-import EditEventPage from './Pages/EditEventPage';
 import EventInfoUser from './Pages/eventInfoUsers';
 import Extras from './Pages/extras';
 import FAQ from './Pages/FAQ';
@@ -91,7 +85,6 @@ function App() {
       {/* event owners */}
       <Route path='/events-signin' element={<EventAttendance/>}/>
       <Route path='/events-attendance' element={<ProtectedCreatorRoute element={<EventOwnerAttendance/>}/>}/>
-      {/* <Route path='/admin/admin-dashboard' element={<ProtectedCreatorRoute element={<EventAttendance/>} />}/> */}
       <Route path='/events-attendance/tickets-verified/:id' element={<ApprovedAttendance/>}/>
         
         {/* cart pages */}

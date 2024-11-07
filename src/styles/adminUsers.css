@@ -21,6 +21,7 @@
     margin-top: 80px;
     overflow-x: hidden;
     min-height: 90vh;
+    position: relative;
     
 }
 .main-container .sub-container .heading{
