@@ -38,7 +38,7 @@ const EventAttendance = () =>{
           setLoading(false)
           
           const eventId = result.data.event.id
-          // event_zSZ33
+         
           localStorage.setItem('eventId', JSON.stringify(eventId))
           
           if(result.data.success) {
@@ -47,6 +47,8 @@ const EventAttendance = () =>{
             navigate('/events-attendance', { replace: true });
           
             localStorage.setItem('UserInfo', JSON.stringify(result.data))
+            console.log(result.data);
+            
           }
           else {
             notifyError(result.data.errors ? JSON.stringify(result.data.errors) : result.data.message);

@@ -182,22 +182,10 @@
     border-radius: 8px;
   }
   
-  /* button { */
-    /* background-color: #007bff; */
-    /* color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    background-color: #66BB6A;
-  } */
-  
-  /* button:hover {
-    background-color: #0056b3;
-  }     */
+ 
   .save-btn {
     display: flex;
     width: 100%;
-    height: 52px;
     padding: 17px 0px;
     justify-content: center;
     align-items: center;
@@ -211,7 +199,9 @@
     font-style: normal;
     font-weight: 400;
     margin-bottom: 20px;
-    line-height: 18px; /* 112.5% */
+    border: none;
+    outline: none;
+    
   }
   
 

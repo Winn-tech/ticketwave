@@ -57,7 +57,6 @@ function App() {
         <Route path='/forget-password' element={<ForgetPassThre/>}/>
 
         {/* single pages */}
-        {/* <Route path="/" element={<ProtectedRoute element={<HomePage/>} />} /> */}
         <Route path="/" element={<HomePage/>} />
         <Route path='/orders' element={<ProtectedRoute element={<Orders />} />} />
         <Route path='/create-event' element={<ProtectedRoute element={<CreateEventPage />} />} />

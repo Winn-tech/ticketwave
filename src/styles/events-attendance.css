@@ -190,24 +190,8 @@
   border: 1px solid #ccc ;
   display: none;
 }
-.show-scanned{
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 20;
-}
-.show-scanned div{
-  background-color: white;
-  color: #66BB6A;
-  /* display: none; */
-  padding: 5%;
-}
+
+
 .verification-container .head{
   display: flex;
   justify-content: space-between;
@@ -216,6 +200,9 @@
 .verification-container .scanButton{
     padding: 5px, 10px;
     display: none;
+}
+.show-scanned{
+  display: none;
 }
 
 /* Responsive Adjustments */
@@ -246,6 +233,28 @@
   margin-top: 20px;
   border: 1px solid #ccc ;
   display: block;
+}
+.show-scanned{
+  display: block;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+
+}
+
+.show-scanned div{
+  background-color: white;
+  color: #66BB6A;
+  /* display: none; */
+  padding: 5%;
+
 }
 }
 

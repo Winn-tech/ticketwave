@@ -186,7 +186,11 @@
     border-radius: 7px;
     text-transform: capitalize;
     border: none;
+} 
+.creator-sidebar .check{
+  display: none;
 }
+
 @media (min-width : 920px) {
     .scan-button{
         display: none;
@@ -212,6 +216,7 @@
       display: none;
      }
      .creator-sidebar .check{
+      display: block;
       color: var(--primaryColor);
       border: none;
       margin-bottom: 30px;

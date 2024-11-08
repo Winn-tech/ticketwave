@@ -13,7 +13,6 @@ import PopularEvents from '../Components/popularEvents';
 
 
 const CartPageOne = () => {
-    const [quantity, setQuantity] = useState(1);
     const userInfo = JSON.parse(localStorage.UserInfo);
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
@@ -102,44 +101,6 @@ const CartPageOne = () => {
 
     const updateCart = async () => {
         setLoading(true); 
-        // let hasShown = false; 
-    
-        // try {
-        //     for (const cart of carts) {
-        //         const data = {
-        //             quantity: cart.quantity,
-        //         };
-    
-        //         const result = await axios.post(environment.appUrl + 'carts/' + cart.id, data, {
-        //             headers: {
-        //                 Authorization: `Bearer ${userInfo.token}`,
-        //                 'Content-Type': 'multipart/form-data',
-        //             },
-        //         });
-    
-        //         if (result.data.success) {
-        //             if (!hasShown) {
-        //                 notifySuccess(result.data.message);
-        //                 hasShown=true;
-        //             }
-                    
-        //             navigate('/Cart/checkout');
-                    
-        //         } else {
-        //             if (!hasShown) {
-        //                 notifyError(result.data.errors ? JSON.stringify(result.data.errors) : result.data.message);
-        //                 hasShown=true;
-        //             }
-
-        //         }
-        //     }
-        // } catch (error) {
-        //     notifyError(`Error: ${error.response ? error.response.data.message : error.message}`);
-        //     console.error('There was an error posting the data!', error);
-        // } finally {
-        //     setLoading(false);
-        // }
-        
         const cartData = carts.map(cart => ({
             id: cart.id,
             quantity: cart.quantity,
