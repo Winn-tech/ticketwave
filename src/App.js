@@ -41,6 +41,7 @@ import EventAttendance from './Pages/eventOwnersSignIn';
 import EventOwnerAttendance from './Pages/eventOwnerAttendance';
 import ProtectedCreatorRoute from './Components/protectedCreator';
 import ApprovedAttendance from './Pages/approvedAttendance';
+import WrongRoute from './Pages/wrongRoutePage';
 
 
 
@@ -63,7 +64,8 @@ function App() {
         <Route path='/events' element={<EventsPage/>}/>
         <Route path='/notifications' element={<ProtectedRoute element={<NotificationPage />} />} />
         <Route path='/user-profile' element={<ProtectedRoute element={<UserProfilePage />} />} />
-        <Route path='/eventInfoUsers/:id' element={<EventInfoUser/>}/>
+        <Route path='/eventInfoUsers/:id' element={<ProtectedRoute element={<EventInfoUser/>}/>}/>
+        <Route path='*' element={<WrongRoute/>} />
         
         {/* admin pages */}
         <Route path='/admin/admin-dashboard' element={<ProtectedAdminRoute element={<AdminDashBoard/>} /> }/>
@@ -84,7 +86,7 @@ function App() {
       {/* event owners */}
       <Route path='/events-signin' element={<EventAttendance/>}/>
       <Route path='/events-attendance' element={<ProtectedCreatorRoute element={<EventOwnerAttendance/>}/>}/>
-      <Route path='/events-attendance/tickets-verified/:id' element={<ApprovedAttendance/>}/>
+      <Route path='/events-attendance/tickets-verified/:id' element={<ProtectedCreatorRoute element={<ApprovedAttendance/>}/>}/>
         
         {/* cart pages */}
         <Route path='/Cart' element={<ProtectedRoute element={<CartPageOne />} />} />

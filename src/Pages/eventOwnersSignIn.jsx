@@ -36,6 +36,10 @@ const EventAttendance = () =>{
           });
   
           setLoading(false)
+         
+          const eventTitle =  result.data.event.event_title
+         localStorage.setItem("eventTitle", JSON.stringify(eventTitle))
+          
           
           const eventId = result.data.event.id
          

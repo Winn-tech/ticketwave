@@ -251,11 +251,33 @@
 
 .show-scanned div{
   background-color: white;
-  color: #66BB6A;
-  /* display: none; */
+  width: 90%;
   padding: 5%;
-
+  border-radius: 10px;
 }
+.show-scanned div h4{
+  color: #66BB6A;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.show-scanned div li{
+  margin-bottom: 10px;
+}
+.show-scanned div a{
+  text-decoration: none;
+  font-family: inter;
+  font-weight: 400;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #2D2D2D;
+}
+
+.show-scanned div a .ticket-icon{
+  color: #66BB6A;
+}
+
 }
 
 /* Mobile Devices */

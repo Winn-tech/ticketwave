@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import NavLink from '../navData';
+import { NavLink } from 'react-router-dom';
 import CreatorsNavbar from '../Components/event-creators/creators-navbar';
 import CreatorsSidebar from '../Components/event-creators/creatorsSidebar';
 import '../styles/events-attendance.css'
 import { environment } from '../environment';
+import { GrTicket } from "react-icons/gr";
 import { toast } from 'react-toastify';
 import { Bars } from 'react-loader-spinner';
 import { Html5QrcodeScanner } from 'html5-qrcode';
@@ -12,9 +13,10 @@ import { useGlobalContext } from '../Components/context';
 
 
 const EventOwnerAttendance = () => {
+    const eventTitle = JSON.parse(localStorage.getItem('eventTitle'));
     const { openScannedTicket,setOpenScannedTicket} = useGlobalContext()
     const [ticketCode, setTicketCode] = useState('');
-    const [eventName, setEventName] = useState('');
+    const [eventName, setEventName] = useState(eventTitle);
     const [loading, setLoading] = useState(false);
     const [tickCategories, setTickCategories] = useState([]);
     const [scannerActive, setScannerActive] = useState(false)
@@ -35,9 +37,8 @@ const EventOwnerAttendance = () => {
                         Authorization: `Bearer ${userInfo?.token}`,
                     },
                 });
-                
-                // Assuming response contains categories with names and counts
-                console.log(response.data.ticket_types);
+            
+                // console.log( "hello", response.data.ticket_types);
                 
                 setTickCategories(response.data.ticket_types);
             } catch (error) {
@@ -54,7 +55,7 @@ const EventOwnerAttendance = () => {
                     height: 250,
                     width: 250,
                 },
-                fps: 1,
+                fps: 0.5,
             });
 
             const success = (result) => {
@@ -65,6 +66,7 @@ const EventOwnerAttendance = () => {
 
             const error = (err) => {
                 toast.error(`QR scanner error: ${err}`);
+                setScannerActive(false); 
             };
 
             // Render the scanner inside the container and handle success/error
@@ -147,8 +149,7 @@ const EventOwnerAttendance = () => {
                                 type="text"
                                 placeholder="Ticketwave Pool party"
                                 id="eventName"
-                                value={eventName}
-                                onChange={(e) => setEventName(e.target.value)}
+                                defaultValue={eventName}
                                 required
                             />
                             <label htmlFor="eventId">Ticket ID</label>
@@ -156,7 +157,7 @@ const EventOwnerAttendance = () => {
                                 type="text"
                                 placeholder="eg: therav3099bbrt"
                                 value={ticketCode}
-                                id="eventId"  // Make sure this has id="eventId"
+                                id="eventId"  
                                 onChange={(e) => setTicketCode(e.target.value)}
                                 required
                             />
@@ -180,12 +181,12 @@ const EventOwnerAttendance = () => {
                             <section className="show-scanned" onClick={()=>setOpenScannedTicket(false)}>
                                 <div className="scanned-content" >
                                     <h4>Categories:</h4>
-                                    <ul>
+                                     <ul>
                                         {tickCategories.map((category) => (
-                                            <li key={category.event_id}>
-                                                <NavLink className="nav-item" to={`/events-attendance/tickets-verified/${category.event_id}`}>
+                                            <li key={category.id}>
+                                                <NavLink className="nav-item" to={`/events-attendance/tickets-verified/${category.id}`}>
                                                     <span style={{ color: "black" }}>{category.level}</span>
-    
+                                                    <span className='ticket-icon'><GrTicket /></span> 
                                                     <span>({category.validated_tickets.length})</span>
                                                 </NavLink>
                                             </li>

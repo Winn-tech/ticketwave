@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { environment } from '../environment'
 import CreatorsNavbar from '../Components/event-creators/creators-navbar'
@@ -6,24 +7,25 @@ import CreatorsSidebar from '../Components/event-creators/creatorsSidebar'
 
 
 const ApprovedAttendance = () => {
-    // const { id } = useParams();
+    const { id } = useParams();
+    const userInfo = JSON.parse(localStorage.getItem('UserInfo'));
     
-    // useEffect(()=>{
-    //    const getData = async () =>{
-    //     try {
-    //         const response = await axios.get(`${environment.appUrl}validated-tickets/event/${eventId}`, {
-    //             headers: {
-    //                 Authorization: `Bearer ${userInfo?.token}`,
-    //             },
-    //         });
-    //         console.log(response);
+    useEffect(()=>{
+       const getData = async () =>{
+        try {
+            const response = await axios.get(`${environment.appUrl}validated-tickets/event/${id}`, {
+                headers: {
+                    Authorization: `Bearer ${userInfo?.token}`,
+                },
+            });
+            console.log("approved", response);
             
-    //     } catch (error) {
+        } catch (error) {
             
-    //     }
-    //    }
-    //    getData()
-    // },[])j
+        }
+       }
+       getData()
+    },[])
   return (
    <>
 

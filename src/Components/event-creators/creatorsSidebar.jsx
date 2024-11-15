@@ -24,7 +24,7 @@ const CreatorsSidebar = () => {
                 });
                 
                 // Assuming response contains categories with names and counts
-                console.log(response.data.ticket_types);
+                // console.log(response.data.ticket_types);
                 
                 setTickCategories(response.data.ticket_types);
             } catch (error) {
@@ -40,8 +40,8 @@ const CreatorsSidebar = () => {
             <nav className="sidebar-nav">
                 <ul>
                     {tickCategories.map((category) => (
-                        <li key={category.event_id}>
-                            <NavLink className="nav-item" to={`/events-attendance/tickets-verified/${category.event_id}`}>
+                        <li key={category.id}>
+                            <NavLink className="nav-item" to={`/events-attendance/tickets-verified/${category.id}`}>
                                 <span style={{ color: "black" }}>{category.level}</span>
                                 <span className='ticket-icon'><GrTicket /></span> 
                                 <span>({category.validated_tickets.length})</span>
