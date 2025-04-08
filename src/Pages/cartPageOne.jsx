@@ -11,7 +11,6 @@ import PopularEvents from '../Components/popularEvents';
 
 
 
-
 const CartPageOne = () => {
     const userInfo = JSON.parse(localStorage.UserInfo);
     const [loading, setLoading] = useState(false);
@@ -63,7 +62,7 @@ const CartPageOne = () => {
               }
             });
             console.log(result.data.cart);
-            setCart(result.data.cart);
+           setCart(result.data.cart);
           } catch (error) {
             console.log(error);
             setCart([]);

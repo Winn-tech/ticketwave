@@ -69,6 +69,7 @@ function App() {
         
         {/* admin pages */}
         <Route path='/admin/admin-dashboard' element={<ProtectedAdminRoute element={<AdminDashBoard/>} /> }/>
+        {/* <Route path='/admin/admin-dashboard' element={<AdminDashBoard/>} /> */}
         <Route path='/admin/users' element={<ProtectedAdminRoute element={<Users/>} />} />
         <Route path='/admin/orders' element={<ProtectedAdminRoute element={<AdminOrders/>} />} />
         <Route path='/admin/Revenue' element={<ProtectedAdminRoute element={<AdminRevenue/>} />} />
@@ -98,6 +99,8 @@ function App() {
         <Route path='/help/contact-us' element={ <ContactUs/>}/>
          
          {/* more pages */}
+
+         
         <Route path='/more/applauders' element={<Applauders/>}/>
         <Route path='/more/seat-warmers' element={<SeatWarmers/>}/>
         <Route path='/more/volunteers' element={<Volunteers/>}/>

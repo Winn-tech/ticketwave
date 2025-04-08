@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { BiLogOut } from "react-icons/bi";
 // import { environment } from '../environment';
 
-const LogoutButton = ( ) => {
+const AdminLogoutButton = (  ) => {
     const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -14,7 +14,7 @@ const LogoutButton = ( ) => {
     localStorage.clear();
 
     // Redirect to the homepage
-    navigate("/login");
+    navigate("/admin/auth");
   };
 
     return (
@@ -24,4 +24,4 @@ const LogoutButton = ( ) => {
     );
 };
 
-export default LogoutButton;
+export default AdminLogoutButton;

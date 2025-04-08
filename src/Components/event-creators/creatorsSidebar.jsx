@@ -5,6 +5,7 @@ import { environment } from '../../environment';
 import axios from 'axios';
 import LogoutButton from '../logoutButton';
 import { useGlobalContext } from '../context';
+import CreatorLogoutButton from '../creatorsLogout';
 
 const CreatorsSidebar = () => {
     const { openScannedTicket, setOpenScannedTicket} = useGlobalContext()
@@ -56,10 +57,8 @@ const CreatorsSidebar = () => {
                 >
                     check scanned tickets
             </button>
-            {/* <button className="logout-button">
-                <BiLogOut /> Logout
-            </button> */}
-           <LogoutButton data="UserInfo" destination="event-signin" />
+            
+           <CreatorLogoutButton/>
 
         </div>
     );

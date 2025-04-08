@@ -112,9 +112,7 @@ const CreateEvents = () => {
                 e.target.reset();
                 setCosts([]);
             }
-
-
-            
+      
             console.log(result.data);
             setLoading(false)
 
@@ -165,6 +163,7 @@ const CreateEvents = () => {
                         <select 
                             id="event-category" 
                             required 
+                            
                             value={selectedCategory} 
                             onChange={(e) => setSelectedCategory(e.target.value)} // Handle the change event
                         >
@@ -238,7 +237,7 @@ const CreateEvents = () => {
                         </div>
                         ))}
                     </div>}
-                    <button type='button' className='add-button' onClick={handleInputFocus}>add</button>
+                    <button type='button' className='add-button' onClick={handleInputFocus}>Add</button>
                  </div> 
                  {/* Modal Component */}
                 <Modal isOpen={isModalOpen} onClose={closeModal} setCosts={setCosts} costs={costs} />

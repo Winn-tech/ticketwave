@@ -6,6 +6,7 @@ import { HiOutlineUsers } from "react-icons/hi2";
 import { FaMoneyBills } from "react-icons/fa6";
 import { BiLogOut } from "react-icons/bi";
 import { NavLink } from 'react-router-dom';
+import AdminLogoutButton from '../adminLogout';
 
 const AdminSidebar = () => {
     return ( 
@@ -45,9 +46,10 @@ const AdminSidebar = () => {
           </li>
         </ul>
       </nav>
-      <button className="logout-button">
+      {/* <button className="logout-button">
         <BiLogOut/> Logout
-      </button>
+      </button> */}
+      <AdminLogoutButton/>
     </div>
      );
 }

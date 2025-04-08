@@ -12,6 +12,7 @@ import {toast} from 'react-toastify';
 import {Bars} from 'react-loader-spinner'
 import ClientWithdrawal from '../Components/clientWithdrawal';
 import Useravatars from '../Components/useravatars';
+import LogoutButton from '../Components/logoutButton';
 
 
 
@@ -125,7 +126,9 @@ const UserProfilePage = () => {
                    <button onClick={()=>setOpenWithdraw(true)}>Withdraw</button>
                </div>
               
-               
+               <div>
+                  <LogoutButton />
+               </div>
           </section>
           <Footer/>
           {
